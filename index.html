@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex">
+	<title>Random Generation</title>
+	<link href="styles/paper.css" rel="stylesheet" type="text/css">
+	<link href="styles/sheets.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+</head>
+<body onload="makeBully(); threeAilments();">
+	<!-- <header><h1 class="border border-shadow">Random Generators</h1></header>	 -->
+
+	<nav class="border fixed split-nav">
+		<div class="nav-brand">
+			<h1>Random Generators</h1>
+		</div>
+		<div class="collapsible">
+			<input id="collapsible1" type="checkbox" name="collapsible1">
+			<button>
+				<label for="collapsible1">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</label>
+			</button>
+			<div class="collapsible-body">
+				<ul class="inline">
+					<li><a href="#ailments">Ailments</a></li>
+					<li><a href="#bullies">Bullies</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="sheetContainer" class="sheetContainer child-borders child-shadows">
+
+		<div id="illnessSheet" class="sheet padding-left-large padding-right">
+			<h2 id="ailments">Random Ailment Generator</h2>
+			<p>Please, sit down.  I have good news and bad news.  The good news is that you'll live.  The bad news is that you've been diagnosed with:</p>
+			<ul id="theList"> </ul>
+			<button id="illnessButton" onclick="threeAilments()">Anything else?</button>
+		</div>
+
+		<div id="bullySheet" class="sheet padding-left-large padding-right">
+			<h2 id="bullies">Random Bully Generator</h2>
+			<p>Racing to get home from school without encountering any bullies, you turn a corner and crash headlong into:</p>
+			<h3 id="bullyResult"></h3>
+			<p>
+				Oh no!
+			</p>
+
+			<button type="button" onclick="makeBully()">Run Away!</button>
+		</div>
+
+
+	</div>
+
+	<footer></footer>
+
+	<script src="scripts/main.js"></script>
+
+
+</body>
+</html>

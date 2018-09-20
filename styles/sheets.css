@@ -1,0 +1,28 @@
+.sheet {
+	margin: 100px 40px;
+}
+
+button {
+	margin-bottom: 40px;
+}
+
+.sheetContainer {
+	margin-top: 200px;
+}
+
+h2::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+body {
+	background: #f5f5f5;
+}
+
+.sheetContainer > div {
+	background: white;
+}

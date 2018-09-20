@@ -1,0 +1,511 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bull",
+				"bullySheet"
+			],
+			[
+				"hor",
+				"horLaborCost"
+			],
+			[
+				"labor",
+				"laborCount"
+			],
+			[
+				"ma",
+				"main-background"
+			],
+			[
+				"Game",
+				"Game"
+			],
+			[
+				"first",
+				"firstlistitemnode"
+			],
+			[
+				"miniature",
+				"miniaturepinscher"
+			],
+			[
+				"hnt",
+				"hnt"
+			],
+			[
+				"total",
+				"totalTechIncrease"
+			],
+			[
+				"bl",
+				"blueberry"
+			],
+			[
+				"rand",
+				"randBodyPart"
+			],
+			[
+				"disease",
+				"diseaseName"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Random Generation</title>\n\t<link href=\"styles/paper.css\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"styles/sheets.css\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"https://fonts.googleapis.com/css?family=Neucha\" rel=\"stylesheet\">\n</head>\n<body onload=\"makeBully(); threeAilments();\">\n\t<!-- <header><h1 class=\"border border-shadow\">Random Generators</h1></header>\t -->\n\n\t<nav class=\"border fixed split-nav\">\n\t\t<div class=\"nav-brand\">\n\t\t\t<h1>Random Generators</h1>\n\t\t</div>\n\t\t<div class=\"collapsible\">\n\t\t\t<input id=\"collapsible1\" type=\"checkbox\" name=\"collapsible1\">\n\t\t\t<button>\n\t\t\t\t<label for=\"collapsible1\">\n\t\t\t\t\t<div class=\"bar1\"></div>\n\t\t\t\t\t<div class=\"bar2\"></div>\n\t\t\t\t\t<div class=\"bar3\"></div>\n\t\t\t\t</label>\n\t\t\t</button>\n\t\t\t<div class=\"collapsible-body\">\n\t\t\t\t<ul class=\"inline\">\n\t\t\t\t\t<li><a href=\"#ailments\">Ailments</a></li>\n\t\t\t\t\t<li><a href=\"#bullies\">Bullies</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</nav>\n\n\t<div id=\"sheetContainer\" class=\"sheetContainer child-borders child-shadows\">\n\n\t\t<div id=\"illnessSheet\" class=\"sheet padding-left-large\">\n\t\t\t<h2 id=\"ailments\">Random Ailment Generator</h2>\n\t\t\t<p>Please, sit down.  I have good news and bad news.  The good news is that you'll live.  The bad news is that you've been diagnosed with:</p>\n\t\t\t<ul id=\"theList\"> </ul>\n\t\t\t<button id=\"illnessButton\" onclick=\"threeAilments()\">Anything else?</button>\n\t\t</div>\n\n\t\t<div id=\"bullySheet\" class=\"sheet padding-left-large\">\n\t\t\t<h2 id=\"bullies\">Random Bully Generator</h2>\n\t\t\t<p>Racing to get home from school without encountering any bullies, you turn a corner and crash headlong into:</p>\n\t\t\t<h3 id=\"bullyResult\"></h3>\n\t\t\t<p>\n\t\t\t\tOh no!\n\t\t\t</p>\n\n\t\t\t<button type=\"button\" onclick=\"makeBully()\">Run Away!</button>\n\t\t</div>\n\n\n\t</div>\n\n\t<footer></footer>\n\n\t<script src=\"scripts/main.js\"></script>\n\n\n</body>\n</html>\n",
+			"file": "index.html",
+			"file_size": 1938,
+			"file_write_time": 131816950180656695,
+			"settings":
+			{
+				"buffer_size": 1887,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 16855,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/sheets.css",
+			"settings":
+			{
+				"buffer_size": 247,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": ".sheet {"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: sear",
+				"Package Control: Discover Packages"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Pandoc"
+			],
+			[
+				"pandoc",
+				"Pandoc"
+			],
+			[
+				"pa",
+				"Pandoc"
+			],
+			[
+				"pand",
+				"Pandoc"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"citer",
+				"Citer: Show All"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"cite",
+				"CiteBibTeX: Extract citations in current file"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pan",
+				"Pandoc"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 468.0
+	},
+	"console":
+	{
+		"height": 248.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles"
+	],
+	"file_history":
+	[
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles/paper.css",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/generators.sublime-workspace",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/index.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/dom-verify.js",
+		"/C/Users/Richard/Desktop/todo.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/verifyTemplate.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/Interesting discoveries",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/Casino awards",
+		"/C/Users/Richard/Desktop/Wedding music.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/Game movies",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/styles/blueberry.css",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/C/Users/Richard/Downloads/obfuscated.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/ber-verify.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/blueberry.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/makeObjects.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/trp-verify.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/fsh-verify.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/Blueberryspecs",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Kids/snippet ideas",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/The Hunt",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/fr-verify.js",
+		"/C/Users/Richard/Dropbox/Documents/Backups/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/fsh-verify-2018-07-29_02-08-08.js",
+		"/C/Users/Richard/Dropbox/Documents/Backups/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/fsh-verify-2018-07-29_02-15-07.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/verifications/The Hunt",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/textnotes/Fish list",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/Blueberryspecs",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Automatic Backups/Automatic Backups.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/Automatic Backups.sublime-settings",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/blueberry-clicker/scripts/fr-verify.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Blueberry Clicker/blueberry0.1.css",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Blueberry Clicker/blueberry0.1.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Blueberry Clicker/Blueberryspecs",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Blueberry Clicker/blueberry0.1.html",
+		"/C/Users/Richard/Dropbox/My Work/My Courses/Future Course Ideas/History of Madness/Madness.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2016 Games/Games.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/todo.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/Notes from iphone",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Random lists/fruit.js",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Random lists/Ailment5.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Random lists/Ailment2.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Random lists/Ailment4.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2018 Random lists/Bully.md",
+		"/C/Users/Richard/Dropbox/My Work/Apps and Recs/Referee Reports/2018/Pacific Philosophical Quarterly/01 Why Emotions are Always Conscious/comments",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2015 Emotional Behavior/Irruptive Cognitions notes",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2017 Devfic/ascendants3.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2017 Devfic/Hitman/ascendants.md",
+		"/C/Users/Richard/Dropbox/My Work/Apps and Recs/Applications/2017 SNF Advanced Mobility/To Submit/Lay Summary",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2017 Devfic/Haldane House.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2017 Devfic/ascendants.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/2017 Devfic/Arkham Horror LCG/Dunwich Legacy Playthrough 1.md",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/Current/fodor degrees of belief",
+		"/C/Users/Richard/Desktop/HelloWorld.py",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/CiteBibtex.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/Citer.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/CiteBibtex/README.md",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/CiteBibtex/Default.sublime-keymap",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/CiteBibtex/CiteBibtex.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Richard/Dropbox/Documents/Immigration/2018 Jan Change of Status/Checklist.md",
+		"/C/pandoc/ascendants.md",
+		"/C/pandoc/test.md",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/Pandoc.sublime-settings",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/2013-2016/2013 Delusions Acceptances and Cognitive Feelings/2014 PPR/2014BJPS.tex",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/WordCount/WordCount.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/Pandoc/Pandoc.sublime-settings",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/2013-2016/2013 Writing Sample/2014sample04.tex",
+		"/C/pandoc/ascendants.html",
+		"/C/pandoc/test3.html",
+		"/C/pandoc/test2.html",
+		"/C/pandoc/test.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"jenkins",
+			"demo",
+			"font-f",
+			"font"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"bullyResult"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								835,
+								835
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 1315,
+								"count": 64,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2709,
+								2709
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 10,
+								"count": 0,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "javascript"
+							},
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 3455.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styles/sheets.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 17,
+								"count": 1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "css"
+							},
+							"auto_name": ".sheet {",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 126.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 131.0
+	},
+	"pinned_build_system": "",
+	"project": "generators.sublime-project",
+	"replace":
+	{
+		"height": 73.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

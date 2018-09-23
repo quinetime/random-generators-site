@@ -8,7 +8,7 @@ function nextCyberRole() {
 	let randonum = Math.floor(Math.random()*cyberRoles.length);
 	let newRole = cyberRoles.splice(randonum, 1)[0];
 	lastRoles.push(newRole);
-	if (lastRoles.length>cyberRoles.length-4) {
+	if (cyberRoles.length<=5) {
 		let oldRole = lastRoles.shift();
 		cyberRoles.push(oldRole);
 	}
@@ -28,7 +28,8 @@ function makeCyberpunk() {
 			criminal = "The Gifted: ";
 			break;
 		case "politics":
-			criminal = randomChoice("The Influence: ", "The Politico: ");
+			criminal = randomChoice("The Influence: ", "The Politician: ");
+			criminalText = cyberPolitics();
 			break;
 		case "religion":
 			criminal = "The Faith: ";
@@ -48,6 +49,7 @@ function makeCyberpunk() {
 			break;
 		case "wildcard":
 			criminal = randomChoice("The Wild Card: ", "The X Factor: ");
+			criminalText = cyberWildcard();
 			break;
 		case "fence":
 			criminal = randomChoice("The Fence: ", "The Fixer: ");
@@ -103,16 +105,16 @@ function makeCyberpunk() {
 /// Tools for making descriptions
 
 
-const cyberPrefixes = ["raster", "neo", "cred", "techno", "mech", "tech", "plasma", "bit", "byte", "meme", "gif", "vector", "cyber", "plasti", "array", "crypto", "pixel", "voxel", "script", "code", "repli", "nano", "xeno", "pico", "light", "laser", "futuro", "net", "hack", "jack", "info", "holo", "mecha", "silico", "deck", "data", "robo", "giga", "retro", "circuit", "crash", "bio", "neon", "bioport", "beam", "magneto", "wave", "freq", "rift", "oculo", "scan", "gene", "splice", "ion", "crack", "cipher"];
-const cyberSimplePrefixes = ["cyber", "techno", "crypto"];
+const cyberPrefixes = ["raster", "neo", "techno", "mech", "tech", "plasma", "bit", "byte", "meme", "gif", "vector", "cyber", "plasti", "array", "crypto", "pixel", "voxel", "script", "code", "repli", "nano", "xeno", "pico", "light", "laser", "futuro", "net", "hack", "jack", "info", "holo", "mecha", "silico", "deck", "data", "robo", "giga", "retro", "circuit", "crash", "bio", "neon", "bioport", "beam", "magneto", "wave", "freq", "rift", "oculo", "scan", "gene", "splice", "ion", "crack", "cipher"];
+const cyberSimplePrefixes = ["cyber", "techno", "crypto", "neo"];
 const cyberMoneyPrefixes = ["neo", "corpo", "omni", "giga", "cyber", "byte", "vox", "net", "neuro", "media", "patriot", "freedom", "electro"];
 const cyberMoneySuffixes = ["creds", "dollars", "coins", "bucks"];
-const cyberCorpPrefixes = ["Omni", "Umbra", "Globo", "Inter", "Nett", "Shado", "Tyrell", "Aerro", "Sky", "Edu", "Yawaha", "Grün", "Ultra", "Time", "Pax", "Patreo", "Coca", "Wylan", "Cyty", "Virtu", "Philoso", "Lambda", "Upsilon", "Encyclo", "Gymno", "Geny", "Tindr", "Twitt", "Googo", "Neutrino", "ICE", "Uber", "Episteme", "Neu", "Credo"];
-const cyberCorpSuffixes = ["corp", "zon", "sys", "soft", "comp", " Pharmaceuticals", " Macrosystems", " Microsystems", " Telecoms", " Comms", " Systems", " Enterprises", " Brands", "bank", " Industries"];
+const cyberCorpPrefixes = ["Omni", "Umbra", "Globo", "Inter", "Nett", "Shado", "Tyrell", "Ayro", "Sky", "Edu", "Yawaha", "Grün", "Ultra", "Time", "Pax", "Patreo", "Coca", "Wylan", "Cyty", "Virtu", "Philoso", "Lambda", "Upsilon", "Encyclo", "Gymno", "Geny", "Tindr", "Twitt", "Googo", "Neutrino", "ICE", "Uber", "Episteme", "Neu", "Credo", "Panthe", "Z-Wave", "Sy"];
+const cyberCorpSuffixes = ["corp", "zon", "soft", "comp", "labs", " Pharmaceuticals", " Macrosystems", " Microsystems", " Telecoms", " Comms", " Systems", " Enterprises", " Brands", "bank", " Industries"];
 const cyberChurch = ["XOR", "Uplink", "Inheritance Class", "Higher Scope", "Modal", "Lambda Function", "Envatted", "System S4", "Strict Entailment", "Empiricist", "Overclock", "Perceptron", "Hidden Layer", "Kernel"];
-const cyberSpecies = ["human", "alien", "xenomorph", "cyborg", "robot", "holo-AI"];
-const cyberGenders = [["his", "him", "he", "man"], ["her", "her", "she", "woman"]];
-const cyberPolice = ["the FBXI", "Cypherpol", "Corpopol", "S/F/PD", "AI-Reg Enforcement", "the IRS2.0", "Drug Enforcement Systems"];
+const cyberSpecies = ["human", "human", "alien", "xenomorph", "cyborg", "robot", "holo-AI", "android"];
+const cyberGenders = [["his", "him", "he", "man", "boy"], ["her", "her", "she", "woman", "girl"]];
+const cyberPolice = ["the FBXI", "Cypherpol", "Corpopol", "S/F/PD", "AI-Reg Enforcement", "the IRS2.0", "Drug Enforcement Systems", "the Feds", "a vigilante Street Judge"];
 
 
 let cyberPrefixesTemp = cyberPrefixes.slice();
@@ -197,7 +199,7 @@ function vowel() {
 }
 
 function capFirst(str) {
-	return str.replace(/^\w/, c => c.toUpperCase());
+	return str.replace(/^\w/, x => x.toUpperCase());
 }
 
 
@@ -209,30 +211,87 @@ function capFirst(str) {
 var cyberDriverTypes = [];
 function cyberDriver() {
 	if (cyberDriverTypes.length == 0) {
-		cyberDriverTypes = [1,2,3];			//enter numbers equal to the number of switchcases.
+		cyberDriverTypes = [1,2,3,4,5,6];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberDriverTypes.length);
 	let switchcase = cyberDriverTypes.splice(temp, 1)[0];
 	switch (switchcase) {
 		case 1: 
-			return `${randomChoice("R", "Br", "B", "Gr", "Kr", "Ad", "Vr", "Dr")+vowel()}m ${randomChoice("Velo", "Motto", "Vroga", "Charge", "Scree")+randomChoice("n","r","t","")}, ${randomChoice("grizzled", "hard-drinking", "disgraced", "discredited", "dishonored")} ${randCyberPrefix()+randomChoice("cycle","buggy","bike")} racer ${randomChoice("kicked out of", "booted from", "who had his titles stripped from")} the pro ${randomChoice("circuit", "league")} for excessive ${randCyberPrefix()+randomChoice("roid","booster")} use.`;
+			return `${randomChoice("R", "Br", "B", "Gr", "Kr", "Ad", "Vr", "Dr")+vowel()}m ${randomChoice("Velo", "Motto", "Vroga", "Charge", "Scree")+randomChoice("n","r","t","")}, ${randomChoice("grizzled", "hard-drinking", "disgraced", "a now-homeless")} ${randCyberPrefix()+randomChoice("cycle","buggy","bike")} racer ${randomChoice("kicked out of", "booted from", "who had his titles stripped from")} the pro ${randomChoice("circuit", "league")} for excessive ${randCyberPrefix()+randomChoice("roid","booster")} use.`;
 			break;
 		case 2:
-			return `gig.econ Vehicle Wageslave #${randomChoice("449102", "88904622", "313330012", "440441", "13X4", "CC940A")}, ${randomChoiceInArray(cyberSpecies)} ${randomChoice("Lifttaxi", "Hovercab", "Blackcab")} driver ${randomChoice("seeking to smash the system", "trying to earn enough "+randCyberMoney()+" to purchase "+randomChoice("his","her")+" freedom")}.`;
+			return `Vehicle Wageslave #${randomChoice("449102", "88904622", "313330012", "440441", "13X4", "CC940A")}, a gig.econ ${randomChoice("Lifttaxi", "Hovercab", "Blackcab")} driver ${randomChoice("seeking to smash the system", "trying to earn enough "+randCyberMoney()+" to purchase "+randomChoice("his","her")+" freedom")}.`;
 			break;
 		case 3:
 			let dualletter = randomChoice("T","X","R","K","N","D","Z","L");
 			let capvowel = capFirst(vowel());
 			let firstlet = randomChoice("K","T","R","S","C","N","H","Q","F","G","J","P");
 			let kittname = firstlet+"."+capvowel+"."+dualletter+"."+dualletter;
-			return `${kittname}, ex-${randomChoice("scientist", "technician", "researcher")} for ${randCyberCorp()} who ${randomChoice("fused", "merged")} ${randomChoice("his","her")} ${randomChoice("consciousness", "personality", "sentience")} with the AI of a self-driving car to avoid capture by ${randCyberPolice()}.`;
+			return `${kittname}., the result of a panicking ${randomChoice("scientist", "technician", "researcher")} ${randomChoice("fusing", "merging")} ${randomChoice("his","her")} ${randomChoice("consciousness", "personality", "sentience")} with the AI of a self-driving car to avoid capture by ${randCyberPolice()}.`;
 			break;
 		case 4:
-			return `carcult`;
+			return `${randomChoice("G","T","B","P")+"o"+randomChoice("g","m","r","rg","rque","rk")}, ${randomChoice("hairless albino", "chrome-painted")} ${randomChoice("ambassador", "exile", "missionary")} of the ${randomChoice("nomadic ","")}${randomChoice("V12", "V8", "Diesel", "Deezle", "Hi-Octane")+" "+randomChoice("Muscle Car","Convoy","Roadrace")} Cult that drives ceaselessly through the ${randomChoice("radioactive","irradiated")} ${randomChoice("Calexican","Nevegasan")} ${randomChoice("waste","bad","out","border")}lands.`
 			break;
 		case 5:
-			return `hotshot wannabe`;
+			let gender = randGender();
+			return `${randomChoice("Bucko", "Kiddo", "Gaga", "Boyo", "Chyll", "Bod", "Baboo", "Todd", "Radio")}, a hotshot teenage rocker${gender[4]} who streams nonstop ${randCyberPrefix()}pop to ${gender[0]} auditory cortex and who drives to ${gender[0]} own beat.`
+			break;
+		case 6:
+			return `${randomChoice("Kryan", "Gryan", "Kosslyn", "Koslin", "Ryu-san", "Scorpio", "The White Scorpion")}, ${randomChoice("a taciturn", "an untalkative", "an affectless")} ${randomChoice("Z","H","B","N","K","X")}ollywood stunt driver unaware he is a replicant created by ${randCyberCorp()}.`
 			break;
 		default: return "No driver.";
 	}
+}
+
+
+var cyberWildcardTypes = [];
+function cyberWildcard() {
+	if (cyberWildcardTypes.length == 0) {
+		cyberWildcardTypes = [1,2,3,4,5,6];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberWildcardTypes.length);
+	let switchcase = cyberWildcardTypes.splice(temp, 1)[0];
+	switch (switchcase) {
+		case 1: 
+			return `Sentient ${randomChoice("liquid","cloud","rock creature","plant","crystal","lightwave","magnetic field")} ${randomChoice("R","G","N")}'${randomChoice("fan","ming","glo","tree","por","kon","gil","ta","pro","troc")+randomChoice("ta","ba","ma","leo","ve","ril","loo","traye","nosh","plo")} ${randomChoice("Bo","Ro","Mo","Zo","Tay","Gla","Yo")+"'"+randomChoice("grt","brt","brn","trn","wray","flo","fra","sign","sne","dru","blay","n","r","d","cid")}, ${randomChoice("exile of", "visitor from", "last remaining member of a species from", "discovered alone and dying in")} ${randomChoice("Planet Q","the Omicron Dimension","the Crab Nebula","the Infosphere","the Afterlife Dimension", "Otherwhere", "the Possibility Space", "the Alterspace", "the Subjunctive Zone")}, a mystery even to ${randomChoice("itself","himself","herself")}.`;
+			break;
+		case 2:
+			return `${randomChoice("Second","Third","Fourth")} in line to the ${randomChoice("Martian","Venusian","Alpha Centaurian","Neptunian")} throne, the ${randomChoice("ignoble","immortal","bloodthirsty")+" "+randomChoice("cyberdemon","technoprince","technodemon","cyberogre","mechanosquid", "technoprincess","cybertyrant", "spidermech")+" "+randomChoice("J","Gr","L","P","Z","T","K","Q")+"z."}`;
+			break;
+		case 3:
+			return `${randomChoice("First", "Last", "Wisest", "Most beautiful", "Most glorified", "Most secretive", "Most decadent", "Most cunning", "Most gracious", "Most bloodthirsty", "Cruelest", "Most spite-filled")} of the ${randomChoice("Electronic", "Computational", "Amoral", "Immortal", "Telecom", "Geothermal", "Steam-Powered", "Punchcard", "Circuitboard", "Wireless", "Clockwork")} Muses, ${randomChoice("Her Excellency the Lady", "the Lady", "Oracle", "Seer", "Her Royal Highness, Lady", "Madame")} ${randomChoice("Xoriana", "Nande", "Logixx", "Bayessa", "Cleon", "Pembroke", "Cortana", "Siri", "Alexa")}.`;
+			break;
+		case 4:
+			return `${randomChoice("Martian","Venusian","Alpha Centaurian","Neptunian","Dominion")} shapeshifter ${randomChoice("Fr","Br","Tr","Cr")+"'"+randomChoice("tata","baba","dada","lala","nana")+" "+randomChoice("Cho","Ko","Bo","Lo","Ro","Tro","Sto","Sho","Jonzz","Odo")}, whose ability to take the forms of ${randomChoice("an ID badge", "an easel", "a windowwashing pail", "a desk chair", "a smoke detector", "a pillow", "a coffee mug", "a police badge", "a severed hand", "a treadmill")} and ${randomChoice("a ladder", "a rat", "a guard dog", "a throw rug", "a piece of abstract art", "a shampoo bottle", "a toothbrush", "a wrench", "a necktie", "an alarm clock", "a plasma rifle", "a plasma grenade")} ${randomChoice("should prove invaluable", "will come in handy", "will be necessary")}.`;
+			break;
+		case 5:
+			return `${randomChoice("10010DAC", "0011001CCF", "BAC1101", "01101010", "9F8B0C", "0x68", "RX-LQC", "1101CABBDF")}, a faulty android programmed with only ${randomChoice("one","two")} of the three laws of robotics.`;
+			break;
+		case 6:
+			return `Dream ${randomChoice("intrusion ", "infiltration ", "derangement ")+randomChoice("agent","expert","artist")} ${randomChoice("Hector ", "Felipe ", "Ignacio ", "Pablo ", "Paolo ", "Raoul ", "Francesca ", "Rosa ", "Clara ", "Maria ")+randomChoice("de Cruz","Argento","de Santos","Lopez","Cortez","Delgado")}, ${randomChoice("skilled","certified")} in level ${randomChoice("8","9","10","14")} inceptions, specialist in ${randomChoice("instilling", "inducing")} nightmares of ${randomChoice("falling","spiders","being buried alive","snakes","loneliness","inferiority","humiliation","being chased","drowning")}.`;
+			break;
+		default: return "No wild card.";
+	}
+}
+// If I want to move the Inceptor, consider a bodyswapping alien intelligence
+
+var cyberPoliticsTypes = [];
+function cyberPolitics() {
+	if (cyberPoliticsTypes.length == 0) {
+		cyberPoliticsTypes = [1];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberPoliticsTypes.length);
+	let switchcase = cyberPoliticsTypes.splice(temp, 1)[0];
+	switch (switchcase) {
+		case 1:
+			let gender = randGender();
+			return `${randomChoice("Solid light hologram","Mechanical AI duplicate","Illegal vat-grown clone")} of ${randomChoice("the president","a paleocon congress"+gender[3]+" from Calexico", "the junior senator from New Montana", "the governor of West American Canada", "the mayor of San/Fran", "a senator from Delmarva", "the governor of Saigon Province", "a congress"+gender[3]+" from Florida Island", "a representative of West American Canada", "the Secretary of "+capFirst(randCyberPrefix())+"defense", "the Secretary of Cryptography", "the Secretary of Monopolies"}.`; 
+			break;
+		case 2:
+			return `${randomChoice("Fiery", "Impassioned", "Firebrand", "Revolutionary")} ${randCyberPrefix()+randomChoice("-anarchist", "-socialist", "-democrat", "-libertarian")} candidate for mayor ,${randomChoice("an idealist", "a warrior for social progress", "a rousing speaker", "a dreamer")} eager to tear down the corporatocracy so that society can be built anew.`;
+			break;
+
+		default: return "No politician.";
+
+
 }

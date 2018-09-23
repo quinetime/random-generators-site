@@ -28,7 +28,7 @@ function makeCyberpunk() {
 			criminal = "The Gifted: ";
 			break;
 		case "politics":
-			criminal = randomChoice("The Influence: ", "The Politician: ");
+			criminal = randomChoice("The Influence: ", "The Politico: ");
 			criminalText = cyberPolitics();
 			break;
 		case "religion":
@@ -76,7 +76,7 @@ function makeCyberpunk() {
 			criminal = randomChoice("The Engineer: ", "The Gearhead: ", "The Technician: ");
 			break;
 		case "lookout":
-			criminal = randomChoice("The Look-Out: ", "The Recon: ", "The Watch: ");
+			criminal = randomChoice("The Lookout: ", "The Recon: ", "The Watch: ");
 			break;
 		default:
 			criminal = "No Criminal Found."
@@ -105,7 +105,7 @@ function makeCyberpunk() {
 /// Tools for making descriptions
 
 
-const cyberPrefixes = ["raster", "neo", "techno", "mech", "tech", "plasma", "bit", "byte", "meme", "gif", "vector", "cyber", "plasti", "array", "crypto", "pixel", "voxel", "script", "code", "repli", "nano", "xeno", "pico", "light", "laser", "futuro", "net", "hack", "jack", "info", "holo", "mecha", "silico", "deck", "data", "robo", "giga", "retro", "circuit", "crash", "bio", "neon", "bioport", "beam", "magneto", "wave", "freq", "rift", "oculo", "scan", "gene", "splice", "ion", "crack", "cipher"];
+const cyberPrefixes = ["raster", "neo", "techno", "mech", "tech", "plasma", "bit", "byte", "meme", "gif", "vector", "cyber", "plasti", "array", "crypto", "pixel", "voxel", "script", "code", "repli", "nano", "xeno", "pico", "light", "laser", "futuro", "net", "hack", "jack", "info", "holo", "mecha", "silico", "deck", "data", "robo", "giga", "retro", "circuit", "crash", "bio", "neon", "beam", "magneto", "wave", "freq", "rift", "oculo", "scan", "gene", "splice", "ion", "crack", "cipher", "mirror"];
 const cyberSimplePrefixes = ["cyber", "techno", "crypto", "neo"];
 const cyberMoneyPrefixes = ["neo", "corpo", "omni", "giga", "cyber", "byte", "vox", "net", "neuro", "media", "patriot", "freedom", "electro"];
 const cyberMoneySuffixes = ["creds", "dollars", "coins", "bucks"];
@@ -128,7 +128,7 @@ let cyberCorpSuffixesTemp = cyberCorpSuffixes.slice();
 function randCyberPrefix() {
 	if (cyberPrefixesTemp.length == 0) {cyberPrefixesTemp = cyberPrefixes.slice();}
     let rando = Math.floor(Math.random() * cyberPrefixesTemp.length);
-    return cyberPrefixesTemp.splice(rando, 1);
+    return cyberPrefixesTemp.splice(rando, 1)[0];
 }
 
 function randCyberMoney() {
@@ -136,7 +136,7 @@ function randCyberMoney() {
 	if (cyberMoneySuffixesTemp.length == 0) {cyberMoneySuffixesTemp = cyberMoneySuffixes.slice();}
 	let rando = Math.floor(Math.random() * cyberMoneyPrefixesTemp.length);
 	let rando2 = Math.floor(Math.random() * cyberMoneySuffixesTemp.length);
-    return cyberMoneyPrefixesTemp.splice(rando, 1)+cyberMoneySuffixesTemp.splice(rando2, 1);
+    return cyberMoneyPrefixesTemp.splice(rando, 1)[0]+cyberMoneySuffixesTemp.splice(rando2, 1)[0];
 } 
 
 function randGender() {
@@ -147,7 +147,7 @@ function randGender() {
 function randCyberPolice() {
 	if (cyberPoliceTemp.length == 0) {cyberPoliceTemp = cyberPolice.slice();}
 	let rando = Math.floor(Math.random() * cyberPoliceTemp.length);
-    return cyberPoliceTemp.splice(rando, 1);
+    return cyberPoliceTemp.splice(rando, 1)[0];
 }
 
 function randCyberCorp() {
@@ -155,7 +155,7 @@ function randCyberCorp() {
 	if (cyberCorpSuffixesTemp.length == 0) {cyberCorpSuffixesTemp = cyberCorpSuffixes.slice();}
 	let rando = Math.floor(Math.random() * cyberCorpPrefixesTemp.length);
 	let rando2 = Math.floor(Math.random() * cyberCorpSuffixesTemp.length);
-    return cyberCorpPrefixesTemp.splice(rando, 1)+cyberCorpSuffixesTemp.splice(rando2, 1);
+    return cyberCorpPrefixesTemp.splice(rando, 1)[0]+cyberCorpSuffixesTemp.splice(rando2, 1)[0];
 } 
 
 function randomChoice() {
@@ -199,7 +199,8 @@ function vowel() {
 }
 
 function capFirst(str) {
-	return str.replace(/^\w/, x => x.toUpperCase());
+	let newstr = str.charAt(0).toUpperCase() + str.substr(1);
+	return newstr;
 }
 
 
@@ -227,7 +228,7 @@ function cyberDriver() {
 			let capvowel = capFirst(vowel());
 			let firstlet = randomChoice("K","T","R","S","C","N","H","Q","F","G","J","P");
 			let kittname = firstlet+"."+capvowel+"."+dualletter+"."+dualletter;
-			return `${kittname}., the result of a panicking ${randomChoice("scientist", "technician", "researcher")} ${randomChoice("fusing", "merging")} ${randomChoice("his","her")} ${randomChoice("consciousness", "personality", "sentience")} with the AI of a self-driving car to avoid capture by ${randCyberPolice()}.`;
+			return `A talking ${randomChoice("Pontiac Firebird", "Pontiac Trans Am", "Dodge Charger", "Dodge Stealth", "DeLorean")+randomChoice(""," 2100"," reissue")} named ${kittname}., the result of a panicking ${randomChoice("scientist", "technician", "researcher")} ${randomChoice("fusing", "merging")} ${randomChoice("his","her")} ${randomChoice("consciousness", "personality", "sentience")} with the AI of a self-driving car to avoid capture by ${randCyberPolice()}.`;
 			break;
 		case 4:
 			return `${randomChoice("G","T","B","P")+"o"+randomChoice("g","m","r","rg","rque","rk")}, ${randomChoice("hairless albino", "chrome-painted")} ${randomChoice("ambassador", "exile", "missionary")} of the ${randomChoice("nomadic ","")}${randomChoice("V12", "V8", "Diesel", "Deezle", "Hi-Octane")+" "+randomChoice("Muscle Car","Convoy","Roadrace")} Cult that drives ceaselessly through the ${randomChoice("radioactive","irradiated")} ${randomChoice("Calexican","Nevegasan")} ${randomChoice("waste","bad","out","border")}lands.`
@@ -273,25 +274,39 @@ function cyberWildcard() {
 		default: return "No wild card.";
 	}
 }
-// If I want to move the Inceptor, consider a bodyswapping alien intelligence
+// If I want to move the Inceptor, consider a bodyswapping alien intelligence, 
 
 var cyberPoliticsTypes = [];
 function cyberPolitics() {
 	if (cyberPoliticsTypes.length == 0) {
-		cyberPoliticsTypes = [1];			//enter numbers equal to the number of switchcases.
+		cyberPoliticsTypes = [1,2];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberPoliticsTypes.length);
 	let switchcase = cyberPoliticsTypes.splice(temp, 1)[0];
 	switch (switchcase) {
 		case 1:
 			let gender = randGender();
-			return `${randomChoice("Solid light hologram","Mechanical AI duplicate","Illegal vat-grown clone")} of ${randomChoice("the president","a paleocon congress"+gender[3]+" from Calexico", "the junior senator from New Montana", "the governor of West American Canada", "the mayor of San/Fran", "a senator from Delmarva", "the governor of Saigon Province", "a congress"+gender[3]+" from Florida Island", "a representative of West American Canada", "the Secretary of "+capFirst(randCyberPrefix())+"defense", "the Secretary of Cryptography", "the Secretary of Monopolies"}.`; 
+			let pref = randCyberPrefix();
+			function presname() {
+				if (gender[0]=="his") 
+					return randomChoice("Hock", "Matthew", "Reginald", "Brant", "Corr", "Flash", "Joe", "Mayhew","Prete"); 
+				else return randomChoice("Linda", "Veronica", "Bett", "Pix", "Ellalla", "Condy", "Zosha","Erin","Baud");
+			}
+			return `${randomChoice("Convincing solid light hologram and AI duplicate","Android duplicate","Illegal vat-grown clone")} of ${presname()} ${randomChoice("Cor","Bar","Har","Stead","Cal","Flash","Fish","Auto","Steel","Glass","Shine","Wish","Win","Light","Know","Click")+randomChoice("zone","man","fast","bulb","ler","fresh","vard","yard","shot","rat","sleeze","slime","murk","dark","bright","chan","zhang","bang")}, ${randomChoice("the President of the United States of America","a paleocon congress"+gender[3]+" from Calexico", "the junior senator from New Montana", "the governor of West American Canada", "the mayor of San/Fran", "newly-elected senator from Delmarva", "the governor of Saigon Province", "a congress"+gender[3]+" from Florida Island", "a representative of West American Canada", "the Federal Secretary of "+capFirst(pref)+"defense", "the Federal Secretary of Cryptography", "the Federal Secretary of Monopolies")}.`; 
 			break;
 		case 2:
-			return `${randomChoice("Fiery", "Impassioned", "Firebrand", "Revolutionary")} ${randCyberPrefix()+randomChoice("-anarchist", "-socialist", "-democrat", "-libertarian")} candidate for mayor ,${randomChoice("an idealist", "a warrior for social progress", "a rousing speaker", "a dreamer")} eager to tear down the corporatocracy so that society can be built anew.`;
+			return `${randomChoice("Fiery", "Impassioned", "Firebrand")} ${randCyberPrefix()+randomChoice("-anarchist", "-socialist", "-revolutionary", "-ecologist")} ${randomChoice("Sheila", "Richard", "Bil", "Devon", "Clare", "Michaela", "Enrico", "Gordon", "Donn", "Jax", "Sonya")+" "+randomChoice("Kinship","Garnish","Soda","Smitt","Turnbuckle","Mirrorshades","Blumilk","Kang","Cageless")}, ${randomChoice("candidate","currently running")} for ${randomChoice("city council","mayor","the Mall of Congress")}, ${randomChoice("an idealist", "a warrior for social progress", "a rousing speaker", "a dreamer", "a big-picture visionary")} eager to ${randomChoice("tear down the corporatocracy so that society can be built anew","tear down the government from the inside","do whatever it takes to destroy the clampdown society","do whatever is necessary to climb to the top","burn down the corporatocracy from the inside and rebuild society in its ashes")}.`;
+			break;
+		case 3:
+			return ``;
 			break;
 
 		default: return "No politician.";
+	}
+
+	//local community leader (Griffin's werewolf) fighting for those ruined by cybermods (the Brokendown, the Overclocked, the Fried), corrupt aide or secretary at City Hall, technoshah, Alex Jones conspiracy nut, idealist politician over a virtual community in cyberspace (The Republic), but a criminal in meatspace, Corporate lobbyist, official agreed to be taken hostage
+
+	//need more grotesque cybermods
 
 
 }

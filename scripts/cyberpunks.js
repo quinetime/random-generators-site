@@ -75,6 +75,7 @@ function makeCyberpunk() {
 			break;
 		case "engineer":
 			criminal = randomChoice("The Engineer: ", "The Gearhead: ", "The Technician: ");
+			criminalText = cyberEng();
 			break;
 		case "lookout":
 			criminal = randomChoice("The Lookout: ", "The Recon: ", "The Watch: ");
@@ -289,7 +290,7 @@ function cyberWildcard() {
 		default: return "No wild card.";
 	}
 }
-// If I want to move the Inceptor, consider a bodyswapping alien intelligence, 
+// If I want to move the Inceptor, consider a bodyswapping alien intelligence
 
 var cyberPoliticsTypes = [];
 function cyberPolitics() {
@@ -325,7 +326,7 @@ function cyberPolitics() {
 		case 6:
 			let lastn = randomChoice("Jonzz","Alexx","Smith","Freqout","Snuze","Drear","Clott","Grott","Trawl","Phylax","Mudd","Druck","Ziil","Trutch", "Plott", "Glugg");
 			let news = lastn+" "+capFirst(randCyberPrefix()+randomChoice("report","Eye","news","times","blitz","-Update","-Enquirer","-Inquiry","tattle","snoop","cast"));
-			return `${randomChoice("Grundle","Fredder","Balder","Hander","Cinder","Buggle","Uggle","Crog","Bug","Conker")+randomChoice("drudge","tote","grote","chunt","cruft","pore","plunt","rush","hump")} ${lastn}, ${randomChoice("squat","short","greasy","lunatic","loud")} and ${randomChoice("unsavory","contemptible","dissolute")} ${randomChoice("host","editor","journo","muckracker")} of the conspiracy-minded ${randomChoice("holoprogram","cyberrag","cybertube show","podwire show","tabloid-vid","tabloid")} The ${news}, a ${randomChoice("confusingly","frustratingly","surprisingly")} influential ${randomChoice("blowhard","gasbag","slimeball","creep")} who has had so many ${randomChoice("senshancements","facegrafts","cheekpuffs")} and ${randomChoice("skinfrills","oculomods","sweatbloks")} installed that he looks ${randomChoice("just","almost exactly", "a lot")} like a ${randomChoice("wastetoad","mutofrog","raccoon","wasteland lemur","kinkajou","blobfish", "catfish", randCyberPrefix()+"muppet")}.`;
+			return `${randomChoice("Grundle","Fredder","Balder","Hander","Cinder","Buggle","Uggle","Crog","Bug","Conker")+randomChoice("drudge","tote","grote","chunt","cruft","pore","plunt","rush","hump","mane")} ${lastn}, ${randomChoice("squat","short","greasy","lunatic","loud")} and ${randomChoice("unsavory","contemptible","dissolute")} ${randomChoice("host","editor","journo","muckracker")} of the conspiracy-minded ${randomChoice("holoprogram","cyberrag","cybertube show","podwire show","tabloidtube","tabloid")} The ${news}, a ${randomChoice("confusingly","frustratingly","surprisingly")} influential ${randomChoice("blowhard","gasbag","slimeball","creep")} who has had so many ${randomChoice("senshancements","facegrafts","cheekpuffs")} and ${randomChoice("skinfrills","oculomods","sweatbloks")} installed that he looks ${randomChoice("just","almost exactly", "a lot")} like a ${randomChoice("wastetoad","mutofrog","raccoon","wasteland lemur","kinkajou","blobfish", "catfish", randCyberPrefix()+"muppet")}.`;
 			break;
 
 		default: return "No politician.";
@@ -333,10 +334,13 @@ function cyberPolitics() {
 }
 
 
+// UNDER SIX... TO FINISH
+
+
 var cyberWatchTypes = [];
 function cyberWatch() {
 	if (cyberWatchTypes.length == 0) {
-		cyberWatchTypes = [1,2,3];			//enter numbers equal to the number of switchcases.
+		cyberWatchTypes = [1,2,3,4];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberWatchTypes.length);
 	let switchcase = cyberWatchTypes.splice(temp, 1)[0];
@@ -350,7 +354,10 @@ function cyberWatch() {
 			return `${randomChoice("Josh","Barb","Leo","Greg","Mon","Max")+randomChoice("ua","ara","pold","ory","ica","field","imillian")} ${randomChoice("Up","Down","Fly","Spider","Ant","Bould","Climb","Verti","Whirli")+randomChoice("wards","face","slope","scale","leap","jump","kick")}, ${randomChoice("Olympic-level","platinum-medal-winning","godtier","professional","galaxy-class")} ${randomChoice("free-runner","parkour expert","arrythmic gymnast", "track star")} outfitted with a pair of ${randomChoice("grav-","mag-","gravmag-")+randomChoice("boots","shoes","footpads")} that lets ${randomChoice("him","her")} run straight up walls at ${randomChoice("incredible","dizzying","astounding")} speeds.`;
 			break;
 		case 3:
-			return `${randomChoice("Pug","Pup","Kit","Bee","Eel","Gecko","Pett","Pupa")} ${randomChoice("M","P","L","R")+vowel("y")+randomChoice("ria","stia","gra","gry","rry","ren","rent","rrent","ckent")}, animal body${randomChoice("mod","sculpt")} ${randomChoice("fanatic","addict")} who can fly above the site of the heist on ${gend[0]} ${randomChoice("dragonfly wings","eagle wings","crow wings","batwings")} and ${randomChoice("surveil","keep tabs on")} the scene with ${randomChoice(gend[0]+" hawk's eyes",gend[0]+" ultraviolet-sensing compound eyes",gend[0]+" enormous aye-aye eyes",gend[0]+" nightvision cateyes", "the variety of eyes from different animals studded all over "+gend[0]+" face")}, ${gend[0]} ${randomChoice("bloodhound's nose", "St. Bernard's nose", "three dog noses", "huge rabbit ears", "huge elephant ears")}, and ${gend[0]} ${randomChoice("dolphingraft sonar ability", "sharkgraft sensivitity to electric fields", "pigeongraft sensitivity to magnetic fields")}.`;
+			return `${randomChoice("Pug","Pup","Kit","Bee","Eel","Gecko","Pett","Pupa")} ${randomChoice("M","P","L","R")+vowel("y")+randomChoice("ria","stia","gra","gry","rry","ren","rent","rrent","ckent")}, animal body${randomChoice("mod","sculpt")} ${randomChoice("fanatic","addict")} who can fly above the ${randomChoice("scene","site")} of the heist on ${gend[0]} ${randomChoice("dragonfly wings","eagle wings","crow wings","batwings")} and ${randomChoice("surveil","keep tabs on")} the scene with ${randomChoice(gend[0]+" hawk's eyes",gend[0]+" ultraviolet-sensing compound eyes",gend[0]+" enormous tarsier eyes",gend[0]+" nightvision cateyes", "the eyes of twelve different animals")}, ${gend[0]} ${randomChoice("bloodhound's nose", "St. Bernard's nose", "three dog noses", "huge rabbit ears", "huge elephant ears")}, and ${gend[0]} ${randomChoice("dolphingraft sonar", "sharkgraft sensivitity to electric fields", "pigeongraft sensitivity to magnetic fields")}.`;
+			break;
+		case 4:
+			return `${randomChoice("Midas","Elvin","Flyboy","Goldcoil","Hetset","Hurlburt","Goose","Mavric","Jester")} ${randomChoice("K","P","M","F","T")}. ${randomChoice("Keats","Keaton","Airson","Millet","Cortell","Metacalf","Bradshaw","Eisman")}, ${randomChoice("discharged Spaceforce pilot","octogenarian aviation enthusiast","basement-dweeling peeping tom")} whose primary visual cortex is linked to the cameras of ${"thirty","forty","fifty","sixty"} ${randomChoice("aerodrones","soarsphere drones","helidrones","helicopter drones")}.`;
 			break;
 		default: return "No lookout can be found.";
 
@@ -369,7 +376,7 @@ function cyberFaith() {
 		case 1:
 			let grossname1 = "L"+randCaps("ONELY MOMS IN YOUR AREA")+" !!FREE SIGNUP!!";
 			let grossname2 = "F"+randCaps("REE VIAGRA");
-			let grossname3 = "O"+randCaps("VERSEXED COLLEGE GIRLS WAITING FOR YOU")+" [[CLICK HERE]]";
+			let grossname3 = "O"+randCaps("VERSEXED COLLEGE GIRLS WAITING FOR YOU")+" [CLICK HERE]";
 			return `${randomChoice("Pontife","Antipope Pius ")}XXX ${randomChoice(grossname1, grossname2,grossname3)}, Catholic Pope whose ${randomChoice("cerebrum","cerebral cortex","prefrontal cortex")} was corrupted with malware ${randomChoice("when cruising the darkweb","when downloading bittorrents","written by atheo-terrorists")} and who subsequently ${randomChoice("was excommunicated", "was forced to retire", "turned the Vatican into a brothel and a den of criminality", "turned the Vatican into a global criminal enterprise", "caused the Catholic Church to splinter into a conservative sect and the S3XYSEX sect")}.`;
 			break;
 		case 2:
@@ -377,30 +384,42 @@ function cyberFaith() {
 			break;
 		case 3:
 			if (Math.random()<0.5) {
-				return `${randomChoice("Fra","Father")} ${randomChoice("Fresnelle","X","Monoculus","Quinine","Vaporcool","Turbo","Hyperlink","Ahref","404","Mountdrive","Sudo","Perceptron")},${randomChoice(" fallen"," corrupt"," mad")} ${randomChoice("monk", "robomonk","cybermonk","robopriest","cyberpriest","lasermonk","mutant monk","digimonk","technomonk")} of the ${randomChoice("XOR","Uplink","Inheritance Class","Higher Scope","Lambda","Envatted","System S4","Gates of Logic","Strict Entailment","Hidden Layer","Kernel")} Brotherhood.`; 
+				return `${randomChoice("Fra","Father")} ${randomChoice("Fresnelle","Variable","Monoculus","Quinine","Vaporcool","Turbo","Hyperlink","Ahref","404","Mountdrive","Sudo","Perceptron")},${randomChoice(" fallen"," corrupt"," mad")} ${randomChoice("monk", "robomonk","cybermonk","robopriest","cyberpriest","lasermonk","mutant monk","digimonk","technomonk")} of the ${randomChoice("XOR","Uplink","Inheritance Class","Higher Scope","Lambda","Envatted","System S4","Gates of Logic","Strict Entailment","Hidden Layer","Kernel")} Brotherhood.`; 
 			}
 			else {
 				return `${randomChoice("Sister","Mother")} ${randomChoice("Fresnelle","X","Monoculus","Quinine","Vaporcool","Turbo","Hyperlink","404","Mountdrive","Sudo","Perceptron")}, ${randomChoice("fallen","corrupt","mad")} ${randomChoice("nun", "robonun","cybernun", "lasernun","mutant nun","diginun","technonun")} of ${randomChoice("XOR","Uplink","Inheritance Class","Higher Scope","Lambda","The Envatted","The Gates of Logic","Strict Entailment","Hidden Layer","Kernel")} Abbey.`
 			}
 			break;
 		case 4:
-			return `Nameless ${("supplicant","parishioner", "faith militant", "crusader", "Sentinel")} of the Church of ${("Digi","Sciento","Laser","Quantico","Cryo","Info","Plasma")}netics, on ${gend[0]} ${randomChoice("first","second","third")} of the ${randomChoice("Three","Four")} ${randomChoice("Holy Acts of Cybercrime","Immoral Ordeals","Sacred Crimetrials")} required before ${gend[2]} can be ${randomChoice("slain","sacrificed","ritually drowned","ritually beheaded")} to ascend to pure ${randomChoice("data","information","abstracta")}.`;
+			return `Nameless ${("supplicant","parishioner", "Faith Militant", "crusader", "Sentinel")} of the Church of ${("Digi","Sciento","Laser","Quantico","Cryo","Info","Plasma")}netics, on ${gend[0]} ${randomChoice("first","second","third")} of the ${randomChoice("Three","Four")} ${randomChoice("Holy Acts of Cybercrime","Immoral Ordeals","Sacred Crimetrials")} required before ${gend[2]} can be ${randomChoice("slain","sacrificed","ritually drowned","ritually beheaded")} in order to ascend to pure ${randomChoice("data","information","abstracta")}.`;
 			break;
 		case 5:
-			return `${randomChoice("A young","An old","A middle-aged")} ${gend[3]} who recently installed ${randomChoice("a God", "an Angel", "an Ecstati")+randomChoice("chip","mod")}, which ${randomChoice("gives","grants")} ${randomChoice("powerful","intense")} ${randomChoice("religious","spiritual")} visions and experiences but secretly also lets ${randCyberCorp()} temporarily wipe the user's ${randomChoice("consciousness","agency","memory")} and take control of ${gend[0]} body to rent out for ${randomChoice("anonymous tasks... such as a cyberheist","suicide missions", "illegal activities","criminal activities")}.`;
+			return `${randomChoice("A young","An old","A middle-aged")} ${gend[3]} who recently installed ${randomChoice("a God", "an Angel", "an Ecstati")+randomChoice("chip","mod")}, which ${randomChoice("gives","grants")} ${randomChoice("powerful","intense")} ${randomChoice("religious","spiritual")} ${randomChoice("experiences","visions")} but also secretly lets ${randCyberCorp()} wipe the user's ${randomChoice("consciousness","agency","memory")} and take control of ${gend[0]} body to rent out for ${randomChoice("anonymous tasks... such as a cyberheist","suicide missions", "illegal activities","criminal activities")}.`;
 			break;
 
 		default: return "No religious figure can be found.";
 	}
 }
 
+var cyberEngTypes = [];
+function cyberEng() {
+	if (cyberEngTypes.length == 0) {
+		cyberEngTypes = [1];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberEngTypes.length);
+	let switchcase = cyberEngTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			return `${randomChoice("M","B","P")+vowel()+randomChoice("n","l","r","c","s")+"t"+vowel("y")+randomChoice("r ","n ","x ")+randomChoice("P","B","Cl")+vowel()+randomChoice("ff","tt","nn","bb","ll","pp","gg")+vowel()+randomChoice("rnut","nrut","rman","lfun","nton","rdon","by","mblen","try","lpot")}, ${randomChoice("begoggled ","")}crackpot ${randomChoice("inventor","tinkerer")} who has somehow ${randomChoice("created","managed to create","managed to build", "stumbled upon a working design for")} a ${randomChoice("Lewisian Many-Worlds Possibility Generator", "Lewisian Possibilia Generator", "Stalnakerian Many-Worlds Possibility Generator", "Lewisian Pluriverse Device")} that ${randomChoice("we can use to", "should be able to", "will be able to", "will")} ${randomChoice("shield us from","confound", "mask our activities from", "cloak us from")} the precogs of the ${randomChoice("Federal", "S/F/PD")} PreCrime division.`;
+			break;
+		default: return "No engineer can be found.";
+	}
+}
 
 
 
 //Lookouts
-// animal sculpt guy with eyes, ears, nose, and sonar.
-// remote drone eyes
-// rooftop runner with mag-grav boots
 // guy with sniper history?
 // satellite boy, never set foot on earth.
 // blind precog
@@ -427,3 +446,5 @@ function cyberFaith() {
 // 
 
 //Supplicant with godchip installed
+
+// Engineer: someone with a Lewisian many-worlds possibility generator that can confuse/confound the precogs of the PreCrime division 

@@ -147,15 +147,5 @@ function threeAilments() {
     var t = document.createTextNode(str);
     h.appendChild(t);
     document.getElementById("theList").appendChild(h);
-       //  createNewAilment();
-       //  var h = document.createElement("H4");
-       //  var t = document.createTextNode(diseaseName);
-       //  h.appendChild(t);
-       //  document.getElementById("theList").appendChild(h);
-       //  createNewAilment();
-       //  var h = document.createElement("H4");
-       //  var t = document.createTextNode(diseaseName);
-       //  h.appendChild(t);
-       // document.getElementById("theList").appendChild(h);
 }
 

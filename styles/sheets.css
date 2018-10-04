@@ -20,8 +20,12 @@ h2 {
 }
 
 h3 {
-
 	font-variant-ligatures: no-common-ligatures;
+}
+
+h4 {
+	font-variant-ligatures: no-common-ligatures;
+	font-size: 0.75em;
 }
 
 
@@ -46,4 +50,12 @@ h3 {
 
 .cybertitle {
 	margin: 0.4em;
+}
+
+#cyberpunks {
+	margin-bottom: 30px;
+}
+
+#cyberIntro {
+	padding-bottom: 2px;
 }

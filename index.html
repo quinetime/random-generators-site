@@ -8,7 +8,7 @@
 	<link href="styles/sheets.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
 </head>
-<body onload="makeBully(); threeAilments();">
+<body onload="makeBully(); threeAilments(); buildCyberIntro();">
 	<!-- <header><h1 class="border border-shadow">Random Generators</h1></header>	 -->
 
 	<nav class="border fixed split-nav">
@@ -56,7 +56,7 @@
 
 		<div id="cyberpunkSheet" class="sheet padding-left-large padding-right-large">
 			<h2 id="cyberpunks">Random Cyberpunk Generator</h2>
-			<p id="cyberIntro">Introductory text.</p>
+			<div id="cyberIntro"></div>
 			<ul id="cyberList"></ul>
 			<button id="cyberBtn" type="button" onclick="makeCyberpunk()">Enlist Cybercriminal</button>
 		</div>

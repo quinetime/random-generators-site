@@ -526,8 +526,11 @@ function cyberForger() {
 
 
 
-
-
+function setTextContent(element, text) {
+    while (element.firstChild!==null)
+        element.removeChild(element.firstChild); // remove all existing content
+    	element.appendChild(document.createTextNode(text));
+}
 
 function buildCyberIntro() {
 	let coffee = randomChoice("coffee","caffinium","neurostim","coff-E","kov","java","hotbrown","presso");
@@ -551,35 +554,41 @@ function buildCyberIntro() {
 	if (rich=="true") {
 		intro3 += `${randomChoice("sip it","take a sip")} as you contemplatively gaze through the window at the Golden Gate ${randomChoice("Cyber","Holo","Light","Magno","Cyclo")}bridge. A view from the penthouse suite of MegaTower ${Math.floor(Math.random()*20)+1} did not come cheap, but you are good at what you do. And now you'll have another chance to make use of your skills. You smile. `;
 		if (party=="nybar"||party=="sports") {
-		intro3 += `Slumming it at a dive bar has unexpectedly paid off.`;
+		intro3 += `Slumming at a dive bar has unexpectedly paid off.`;
 		} else intro3 += `The mayor's party was rich with opportunity.`;
 	} else {
-		intro3 += `${randomChoice("sip it","take a sip")} as you take stock of your tiny ${randomChoice("condopod","podflat","cyberflat","techpartment")}. ${randomChoice("It's grey and squalid; you frown in disapproval.","A mutoroach runs under a rug, and you shudder in revulsion.")} It's time to turn your life around. You've been waiting for ${randomChoice("your big break", "that one job that'll pull you up to the station you deserve")}, and now, it seems, you've found it. You smile. `;
+		intro3 += `${randomChoice("sip it","take a sip")} as you take stock of your tiny ${randomChoice("condopod","podflat","cyberflat","techpartment")}. ${randomChoice(`It's grey and squalid without a single ${randomChoice("biojack","VRjack","techport")} in sight; you frown in disapproval.`,"A mutoroach runs under a rug, and you shudder in revulsion.")} Time to turn your life around. You've been waiting for ${randomChoice("your big break", "that one job that'll pull you up to the station you deserve")}, and now, it seems, you've found it. You smile. `;
 		if (party=="mansion"||party=="olympics") {
 			intro3 += `Sneaking into the mayoral party without an invitation paid off, big time.`
-		} else intro3 += `You got more from ${divebar} than just a massive hangover.`;
+		} else intro3 += `You got more from ${divebar} last night than just a massive hangover.`;
 	}
 
 	let intro4 = cyberOverhear(party);
 
-	let cyberIntroNode1 = document.createElement("p");
-    let cyberIntroText1 = document.createTextNode(intro1);
-    cyberIntroNode1.appendChild(cyberIntroText1);
-	let cyberIntroNode2 = document.createElement("p");
-    let cyberIntroText2 = document.createTextNode(intro2);
-    cyberIntroNode2.appendChild(cyberIntroText2);
-    let cyberIntroNode3 = document.createElement("p");
-    let cyberIntroText3 = document.createTextNode(intro3);
-    cyberIntroNode3.appendChild(cyberIntroText3);
-    let cyberIntroNode4 = document.createElement("p");
-    let cyberIntroText4 = document.createTextNode(intro4);
-    cyberIntroNode4.appendChild(cyberIntroText4);
+	setTextContent(document.getElementById("cyberIntroPar1"), intro1);
+	setTextContent(document.getElementById("cyberIntroPar2"), intro2);
+	setTextContent(document.getElementById("cyberIntroPar3"), intro3);
+	setTextContent(document.getElementById("cyberIntroPar4"), intro4);
 
-    let cyberIntroHead = document.getElementById("cyberIntro");
-    cyberIntroHead.appendChild(cyberIntroNode1);
-    cyberIntroHead.appendChild(cyberIntroNode2);
-    cyberIntroHead.appendChild(cyberIntroNode3);
-    cyberIntroHead.appendChild(cyberIntroNode4);
+
+	// let cyberIntroNode1 = document.createElement("p");
+ //    let cyberIntroText1 = document.createTextNode(intro1);
+ //    cyberIntroNode1.appendChild(cyberIntroText1);
+	// let cyberIntroNode2 = document.createElement("p");
+ //    let cyberIntroText2 = document.createTextNode(intro2);
+ //    cyberIntroNode2.appendChild(cyberIntroText2);
+ //    let cyberIntroNode3 = document.createElement("p");
+ //    let cyberIntroText3 = document.createTextNode(intro3);
+ //    cyberIntroNode3.appendChild(cyberIntroText3);
+ //    let cyberIntroNode4 = document.createElement("p");
+ //    let cyberIntroText4 = document.createTextNode(intro4);
+ //    cyberIntroNode4.appendChild(cyberIntroText4);
+
+ //    let cyberIntroHead = document.getElementById("cyberIntro");
+ //    cyberIntroHead.appendChild(cyberIntroNode1);
+ //    cyberIntroHead.appendChild(cyberIntroNode2);
+ //    cyberIntroHead.appendChild(cyberIntroNode3);
+ //    cyberIntroHead.appendChild(cyberIntroNode4);
 } 
 
 function cyberIntroParty(party, alcohol,divebar) {
@@ -588,7 +597,7 @@ function cyberIntroParty(party, alcohol,divebar) {
 			return `It's the first day of 21${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}, and you hit the ${alcohol} pretty hard last night at the New Year's Eve Masquerade Ball at the San/Fran mayoral mansion.`;
 			break;
 		case "nybar":
-			return `It's the first day of 21${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}, and you hit the ${alcohol} pretty hard at last night.  You remember counting down the New Year at ${divebar}, one of San/Fran's ${randomChoice("thoroughly","truly")} ${randomChoice("seedy","disgusting")} dive bars, but you can barely recall how you got home.`;
+			return `It's the first day of 21${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}, and you hit the ${alcohol} pretty hard last night.  You remember counting down the New Year at ${divebar}, one of San/Fran's ${randomChoice("thoroughly","truly")} ${randomChoice("seedy","disgusting")} dive bars, but you can barely recall how you got home.`;
 			break;
 		case "olympics":
 			return `You hit the ${alcohol} pretty hard last night. San/Fran won its bid for the 21${Math.floor(Math.random()*10)}${(Math.floor(Math.random()*5))*2} Olympics, and the mayor threw a lavish celebration. Everyone who is anyone was invited.  So, of course, you found a way to be there.`;
@@ -616,7 +625,7 @@ function cyberIntroAwaken(awakener) {
 			str = `the gentle prods of your ${randomChoice("solid-light holoassistant","robotic housedroid assistant")}. "It's morning, ${randomChoice("my dear","boss")}," ${randomChoice("he","she","it")} says. "${randomChoice("You'd better","It's time to")} wake up."`
 			break;
 		case "clock":
-				str = `${randomChoice("the beeps and bloops","the bloops and jangles")} of ${randCyberPrefix()}pop music playing from your ${randomChoice("splice","smart","bit")}clock. Sensing that you're beginning to wake up, the wallscreen to your ${randomChoice("left","right")} automatically flips on and a weatherbot tells you to ${randomChoice("look forward to sunshine","expect rain")} today. It's ${randomChoice(8,9,10)} AM.`;
+			str = `${randomChoice("the beeps and bloops","the bloops and jangles")} of ${randCyberPrefix()}pop music playing from your ${randomChoice("splice","smart","bit")}clock. Sensing that you're beginning to wake up, the wallscreen to your ${randomChoice("left","right")} automatically flips on and a weatherbot on ${randomChoice("Good Morning San/Fran", "The 8 AM Blogroll", "The San/Fran Morncast", "The San/Fran Upload")} tells you to ${randomChoice("look forward to sunshine","expect rain")} today.`;
 			break;
 		default: 
 			str = awakener;

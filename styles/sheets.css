@@ -57,5 +57,9 @@ h4 {
 }
 
 #cyberIntro {
-	padding-bottom: 2px;
+	padding-bottom: 0px;
+}
+
+#cyberOutcome {
+	padding-top: 10px;
 }

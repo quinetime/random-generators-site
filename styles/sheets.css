@@ -6,14 +6,18 @@ button {
 	margin-bottom: 40px;
 }
 
-h2::before { 
-  display: block; 
-  content: " "; 
-  margin-top: -250px; 
-  height: 250px; 
-  visibility: hidden; 
-  pointer-events: none;
+@media only screen and (min-width: 631px) {
+	h2::before { 
+	  display: block; 
+	  content: " "; 
+	  margin-top: -250px; 
+	  height: 250px; 
+	  visibility: hidden; 
+	  pointer-events: none;
+	}
 }
+
+
 
 h2 {
 	font-variant-ligatures: no-common-ligatures;
@@ -30,8 +34,27 @@ h4 {
 
 
 .sheetContainer {
-	margin-top: 200px;
+	margin-top: 180px;
 }
+
+@media only screen and (max-width: 630px) {
+	.sheetContainer {
+		margin-top: 120px;
+	}
+}
+
+@media only screen and (max-width: 490px) {
+	.sheetContainer {
+		margin-top: 80px;
+	}
+}
+
+@media only screen and (max-width: 342px) {
+	.sheetContainer {
+		margin-top: 30px;
+	}
+}
+
 
 .sheetContainer > div {
 	background: white;
@@ -68,6 +91,14 @@ h4 {
   line-height: 1.3;
 }
 
-p {
-  font-size: 1.1em;
+
+@media only screen and (max-width: 630px) {
+	.cyberList{
+		padding-left: 0;
+		margin-left: 0;
+	}
 }
+
+/*p {
+  font-size: 1.1em;
+}*/

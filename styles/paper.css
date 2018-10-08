@@ -351,7 +351,7 @@ hr::after {
 .col {
   padding: 1rem
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:970px) { /*DUB CHANGE: originally 769*/
   .col {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 100%;
@@ -536,7 +536,7 @@ hr::after {
     max-width: 100%
   }
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:970px) { /*DUB CHANGE: originally 769*/
   .sm-1 {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 8.33333%;
@@ -1722,7 +1722,7 @@ fieldset.form-group {
   position: absolute;
   top: 0
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:970px) { /*DUB CHANGE: originally 768*/
   .modal .modal-body {
     box-sizing: border-box;
     width: 90%
@@ -2050,7 +2050,7 @@ nav {
   width: 100%;
   z-index: 100
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:969px) { /*DUB CHANGE: originally 768*/
   nav {
     display: block
   }
@@ -2099,7 +2099,7 @@ nav ul.inline li {
   display: inline-block;
   margin: 0 .5rem
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:969px) { /*DUB CHANGE: originally 769*/
   nav ul.inline li {
     display: block;
     margin: 1rem 0
@@ -2146,7 +2146,7 @@ nav .collapsible .collapsible-body,
 nav .collapsible:nth-of-type(1) {
   border: 0
 }
-@media only screen and (min-width:769px) {
+@media only screen and (min-width:969px) {  /*DUB CHANGE: originally 769*/
   nav .collapsible .collapsible-body,
   nav .collapsible:nth-of-type(1) {
     display: contents
@@ -2169,8 +2169,55 @@ nav .collapsible > button {
   right: 0;
   top: .2rem
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:969px) {/*DUB CHANGE: originally 769*/
   nav .collapsible > button {
     display: block
   }
+}
+
+/* DUBCHANGE added breakpoints below */
+p {
+  font-size: 1.1rem;
+}
+@media only screen and (max-width: 630px) {
+    h1 {
+        font-size: 3rem;
+    }
+    ul {
+      margin-left: 0;
+    }
+}
+@media only screen and (max-width: 490px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 2rem
+    }
+    h3 {
+        font-size: 1.5rem
+    }
+    h4 {
+        font-size: 1rem
+    }
+    p {
+      font-size: 0.9rem
+    }
+}
+@media only screen and (max-width: 342px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.5rem
+    }
+    h3 {
+        font-size: 1.5rem
+    }
+    h4 {
+        font-size: 1rem
+    }
+    p {
+      font-size: 0.8rem
+    }
 }

@@ -56,13 +56,10 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Random Generation</title>\n\t<link href=\"styles/paper.css\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"styles/sheets.css\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"https://fonts.googleapis.com/css?family=Neucha\" rel=\"stylesheet\">\n</head>\n<body onload=\"makeBully(); threeAilments();\">\n\t<!-- <header><h1 class=\"border border-shadow\">Random Generators</h1></header>\t -->\n\n\t<nav class=\"border fixed split-nav\">\n\t\t<div class=\"nav-brand\">\n\t\t\t<h1>Random Generators</h1>\n\t\t</div>\n\t\t<div class=\"collapsible\">\n\t\t\t<input id=\"collapsible1\" type=\"checkbox\" name=\"collapsible1\">\n\t\t\t<button>\n\t\t\t\t<label for=\"collapsible1\">\n\t\t\t\t\t<div class=\"bar1\"></div>\n\t\t\t\t\t<div class=\"bar2\"></div>\n\t\t\t\t\t<div class=\"bar3\"></div>\n\t\t\t\t</label>\n\t\t\t</button>\n\t\t\t<div class=\"collapsible-body\">\n\t\t\t\t<ul class=\"inline\">\n\t\t\t\t\t<li><a href=\"#ailments\">Ailments</a></li>\n\t\t\t\t\t<li><a href=\"#bullies\">Bullies</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</nav>\n\n\t<div id=\"sheetContainer\" class=\"sheetContainer child-borders child-shadows\">\n\n\t\t<div id=\"illnessSheet\" class=\"sheet padding-left-large\">\n\t\t\t<h2 id=\"ailments\">Random Ailment Generator</h2>\n\t\t\t<p>Please, sit down.  I have good news and bad news.  The good news is that you'll live.  The bad news is that you've been diagnosed with:</p>\n\t\t\t<ul id=\"theList\"> </ul>\n\t\t\t<button id=\"illnessButton\" onclick=\"threeAilments()\">Anything else?</button>\n\t\t</div>\n\n\t\t<div id=\"bullySheet\" class=\"sheet padding-left-large\">\n\t\t\t<h2 id=\"bullies\">Random Bully Generator</h2>\n\t\t\t<p>Racing to get home from school without encountering any bullies, you turn a corner and crash headlong into:</p>\n\t\t\t<h3 id=\"bullyResult\"></h3>\n\t\t\t<p>\n\t\t\t\tOh no!\n\t\t\t</p>\n\n\t\t\t<button type=\"button\" onclick=\"makeBully()\">Run Away!</button>\n\t\t</div>\n\n\n\t</div>\n\n\t<footer></footer>\n\n\t<script src=\"scripts/main.js\"></script>\n\n\n</body>\n</html>\n",
 			"file": "index.html",
-			"file_size": 1938,
-			"file_write_time": 131816950180656695,
 			"settings":
 			{
-				"buffer_size": 1887,
+				"buffer_size": 2718,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -71,16 +68,25 @@
 			"file": "scripts/main.js",
 			"settings":
 			{
-				"buffer_size": 16855,
+				"buffer_size": 16451,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/paper.css",
+			"settings":
+			{
+				"buffer_size": 47457,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "styles/sheets.css",
 			"settings":
 			{
-				"buffer_size": 247,
+				"buffer_size": 1259,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": ".sheet {"
@@ -180,9 +186,9 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators",
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts",
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles"
+		"/C/SD card/Dropbox/My Work/My Projects/web-projects/random-generators",
+		"/C/SD card/Dropbox/My Work/My Projects/web-projects/random-generators/scripts",
+		"/C/SD card/Dropbox/My Work/My Projects/web-projects/random-generators/styles"
 	],
 	"file_history":
 	[
@@ -279,6 +285,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"p {",
+			"970",
+			"ul",
+			"970",
+			"h1",
+			"768",
+			"769",
+			"796",
+			"collapsi",
 			"jenkins",
 			"demo",
 			"font-f",
@@ -301,7 +316,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -310,15 +325,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1887,
+						"buffer_size": 2718,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								835,
-								835
+								1489,
+								1489
 							]
 						],
 						"settings":
@@ -332,13 +347,14 @@
 								"status": -1,
 								"syntax": "plain text"
 							},
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
+						"translation.y": 696.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -347,15 +363,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16855,
+						"buffer_size": 16451,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2709,
-								2709
+								0,
+								0
 							]
 						],
 						"settings":
@@ -372,30 +388,61 @@
 							"auto_name": "",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
 						},
-						"translation.x": 3455.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 2876.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "styles/sheets.css",
+					"file": "styles/paper.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 247,
+						"buffer_size": 47457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								175,
-								175
+								47011,
+								46968
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 43434.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "styles/sheets.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								745,
+								745
 							]
 						],
 						"settings":
@@ -413,10 +460,10 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 522.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -424,7 +471,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -461,7 +508,7 @@
 	"project": "generators.sublime-project",
 	"replace":
 	{
-		"height": 73.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

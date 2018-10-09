@@ -476,7 +476,7 @@ function cyberFaith() {
 			return `${randomChoice("A young","An old","A middle-aged")} ${gend[3]} who recently installed ${randomChoice("a God", "an Angel", "an Ecstati")+randomChoice("chip","mod")}, which ${randomChoice("gives","grants")} ${randomChoice("powerful","intense")} ${randomChoice("religious","spiritual")} ${randomChoice("experiences","visions")} but also secretly lets ${randCyberCorp()} wipe the user's ${randomChoice("consciousness","agency","memory")} and take control of ${gend[0]} body to rent out for ${randomChoice("anonymous tasks... such as a cyberheist","suicide missions", "dangerous jobs","criminal undertakings")}.`;
 			break;
 		case 6:
-			return `${randomChoice("Moss","Swump","Ives","Vane","Alga","Brackish")}, ${randomChoice("techno","cyber","splicer","biohack-","climate ","eco")}druid of ${randomChoice("The Order of the Ozone","The Photosynthetes","The Organic Circle","The Order of Granola","The Church of the Biodegradables")}, a ${randomChoice("leafy-robed figure",`sexy green-skinned ${gend[3]}`,`pointy-eared ${gend[3]}`)} who is keeping a vow of ${randomChoice("silence","celibacy")} until ${randomChoice("global warming has been reversed","sea levels have returned to pre-disaster levels")} and who wields a${randomChoice(" gene"," bio"," geo"," Gaia","n eco")+randomChoice("staff","-seedpouch","ray rifle","bolt pistol","-orb","wand","-sash")} that gives ${gend[1]} ${randomChoice("impressive","tremendous","total")} control over ${randomChoice("geothermal activity","the weather","ambient temperature","atmospheric moisture","plant life","insect life","plant growth")}.`;
+			return `${randomChoice("Moss","Swump","Ives","Vane","Alga","Brackesh")}, ${randomChoice("techno","cyber","splicer","biohack-","climate ","eco")}druid of ${randomChoice("The Order of the Ozone","The Photosynthetes","The Organic Circle","The Order of Granola","The Church of the Biodegradables")}, a ${randomChoice("leafy-robed figure",`sexy green-skinned ${gend[3]}`,`pointy-eared ${gend[3]}`)} who is keeping a vow of ${randomChoice("silence","celibacy")} until ${randomChoice("global warming has been reversed","sea levels have returned to pre-disaster levels")} and who wields a${randomChoice(" gene"," bio"," geo"," Gaia","n eco")+randomChoice("staff","-seedpouch","ray rifle","bolt pistol","-orb","wand","-sash")} that gives ${gend[1]} ${randomChoice("impressive","tremendous","total")} control over ${randomChoice("geothermal activity","the weather","ambient temperature","atmospheric moisture","plant life","insect life","plant growth")}.`;
 			break;
 		default: return "No religious figure can be found.";
 	}
@@ -501,7 +501,7 @@ function cyberEng() {
 			} else {
 				geniusname = randomChoice("Janice","Yuki","Karabo","Iminathi","Ayanda","Amanda","Mercedes","Taylor","Piper");
 			}
-			return `${geniusname} ${randomChoice("Warren","Quiz","Query","Quest","Ziphozonke","Yamakazi","Ventura")}, ${gend[4]} genius who ${randomChoice("made "+gend[0]+" fortune", "revolutionized industry","astonished the world")} by ${randomChoice("patenting","developing","designing")} ${randomChoice("hundreds of","more than a hundred")} ${randomChoice("marvels of engineering","society-changing inventions")} as a child (including ${randomChoice("a clean hypofission reactor","Riemannian curvature blockchain-cracks","electric sugar","transparent concrete")}, ${randomChoice("paperscreens","information landfills","phase cloaks","quantum darkfuel","ozone constructors","crowdsourced bioenergy collectors","solar pseudotravel")}, and ${randomChoice("ionic democracy","pharma beans","grassfed housing",`genetically modified fallout-cleansing ${randomChoice("spiders","rats","turtles")}`,"nuclear VR","timestop chambers")}), but who has now in ${randomChoice("adulthood",gend[0]+" late twenties",gend[0]+" early thirties")} grown bored of success and ${randomChoice("idly ","")}turned to crime ${randomChoice("as a sort of sport","in search of fun","to try to find some sort of challenge")}.`;
+			return `${geniusname} ${randomChoice("Warren","Quiz","Query","Quest","Ziphozonke","Yamakazi","Ventura")}, ${gend[4]} genius who ${randomChoice("made "+gend[0]+" fortune", "revolutionized industry","astonished the world")} by ${randomChoice("patenting","developing","designing")} ${randomChoice("hundreds of","more than a hundred")} ${randomChoice("marvels of engineering","society-changing inventions")} (including ${randomChoice("a clean hypofission reactor","Riemannian curvature blockchain-cracks","electric sugar","transparent concrete")}, ${randomChoice("paperscreens","information landfills","phase cloaks","quantum darkfuel","ozone constructors","crowdsourced bioenergy collectors","solar pseudotravel")}, and ${randomChoice("ionic democracy","pharma beans","grassfed housing",`genetically modified fallout-cleansing ${randomChoice("spiders","rats","turtles")}`,"nuclear VR","timestop chambers")}), but who has now in ${randomChoice("adulthood",gend[0]+" late twenties",gend[0]+" early thirties")} grown bored of success and ${randomChoice("idly ","")}turned to crime ${randomChoice("as a sort of sport","in search of fun","to try to find some sort of challenge")}.`;
 			break;
 		case 3:
 			return `${randomChoice("Gizmo","Gyro","Sprock","Gadget","Zipper","Casey Splacer")}, ${randomChoice("head ","")}repair${gend[3]} for the ${randCyberCorp()} fleet of ${randomChoice("interstellar","interplanetary","intergalactic","startravel","space-tourism","moontravel")} ${randomChoice("ships","cruisers","mechs","mechanthropes")}, a ${randomChoice("reliable","dependable")} worker who has replaced one of ${gend[0]} ${randomChoice("hands","arms")} with ${randomChoice("a holographic multitool","a soldering laser","a huge wrench","a welding magtorch")}.`;
@@ -519,6 +519,51 @@ function cyberEng() {
 	}
 }
 
+
+var cyberMuscleTypes = [];
+function cyberMuscle() {
+	if (cyberMuscleTypes.length == 0) {
+		cyberMuscleTypes = [1,2,3,4,5,6];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberMuscleTypes.length);
+	let switchcase = cyberMuscleTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			if (gend[4]=="girl") {
+				return `${randomChoice("Montanar","Montanax","Ari Zonar","Ari Zonax")}, a massive ${randomChoice("steam","coal")}-powered locomotobot whose ${randomChoice("neural net was trained exclusively on","machine learning algorithm was fed only")} ${randomChoice("ancient American","John Wayne")} westerns, which is why ${randomChoice("he","it")} wears ${randomChoice("a cowboy hat","a Stetson")} and ${randomChoice("a poncho","blue jeans","spurs")} and speaks in a ${randomChoice("robotic-sounding","monotone","clicky and staticky")} drawl${randomChoice(" that is played off internal wax cylinders","")}.`;
+			}
+			else {
+				return `${randomChoice("Montanar","Montanax","Ari Zonar","Ari Zonax")}, a massive ${randomChoice("bull","bison")}-${randomChoice("Martian","Venusian")} hybrid who ${randomChoice("was discarded in the borderlands","was orphaned in the badlands")} as a baby then grew up exclusively on ${randomChoice("ancient American","John Wayne")} westerns, which is why he wears ${randomChoice("a cowboy hat","a Stetson")} and ${randomChoice("a poncho","blue jeans","spurs")} and speaks with a ${randomChoice("snorting and grunting","grotesque and halting")} drawl.`;
+			} 
+			break;
+		case 2:
+			return `${randomChoice(`B${vowel()}r${randomChoice("d","t","n")}ie`,`Be${randomChoice("bop","nchy","eb","drock","anpot","efbowl")}`,`Rock${randomChoice("steady","lobber","ledunk"," Simpleson")}`)}, bouncer at ${randomChoice("The Collapsing Waveform","Xeno's","The King's Bionics","Rare Earth Mineral","The Dog and Hacker","Mechaskullz","Club Neon","The Wireless Underground", "Touchscreen", "Glass and Leather","The Sensor Bar")}, a ${randomChoice("pock-marked","massive","seven-foot-tall","one-eared","hulking")} ${randomChoice(randCyberPrefix()+"roid",`${randomChoice("Martian","Mutant","Kaiju")}-Growth-Hormone`)} ${randomChoice("addict","junkie")} who is ${randomChoice("basically","essentially")} just a ${randomChoice("huge bicep","slab of meat","big veiny muscle")} ${randomChoice("with a mohawk","in a leather jacket","in a tight black t-shirt")} and${randomChoice(" thrash",""," glow")} chains.`;
+			break;
+		case 3:
+			return `${randomChoice("Sword","Katana","Daishō")}-for-hire ${randomChoice("Soulstained Michi","Jensen Orokusaki","Taylor Kojima","by the name of CyberJun","going by the name All-Seeing Zatōichi","going by the name Bumbo","demanding to be called Kōshō Reborn","Shōgun Paul","Paul Peters")}, a ${randomChoice("hulking","monstrous")} ${randomChoice("seven-foot-tall","kamishimo-clad","latinum-armor-clad")} Street Samurai whose eyes blaze neon ${randomChoice("yellow","orange","red","green")} and who claims to be possessed by ${randomChoice("a digital","a virtual","the AI manifestation of an ancient")} ${randomChoice("oni","demon","yokai","spirit of death","ayakashi")}.`;
+			break;
+		case 4:
+			return `A${randomChoice("n"," failed")} experiment aimed at creating the perfect bodyguard, ${randomChoice("SCUD-47","Number 48","BG-47","Fortran-7","4Seven","S.C.U.D.D.","Franky Seven","Number Four","Number Seven")}, a ${randomChoice("bald and barcoded artificial human","wiry but incredibly strong android","cybernetic behemoth")} implanted with a ${randomChoice("nanonuke","virus bomb","psychovirus","g-bomb")} that will immediately kill ${gend[1]} when ${gend[0]} creator dies... but who, upon ${randomChoice("learning of","discovering")} this, ${randomChoice(`put ${gend[0]} creator in a permanent coma`,`threw ${gend[0]} creator in a cryostasis chamber`,`imprisoned ${gend[0]} creator in a cage`)} and ${randomChoice("went freelance",`set out to write ${gend[0]} own destiny`)}.`
+				//in an attempt to secure ${gend[0]} ${randomChoice("obedience","loyalty","subservience","allegience","commitment to acting as a protector")};
+			break;
+		case 5:
+			let lilname = "";
+			if (gend[4] == "girl") {
+				lilname = randomChoice("Sally","Midge","Charlotte","Amelia","Betty");
+			} else {
+				lilname = randomChoice("Jimmy","Sammy","Billy","Timmy","Jack");
+			}
+			let liltitle = randomChoice("Big","Muscle","Monster","Hulky","Tough","Super","Naughty","Screamy","Bad "+capFirst(gend[4]));
+			return `${liltitle} ${lilname}, a ${randomChoice(9,10,12)}-year-old ${gend[4]} transformed by ${randomChoice("cosmic","interdimensional","galactic","nuclear","ionic","gamma","radioactive","quantum","DNA-unspooling")} ${randomChoice("sludge","slime","fallout","ooze","rays","waves")} into an ${randomChoice("invulnerable","invincible","unstoppable")} ${randomChoice("purple","neon-green","red","grey","neon-yellow","blue")}-${randomChoice("skinned","furred")} ${randomChoice("brute","grotesquerie","beast","monstrosity")}... and the ${randomChoice(`happier ${liltitle} ${lilname} gets`,`more fun ${liltitle} ${lilname} has`,`more excited ${liltitle} ${lilname} gets`,`naughtier ${liltitle} ${lilname} gets`,`screamier ${liltitle} ${lilname} gets`)}, the stronger ${liltitle} ${lilname} gets.`;
+
+			break;
+		case 6:
+			return `${randomChoice("Theseus","Heraclitus","Aristotle","Trigger")} ${randomChoice("Pa","Bla","A","Gra","Bra","Papa","Xa","Za","Va")+randomChoice("vios","llas","lexios","gnew","dopoulos","dakis","sco")}, a human ${randomChoice("tank","weapon")} who has ${randomChoice("swapped out","replaced")} so many ${randomChoice("parts","pieces")} of himself with new ${randomChoice("pieces of cyberware","augments","cyber-augs","cybermods")} that nothing of the original ${randomChoice("person","man")} remains.`;
+			break;
+		default: return `No bruiser could be found.`;
+	}
+}
 
 // UNDER SIX... TO FINISH
 
@@ -583,52 +628,37 @@ function cyberThief() {
 	}
 }
 
-var cyberMuscleTypes = [];
-function cyberMuscle() {
-	if (cyberMuscleTypes.length == 0) {
-		cyberMuscleTypes = [1,2,3,4];			//enter numbers equal to the number of switchcases.
-	}
-	let temp = Math.floor(Math.random()*cyberMuscleTypes.length);
-	let switchcase = cyberMuscleTypes.splice(temp, 1)[0];
-	let gend = randGender();
-	switch (switchcase) {
-		case 1:
-			if (gend[4]=="girl") {
-				return `${randomChoice("Montanar","Montanax","Ari Zonar","Ari Zonax")}, a massive ${randomChoice("steam","coal")}-powered locomotobot whose ${randomChoice("neural net was trained exclusively on","machine learning algorithm was fed only")} ${randomChoice("ancient American","John Wayne")} westerns, which is why ${randomChoice("he","it")} wears ${randomChoice("a cowboy hat","a Stetson")} and ${randomChoice("a poncho","blue jeans","spurs")} and speaks in a ${randomChoice("robotic-sounding","monotone","clicky and staticky")} drawl${randomChoice(" that is played off internal wax cylinders","")}.`;
-			}
-			else {
-				return `${randomChoice("Montanar","Montanax","Ari Zonar","Ari Zonax")}, a massive ${randomChoice("bull","bison")}-${randomChoice("Martian","Venusian")} hybrid who ${randomChoice("was discarded in the borderlands","was orphaned in the badlands")} as a baby then grew up exclusively on ${randomChoice("ancient American","John Wayne")} westerns, which is why he wears ${randomChoice("a cowboy hat","a Stetson")} and ${randomChoice("a poncho","blue jeans","spurs")} and speaks with a ${randomChoice("snorting and grunting","grotesque and halting")} drawl.`;
-			} 
-			break;
-		case 2:
-			return `${randomChoice(`B${vowel()}r${randomChoice("d","t","n")}ie`,`Be${randomChoice("bop","nchy","eb","drock","anpot","efbowl")}`,`Rock${randomChoice("steady","lobber","ledunk"," Simpleson")}`)}, bouncer at ${randomChoice("The Collapsing Waveform","Xeno's","The King's Bionics","Rare Earth Mineral","The Dog and Hacker","Mechaskullz","Club Neon","The Wireless Underground", "Touchscreen", "Glass and Leather","The Sensor Bar")}, a ${randomChoice("pock-marked","massive","7-foot-tall","one-eared","hulking")} ${randomChoice(randCyberPrefix()+"roid",`${randomChoice("Martian","Mutant","Kaiju")} Growth Hormone`)} ${randomChoice("addict","junkie")} who is basically just a ${randomChoice("huge bicep","slab of meat","big veiny muscle")} ${randomChoice("with a mohawk","in a leather jacket","in a tight black t-shirt")} and${randomChoice(" thrash",""," glow")} chains.`;
-			break;
-		case 3:
-			return `${randomChoice("Sword","Katana","Daishō")}-for-hire ${randomChoice("Soulstained Michi","Jensen Orokusaki","Taylor Kojima","going by the name CyberJun","going by the name All-Seeing Zatōichi","going by the name Bumbo","demanding to be called Kōshō Reborn","Shōgun Paul","Paul Peters")}, a ${randomChoice("hulking","monstrous")} ${randomChoice("seven-foot-tall","kamishimo-clad","latinum-armor-clad")} Street Samurai whose eyes blaze neon ${randomChoice("yellow","orange","red","green")} and who claims to be possessed by ${randomChoice("a digital","a virtual","the AI manifestation of an ancient")} ${randomChoice("oni","demon","yokai","spirit of death","ayakashi")}.`;
-			break;
-		case 4:
-			return `${randomChoice("SCUD-47","Number 48","BG-47","Forty-7","4Seven","S.C.U.D.D.","Franky Seven","Number Four","Number Seven")}, a ${randomChoice("bald and barcoded artificial human genetically made","wiry but incredible strong android built","cybernetic behemoth constructed from the parts of seven different people and made")} to be the perfect bodyguard; ${gend[0]} ${randomChoice("loyalty","allegiance","motivation")} was supposed to be ensured by an implanted ${randomChoice("bomb","virus")} that will activate and kill ${gend[1]} when ${gend[0]} creator dies, but upon ${randomChoice("learning of","discovering")} this, ${gend[2]} ${randomChoice(`put ${gend[0]} creator in a permanent coma`,`threw ${gend[0]} creator in a cryostasis chamber`,`imprisoned ${gend[0]} creator in a cage`)} and ${randomChoice("went freelance",`set ${gend[0]} own destiny`)}.`;
-			break;
-		case 5:
-			return ``;
-			break;
-		case 6:
-			return ``;
-			break;
-		default: return `No bruiser could be found.`;
-	}
-}
 
 
 
-//burglar: ghost, Iron Man style corpo saboteur ghost with a phase cloak, gentleman cat burglar (Raffles, Lupin, Kaito Kid, Tux), catwoman cat burglar with animal mods, lightfingered orphan with many fingers modded out by Orphanmaster 
+// mandatory: burglar, hacker, gifted, strike team leader
+// good adds: brains, lowlife/scav/hood, corpo
+// next four: crimeboss, ganger, explosive expert, fence/fixer, celevrity, hedonist, info-seeker
 
-// mandatory: burglar, hacker, gifted, brute, strike team leader
+// do I want infiltrator separate from burglar?
+
+// burglar: 
+// electric ghost
+// Iron Man style corpo saboteur ghost with a phase cloak
+// gentleman cat burglar (Raffles, Lupin, Kaito Kid, Tux)
+// catwoman cat burglar with animal mods
+// lightfingered acrobat orphan pickpocket with many fingers modded out by Orphanmaster
+
+// maybe make nano cloud the wild card and make thief more like an infiltator?
+
+// strike team leader:
+// ex-soldier police of sort sort (with datatusks?)
+// VR vacation
+// Matrix-like skill downloader
+// weapons expert of some sort
+// Fallen street judge
 
 
 
-
+// WHERE TO PUT??
 //mall santa gone mad, become crime boss?
+// The Grey Goo, a swarm of nanobots
+//a Jumper... someone who can swap their consciousness with someone else (but has lost their original body)
   
 
 	//Melvin/Gerald/Percy onetime desk jockey who became an action antihero by taking an immersive VR holovacation in TITLE, and then he believes he never left and that he is still in the game... and found the experience so intoxicating that he refuses to acccept that he was ever unplugged.

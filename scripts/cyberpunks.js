@@ -3,7 +3,7 @@
 const lastRoles = [];
 // const cyberRoles = ["forger", "hacker", "magic", "politics", "religion", "driver", "detective", "brawler", "weapons", "wildcard", "fence", "corpo", "hedonist", "celebrity", "intellect", "thief", "hood", "lookout", "engineer"];
 
-const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout","engineer","brawler"];
+const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout","engineer","brawler","thief","striker"];
 // other: explosive, weapons, acrobat, martial artist/brawler, strike force lead, scav, gang member, undedrworld boss  corporat corpoxec
 let cybersHired = 0;
 const cybersPerTeam = 6;
@@ -93,6 +93,8 @@ function makeCyberpunk() {
 			break;
 		case "striker":
 			criminal = randomChoice("The Strike Team Leader: ", "The Spearhead: ");
+			criminalText = cyberStriker();
+			break;
 		default:
 			criminal = "No Criminal Found."
 	}
@@ -396,7 +398,7 @@ function cyberPolitics() {
 			break;
 		case 4:
 			let goodname = randomChoice("Tad","Joe","Jon","Ted","Bil","Wil","Jim","Don","Ron");
-			return `${randomChoice("Handsome","Smiling","Friendly","Kind-Eyed","Wise and Dimpled","Humble", "Goodboy")+" "+goodname}, ${randomChoice("extremely popular","beloved")+" "+randomChoice("President","Prime Minister")} of the virtual cyberspace country of ${goodname+"topia (population: "+randomChoice("7","8","12","21","40")} million) who in meatspace is secretly the infamous ${randomChoice("terrorist","arsonist","kidnapper")+" and "+randomChoice("assassin ","murderer ","serial killer ")+randomChoice("Filthy ","Horrorshow ","Bandsaw ","Bonecrack ","Pigblood ","Lobotomy ")+randomChoice("Pete","Chuck","Burt","Stu","Dick","Rob")}.`;
+			return `${randomChoice("Handsome","Smiling","Friendly","Kind-Eyed","Wise and Dimpled","Humble", "Goodboy")+" "+goodname}, ${randomChoice("extremely popular","beloved")+" "+randomChoice("President","Prime Minister")} of the virtual cyberspace country of ${goodname+"topia (population: "+randomChoice("seven","eight","twelve","twenty-one","forty")} million) who in meatspace is secretly the infamous ${randomChoice("terrorist","arsonist","kidnapper")+" and "+randomChoice("assassin ","murderer ","serial killer ")+randomChoice("Filthy ","Horrorshow ","Bandsaw ","Bonecrack ","Pigblood ","Lobotomy ")+randomChoice("Pete","Chuck","Burt","Stu","Dick","Rob")}.`;
 			break;
 		case 5:
 			let cappre = capFirst(randCyberPrefix());
@@ -422,7 +424,7 @@ function cyberWatch() {
 	switch (switchcase) {
 		case 1:
 			hivemindNum = randomChoice("fourteen", "sixteen", "eight", "twelve", "nine");
-			return `The ${randomChoice("Midwich","Borgia","San Bernardino","Dunwich","Alcatraz","Simi Valley","Bordeaux","Brie","Savescumm","Voight-Ashbury")} ${randomChoice("Commune","One-Mind","Ego","Network","Consortium","Collective","Aggregate","Aggregation","Polyphony","Organon","Organum")}, a hivemind-for-hire made up of ${hivemindNum} ${randomChoice("gang members","college students","housewives","teenagers","Prussian mobsters","bohemians","French mobsters","escaped prisoners")} so thoroughly quantum-${randomChoice("networked","interlinked")} that they have become a single conscious ${randomChoice("being", "entity")} with ${randomChoice(hivemindNum)} bodies... and ${randomChoice(hivemindNum)} pairs of eyes to ${randomChoice("keep lookout", "keep watch", "survey the job site", "help coordinate our activities")}.`;
+			return `The ${randomChoice("Midwich","Borgia","San Bernardino","Dunwich","Alcatraz","Simi Valley","Bordeaux","Brie","Savescumm","Voight-Ashbury")} ${randomChoice("Commune","One-Mind","Ego","Network","Consortium","Collective","Aggregate","Aggregation","Polyphony","Organon","Organum")}, a hivemind-for-hire made up of ${hivemindNum} ${randomChoice("gang members","college students","housewives","teenagers","Prussian mobsters","bohemians","French mobsters","escaped prisoners")} so thoroughly ${randomChoice("quantum-","cloudsynapse-")}${randomChoice("networked","interlinked")} that they have become a single conscious ${randomChoice("being", "entity")} with ${randomChoice(hivemindNum)} bodies... and ${randomChoice(hivemindNum)} pairs of eyes to ${randomChoice("keep lookout", "keep watch", "survey the job site", "help coordinate our activities")}.`;
 			break;
 		case 2:
 			return `${randomChoice("Josh","Barb","Greg","Mon","Max","Mal","Jenn")+randomChoice("ua","ifer","ara","pold","ory","ica","field","imillian")} ${randomChoice("Up","Down","Fly","Spider","Ant","Bould","Climb","Verti","Whirli","Hop")+randomChoice("wards","face","slope","scale","leap","jump","kick")}, ${randomChoice("Olympic-level","latinum-medal-winning","godtier","professional","galaxy-class")} ${randomChoice("free-runner","parkour expert","arrythmic gymnast", "track star")} outfitted with a pair of ${randomChoice("grav-","mag-","gravmag-")+randomChoice("boots","shoes","footpads")} that lets ${randomChoice("him","her")} run straight up walls at ${randomChoice("incredible","dizzying","astounding","next-gen")} speeds.`;
@@ -541,10 +543,10 @@ function cyberMuscle() {
 			return `${randomChoice(`B${vowel()}r${randomChoice("d","t","n")}ie`,`Be${randomChoice("bop","nchy","eb","drock","anpot","efbowl")}`,`Rock${randomChoice("steady","lobber","ledunk"," Simpleson")}`)}, bouncer at ${randomChoice("The Collapsing Waveform","Xeno's","The King's Bionics","Rare Earth Mineral","The Dog and Hacker","Mechaskullz","Club Neon","The Wireless Underground", "Touchscreen", "Glass and Leather","The Sensor Bar")}, a ${randomChoice("pock-marked","massive","seven-foot-tall","one-eared","hulking")} ${randomChoice(randCyberPrefix()+"roid",`${randomChoice("Martian","Mutant","Kaiju")}-Growth-Hormone`)} ${randomChoice("addict","junkie")} who is ${randomChoice("basically","essentially")} just a ${randomChoice("huge bicep","slab of meat","big veiny muscle")} ${randomChoice("with a mohawk","in a leather jacket","in a tight black t-shirt")} and${randomChoice(" thrash",""," glow")} chains.`;
 			break;
 		case 3:
-			return `${randomChoice("Sword","Katana","Daishō")}-for-hire ${randomChoice("Soulstained Michi","Jensen Orokusaki","Taylor Kojima","by the name of CyberJun","going by the name All-Seeing Zatōichi","going by the name Bumbo","demanding to be called Kōshō Reborn","Shōgun Paul","Paul Peters")}, a ${randomChoice("hulking","monstrous")} ${randomChoice("seven-foot-tall","kamishimo-clad","latinum-armor-clad")} Street Samurai whose eyes blaze neon ${randomChoice("yellow","orange","red","green")} and who claims to be possessed by ${randomChoice("a digital","a virtual","the AI manifestation of an ancient")} ${randomChoice("oni","demon","yokai","spirit of death","ayakashi")}.`;
+			return `${randomChoice("Sword","Katana","Daishō","Rōnin")}-for-hire ${randomChoice("Soulstained Michi","Jensen Orokusaki","Taylor Kojima","by the name of CyberJun","going by the name All-Seeing Zatōichi","who goes by the name Bumbo","Kitsune Yojimbo","demanding to be called Kōshō Reborn","Shōgun Paul","Paul Peters")}, a ${randomChoice("hulking","monstrous")} ${randomChoice("seven-foot-tall","kamishimo-clad","armor-clad")} Street Samurai whose eyes blaze neon ${randomChoice("yellow","orange","red","green")} and who claims to be possessed by ${randomChoice("a digital","a virtual","the AI manifestation of an ancient")} ${randomChoice("oni","demon","yokai","spirit of death","ayakashi")}.`;
 			break;
 		case 4:
-			return `A${randomChoice("n"," failed")} experiment aimed at creating the perfect bodyguard, ${randomChoice("SCUD-47","Number 48","BG-47","Fortran-7","4Seven","S.C.U.D.D.","Franky Seven","Number Four","Number Seven")}, a ${randomChoice("bald and barcoded artificial human","wiry but incredibly strong android","cybernetic behemoth")} implanted with a ${randomChoice("nanonuke","virus bomb","psychovirus","g-bomb")} that will immediately kill ${gend[1]} when ${gend[0]} creator dies... but who, upon ${randomChoice("learning of","discovering")} this, ${randomChoice(`put ${gend[0]} creator in a permanent coma`,`threw ${gend[0]} creator in a cryostasis chamber`,`imprisoned ${gend[0]} creator in a cage`)} and ${randomChoice("went freelance",`set out to write ${gend[0]} own destiny`)}.`
+			return `${randomChoice('"The perfect bodyguard",',"Experimental bodyguard prototype")} ${randomChoice("SCUD-47","Number 48","BG-47","Fortran-7","4Seven","S.C.U.D.D.","Frankie Seven","Number Four","Number Seven")}, a ${randomChoice("bald and barcoded artificial human","wiry but incredibly strong android","cybernetic behemoth")} implanted with a ${randomChoice("nanonuke","virus bomb","psychovirus","g-bomb")} that will immediately kill ${gend[1]} when ${gend[0]} creator dies... but who, upon ${randomChoice("learning of","discovering")} this, ${randomChoice(`put ${gend[0]} creator in a permanent coma`,`threw ${gend[0]} creator in a cryostasis chamber`,`imprisoned ${gend[0]} creator in a cage`)} and ${randomChoice("went freelance",`set out to write ${gend[0]} own destiny`)}.`
 				//in an attempt to secure ${gend[0]} ${randomChoice("obedience","loyalty","subservience","allegience","commitment to acting as a protector")};
 			break;
 		case 5:
@@ -565,12 +567,10 @@ function cyberMuscle() {
 	}
 }
 
-// UNDER SIX... TO FINISH
-
 var cyberForgerTypes = [];
 function cyberForger() {
 	if (cyberForgerTypes.length == 0) {
-		cyberForgerTypes = [1,2,3,4,5];			//enter numbers equal to the number of switchcases.
+		cyberForgerTypes = [1,2,3,4,5,6];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberForgerTypes.length);
 	let switchcase = cyberForgerTypes.splice(temp, 1)[0];
@@ -591,19 +591,54 @@ function cyberForger() {
 		case 5:
 			return `${randomChoice("Postfuturo","Abstract","Postconceptual")} artist and ${randomChoice("showrunner","fashion designer","jeweler","furniture designer","architect")} ${randomChoice("Rebecca","Mikael","Travis","Griffin","Justina","Clinton","Blake","Chaddery","Sol")} ${randomChoice("Psonic","Chanman","Glorify","Arbys","Subway","Volcaneo","Kilroy","Basquiat","Sara")}, a ${randomChoice("turtlenecked","quartz-studded","cyberberet-sporting")}, ${randomChoice("neckerchiefed","nanovisored","vaperillo-puffing")}, ${randomChoice("flamboyant","offensively pensive","manic")} ${randomChoice("darling of art critics and aesthetic philosophers","provocateur with the skill to counterfeit almost anything","snow-junkie with undeniable skill and vision")}.`;
 			break;
+		case 6:
+			return `${randomChoice("Otto","Hilgard","Brot","Wulf","Ranier","Gerhard","Horst","Jürgen","Uwe","Helga","Hilda","Ursula","Lena","Anja","Birgit","Ingrid")} ${randomChoice("Wil","Bruns","Fleish","Grün","Rot","Blau","Himmel","Maus","Uhr","Zeit","Vogel","Spitz","Strahlen","Röntgen")+randomChoice("hund","wick","mark","wald","welt","braun","helm","seher","malen","werk","schirm","kunst","berger","mann","weg","maier","feldt","berg","biegel")}, ${randomChoice("white-haired","grey-haired","weathered and lanky","lanky and angular")} ${randomChoice("Swiss-German","German","Prussian","Weimer","Austrian","Austro-Hungarian","Dutch-German","Düsseldorf-born","Zurich-born")} ${randomChoice("watchmaker","clockmaker","maker of hand-crafted nanochips","nano-artist","crafter of handmade boutique microchips")} ${randomChoice("outfitted with","sporting","equipped with")} ${randomChoice("permanently-affixed magnification googles","enormous magnification irises","magnification lens implants")} and fingertips that can ${randomChoice("flip open","be taken off")} to reveal the ${randomChoice("miniscule","tiny")} ${randomChoice("tools","paintbrushes and screwdrivers","soldering tools","tools and brushes")} ${randomChoice("necessary","required","needed")} for ${"","painstakingly "}delicate work.`
 		default: return "No forgers can be found.";
 	}
 }
-// 6: lightfingered violinist/watchmaker who can craft unbelievable details. to a pico level.
+
+
+// UNDER SIX... TO FINISH
 
 
 var cyberThiefTypes = [];
 function cyberThief() {
 	if (cyberThiefTypes.length == 0) {
-		cyberThiefTypes = [1];			//enter numbers equal to the number of switchcases.
+		cyberThiefTypes = [1,2];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberThiefTypes.length);
 	let switchcase = cyberThiefTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			return `A${randomChoice("n electro"," digi"," flicker"," pixel"," holo")+randomChoice("ghast","-geist","ghost","specter","-phantasm","-phantom","haunt","spirit")} you ${randomChoice("suspect","believe")} to be ${randomChoice("Shannon Entropy","The Entrope","The Problem of Newcomb Lane","The Demon of Maxwell Lane","The Basilisk","Roko","The Poor Rationale")}, a master ${randomChoice("thief","criminal","cat burglar")} executed ${randomChoice("twenty","twenty-five","thirty","fifty")} years ago whose dying ${randomChoice("consciousness","digital image","ego-signature")} was ${randomChoice("converted into","trapped in")} ambient ${randomChoice("wireless signals","wireless frequencies","waveforms")} and is ${randomChoice("reported","rumored","said")} to ${randomChoice("still exist","haunt San/Fran","exact revenge on the San/Fran elite")} as a ${randomChoice("flickering","staticky","howling","blurry")} ${randomChoice("monochrome","green")} ${randomChoice("image","shadow","figure")} that ${randomChoice("appears and disappears seemingly at random","can pass through solid objects","no door can bar","can apparate anywhere in the city")}.`;
+			break;
+		case 2:
+			return `${randomChoice("Steel","Iron","Death","Tech","Mech","Servo","Polymer","Light","Script","Jade","Onyx","Silent","Wise","Silver","Glow","Neon","Ion","Atom","Vape","Vapor","Zinc")}${randomChoice(" Algorithm","wolf"," Locust"," Cicada"," Jackal","step","wave","spring"," Eyes","scar"," Rain","storm","fall","shroud"," Whisper"," Wind"," Petal","code","leaf","tail"," Fox","dagger","knives","foot","veil","saber","claw")}, ${randomChoice("masked","holo-masked","visored","jawless","faceless","blindfolded")} ${randomChoice("cyberninja","cyborg ninja","cybernetic ninja")} ${randomChoice("skilled","proficient")} at ${randomChoice("perfectly silent","silent","surreptitious","perfectly noiseless")} infiltrations${randomChoice("",`, who replaced ${gend[0]} bones and organs with ultra-lightweight artificial versions ${randomChoice(`to reduce the sound ${gend[2]} makes when prowling`,`allowing ${gend[1]} to leap three times ${gend[0]} height`)}`)}.`;
+			break;
+		case 3:
+			return `${randomChoice("Corpo","Corporate")} saboteur The ${randomChoice("Redlight","Shifting","Quantum","Phase","Innerspace","Freedom","Patriot","Fair Trade","Populist","Egalitarian","Commie")} ${randomChoice("Ghost","Spectre","Shadow")}`;
+			break;
+		case 4:
+			return ``;
+			break;
+		case 5:
+			return ``;
+			break;
+		case 6:
+			return ``;
+			break;
+		default: return `No thief could be found.`;
+	}
+}
+
+var cyberHackerTypes = [];
+function cyberHacker() {
+	if (cyberHackerTypes.length == 0) {
+		cyberHackerTypes = [1];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberHackerTypes.length);
+	let switchcase = cyberHackerTypes.splice(temp, 1)[0];
 	let gend = randGender();
 	switch (switchcase) {
 		case 1:
@@ -624,7 +659,76 @@ function cyberThief() {
 		case 6:
 			return ``;
 			break;
-		default: return `No thief could be found.`;
+		default: return `No hacker could be found.`;
+	}
+}
+
+var cyberStrikerTypes = [];
+function cyberStriker() {
+	if (cyberStrikerTypes.length == 0) {
+		cyberStrikerTypes = [1,2];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberStrikerTypes.length);
+	let switchcase = cyberStrikerTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			return `A onetime office ${randomChoice("wageslave","data-clerk","mailboy","peon")} named ${randomChoice("Melvin","Hubert","Qubert","Rupert","Terrence","Clarence","Rubarbo","Stephen","Chip","Humbert")} ${randomChoice("Squink","Spink","Ping","Pong","Crumb","Grimb","Wink","Shrimp","Thimb","Thrub","Nerf","Nerp","Pring")+randomChoice("ley","leman","leton","s","les")} who ${randomChoice("assumed","played")} the ${randomChoice("role","character")} of ${randomChoice("indestructible","invincible","unstoppable","morally ambiguous")} antihero ${randomChoice("Nuke","Jack","Blaze","Duke","Rock","Zap","Ray")} ${randomChoice("Slater","Codec","Cyberarm","Stronggun","Blastarm","Lasershot","Plasm","Atomica")} in an immersive ${randomChoice("heist","action")} ${randomChoice("holosuite adventure","dreamfilm","VR gamepod")} ${randomChoice("half a year ago","a few years ago","a couple of years ago")}, but who ${randomChoice("refused to accept","refused to believe")} that he ${randomChoice("was ever unplugged","ever logged off","ever logged out")}, so has since been living out his delusion as an ${randomChoice("amazingly","astonishingly","astoundingly")} ${randomChoice("accomplished","successful","skilled")} ${randomChoice("one-man criminal strike force","bank robber","supercriminal","bounty hunter and gun-for-hire")}.`;
+			break;
+		case 2:
+			return `${randomChoice("Cyborg merc","Mercenary cyborg","Cyborg-for-hire","Assassin-for-hire")} ${randomChoice("Ambrogia","Torquato","Raimondo","Ottavio","Chiara","Sofia","Martina","Giulia")} ${randomChoice("Male","Brutto","Cattivo","Guasto","Marcio")+randomChoice("reti","gramma","lessica","denaro","nodo")}, ${randomChoice("condottiero","captain","capitani di ventura")} and CEO of The ${randomChoice("Cwantum","Intrepid","Acquisition","Capital","Bitstream")} ${randomChoice("Corps","Companions","Comrades")}, the ${randomChoice("Italian","Italo-Helvetican","Franco-Italian","Silico-sicilian","neo-Neopolitan")} ${randomChoice("mercenary company","private army","free company")} whose ${randomChoice("successes","feats","achievements")} include turning the tide of The ${randomChoice("English-Catalan War","Battle of Biohack Bay","Second Browser War","First Digital Drug War","War between "+randCyberCorp()+" and "+randCyberCorp(),randCyberCorp()+" Public Offering War","First Great Mutant Uprising","Second American Proletariat Revolt","Third American Proletariat Uprising","Calexican Civil War","War of the Nine A.I. Saints","Battle for the Digital Papacy","Manitoba Bloodbath","Saskatchewan Uprising","Toronto Bloodbath")}.`;
+			break;
+		case 3:
+			return ``;
+			break;
+		case 4:
+			return ``;
+			break;
+		case 5:
+			return ``;
+			break;
+		case 6:
+			return ``;
+			break;
+		default: return `No strike team leader could be found.`;
+	}
+}
+
+// 2: Matrix download of skills
+// 3: Undercover agent for FBXI who eventually switched sides on discovering that she liked the role she was playing more than she cared about justice.
+// 4: Street judge who was betrayed by the system
+// 5: Bounty hunter or merc?  Look at backgrounds of Cable, Deadpool, etc.  Condottieri, "free companies", capitani di ventura, Ambrogia, Torquato, Raimondo, Ottavio  Italo-Helvetican or Italian.  Captain/capitani di ventura/Neo-condottieri and CEO of one of the Free Corpos, turned the tides at the Battle of 
+
+//
+
+var cyberGiftedTypes = [];
+function cyberGifted() {
+	if (cyberGiftedTypes.length == 0) {
+		cyberGiftedTypes = [1];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberGiftedTypes.length);
+	let switchcase = cyberGiftedTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			return ``;
+			break;
+		case 2:
+			return ``;
+			break;
+		case 3:
+			return ``;
+			break;
+		case 4:
+			return ``;
+			break;
+		case 5:
+			return ``;
+			break;
+		case 6:
+			return ``;
+			break;
+		default: return `No individual with unusual talents could be found.`;
 	}
 }
 
@@ -633,16 +737,18 @@ function cyberThief() {
 
 // mandatory: burglar, hacker, gifted, strike team leader
 // good adds: brains, lowlife/scav/hood, corpo
-// next four: crimeboss, ganger, explosive expert, fence/fixer, celevrity, hedonist, info-seeker
+// next: crimeboss, ganger, explosive expert, fence/fixer, celebrity, hedonist, info-seeker (tracker?)
 
 // do I want infiltrator separate from burglar?
 
-// burglar: 
+// burglar: (The Shadow, The Infiltrator)
 // electric ghost
 // Iron Man style corpo saboteur ghost with a phase cloak
 // gentleman cat burglar (Raffles, Lupin, Kaito Kid, Tux)
 // catwoman cat burglar with animal mods
 // lightfingered acrobat orphan pickpocket with many fingers modded out by Orphanmaster
+// cyberninja
+// hypernaut
 
 // maybe make nano cloud the wild card and make thief more like an infiltator?
 
@@ -652,13 +758,19 @@ function cyberThief() {
 // Matrix-like skill downloader
 // weapons expert of some sort
 // Fallen street judge
+// some kind of assassin?
+// 47 bodyguard could be moved here.
+
 
 
 
 // WHERE TO PUT??
 //mall santa gone mad, become crime boss?
 // The Grey Goo, a swarm of nanobots
-//a Jumper... someone who can swap their consciousness with someone else (but has lost their original body)
+// a Jumper... someone who can swap their consciousness with someone else (but has lost their original body)
+// The above two can both be The Intellect.  Jumper is like Dax, lived for ages.
+// Modular distributed brain?
+// sushi/ramen/gagh stall
   
 
 	//Melvin/Gerald/Percy onetime desk jockey who became an action antihero by taking an immersive VR holovacation in TITLE, and then he believes he never left and that he is still in the game... and found the experience so intoxicating that he refuses to acccept that he was ever unplugged.

@@ -597,6 +597,44 @@ function cyberForger() {
 	}
 }
 
+var cyberStrikerTypes = [];
+function cyberStriker() {
+	if (cyberStrikerTypes.length == 0) {
+		cyberStrikerTypes = [1,2,3,4,5,6];			//enter numbers equal to the number of switchcases.
+	}
+	let temp = Math.floor(Math.random()*cyberStrikerTypes.length);
+	let switchcase = cyberStrikerTypes.splice(temp, 1)[0];
+	let gend = randGender();
+	switch (switchcase) {
+		case 1:
+			return `An ${randomChoice("amazingly","astonishingly","astoundingly","incredibly")} ${randomChoice("accomplished","successful")} ${randomChoice("bank robber","supercriminal","one-man army")} who just ${randomChoice("a few years ago","a couple of years ago","ten months ago")} was a ${randomChoice("shy","weakling","simpering","nerdy")} office ${randomChoice("wageslave","data-clerk","mailboy","peon")} named ${randomChoice("Melvin","Hubert","Qubert","Rupert","Terrence","Clarence","Rubarbo","Stephen","Chip","Humbert")} ${randomChoice("Squink","Spink","Ping","Pong","Crumb","Grimb","Wink","Shrimp","Thimb","Thrub","Nerf","Nerp","Pring")+randomChoice("ley","leman","leton","s","les")}, but whose life changed when he logged into the immersive ${randomChoice("heist","action")} ${randomChoice("holosuite adventure","VR game","VR experience","holo-sim")} ${randomChoice("Hard","Shock","Dark","Shaolin","Latinum","Neo","Final","Future","Corpo")} ${randomChoice("MegaTower","Cannon","Clench","Exo-Target","Chronicles","Xeno-Fist","Nite","Saturn","Electron","Vault","Matrix","Grunt","Biomarker")}${randomChoice(" II"," III"," 3"," 4","",""," of the Dead"," Blasters"," Battle"," Souls"," War"," Odyssey"," 2"," Assassin")} and then ${randomChoice("refused to accept","refused to believe")} that he ${randomChoice("was ever unplugged","ever logged off","ever logged out")}, so he continues to delusionally ${randomChoice("assume","play","take on")} the ${randomChoice("role","character")} of ${randomChoice("indestructible","invincible","unstoppable","morally ambiguous")} antihero ${randomChoice("Nuke","Jack","Blaze","Duke","Rock","Zap","Ray")} ${randomChoice("Slater","Codec","Cyberarm","Stronggun","Blastarm","Lasershot","Plasm","Atomica")}.`;
+			break;
+		case 2:
+			return `${randomChoice("Cyborg merc","Mercenary cyborg","Cyborg-for-hire","Assassin-for-hire")} ${randomChoice("Ambrogia","Torquato","Raimondo","Ottavio","Chiara","Sofia","Martina","Giulia","Francesca")} ${randomChoice("Male","Brutto","Marcio","Marco","Sprezza")+randomChoice("reti","gramma","naro","nodo","so","ni","no","tas")}, ${randomChoice("condottiero","captain","capitani di ventura")} and CEO of The ${randomChoice("Cwantum","Intrepid","Acquisition","Capital","Bitstream")} ${randomChoice("Corps","Companions","Comrades")}, the ${randomChoice("Italian","Italo-Helvetican","Franco-Italian","silico-Sicilian","neo-Neopolitan","Venusian-Venetian")} ${randomChoice("mercenary company","private army","free company")} whose ${randomChoice("successes","feats","achievements")} include turning the tide of The ${randomChoice("English-Catalan War","Battle of Biohack Bay","Second Browser War","First Digital Drug War","War between "+randCyberCorp()+" and "+randCyberCorp(),randCyberCorp()+" Public Offering War","First Great Mutant Uprising","Second American Proletariat Revolt","Third American Proletariat Uprising","Calexican Civil War","War of the Nine A.I. Saints","Battle for the Digital Papacy","Manitoba Bloodbath","Saskatchewan Uprising","T'ronto Bloodbath")}.`;
+			break;
+		case 3:
+			return `A former ${randomChoice("Q","E","G","K","R","A","B","D","L","Z","X","M","N")}-SWAT team ${randomChoice("leader","captain")} who ${randomChoice("was fired and forced to go on the run from","was fired from","quit and had go on the run from","was forced to quit")} ${randomChoice("the S/F/PD","the FBXI","Cyberpol")} for ${randomChoice("refusing to undergo a mandatory personality wipe","refusing to take empathy-blocking drugs",`charging ${gend[0]} higher-ups with the murder of the CEO of ${randCyberCorp()}`,`discovering just how thoroughly ${randCyberCorp()} controls the authorities`,`refusing to pin a murder on a random wastoid`)}.`;
+			break;
+		case 4:
+			return `${randomChoice("Snakeskin Sasha","Jesse Snook","Jesse Greenfelt","Sidepocket","Sasha Scratch","Anyside Red","Syd Liquirish","Aubrey Bluff","Skeeter","Happenstance Slim","Casey Royale", "Cornersplice")}, a ${randomChoice("laserpool","lasersnooker","snooker-poker")} hustler who installed so many ${randomChoice("cheatmods","cheat-augs","calc-mods","prediction mods","prediction augments")} that ${gend[2]} can now literally see the physical paths that objects are likely to take${randomChoice(""," (colored according to probability)")}, which ${gend[2]} soon discovered renders ${gend[1]} nearly ${randomChoice("unbeatable","untouchable","unstoppable")} in ${randomChoice("frontal assault","infiltration")} and ${randomChoice("hand-to-hand","melee")} combat, making a life of aggressive crime more profitable than simple ${randomChoice("hustling","grifting")}.`;
+			break;
+		case 5:
+			return `${randomChoice("Keynote","Canoe","Grayble","K-Bo","Chakotay","Depp","Trek","Keno","Keto")} ${randomChoice("Williams","Billiams","Soze","Tallent","Tennant","Whittaker","Wompler","Raitrace")}, a ${randomChoice("martial arts champion","data librarian","gutterpunk")} who recently discovered that ${gend[2]} is somehow able to ${randomChoice("neuro-download","digitally fastlearn")} as many skills as ${gend[2]} wants without ${randomChoice("system-crashing","blinking out","going comatose","suffering brain-bleed")}, and so has quickly become a master of every physical proficiency.`;
+			break;
+		case 6:
+			let fname = "";
+			if (gend[3] == "man") {
+				fname = randomChoice("Gabriel","Michael","Raphael");
+			}
+			else {
+				fname = randomChoice("Gabriela","Michaela","Raffaela");
+			}
+			return `${fname} ${randomChoice("Lopez","Lup","Loop","Lupez","La Paz","Lopes","Looper")}, a ${randomChoice("star","decorated")} undercover agent for the S/F/PD who ${randomChoice(`was so deeply embedded in ${gend[0]} role`,`so completely bifurcated ${gend[0]} consciousness between ${gend[0]} cop role and ${gend[0]} criminal role`)} that, while occupying ${gend[0]} criminal ${("alterego","identity")}, ${gend[2]} discovered evidence of being an undercover agent and then used ${randomChoice("a data scalpel","a precision mem-wipe","targeted neural bleach")} to ${randomChoce("purge","excise")} all ${gend[0]} memories of being a police${gend[3]}.`
+			break;
+		default: return `No strike team leader could be found.`;
+	}
+}
+
 
 // UNDER SIX... TO FINISH
 
@@ -663,43 +701,6 @@ function cyberHacker() {
 	}
 }
 
-var cyberStrikerTypes = [];
-function cyberStriker() {
-	if (cyberStrikerTypes.length == 0) {
-		cyberStrikerTypes = [1,2,3,4];			//enter numbers equal to the number of switchcases.
-	}
-	let temp = Math.floor(Math.random()*cyberStrikerTypes.length);
-	let switchcase = cyberStrikerTypes.splice(temp, 1)[0];
-	let gend = randGender();
-	switch (switchcase) {
-		case 1:
-			return `An ${randomChoice("amazingly","astonishingly","astoundingly","incredibly")} ${randomChoice("accomplished","successful")} ${randomChoice("bank robber","supercriminal","one-man army")} who just ${randomChoice("a few years ago","a couple of years ago","ten months ago")} was a ${randomChoice("shy","weakling","simpering","nerdy")} office ${randomChoice("wageslave","data-clerk","mailboy","peon")} named ${randomChoice("Melvin","Hubert","Qubert","Rupert","Terrence","Clarence","Rubarbo","Stephen","Chip","Humbert")} ${randomChoice("Squink","Spink","Ping","Pong","Crumb","Grimb","Wink","Shrimp","Thimb","Thrub","Nerf","Nerp","Pring")+randomChoice("ley","leman","leton","s","les")}, but whose life changed when he logged in to play the immersive ${randomChoice("heist","action")} ${randomChoice("holosuite adventure","VR game","VR experience","holo-sim")} ${randomChoice("Hard","Shock","Dark","Shaolin","Latinum","Neo","Final")} ${randomChoice("MegaTower","Cannon","Clench","Exo-Target","Chronicles","Xeno-Fist","Nite","Saturn","Electron","Vault","Matrix","Biomarker")} ${randomChoice("II","III","3","4")} and then ${randomChoice("refused to accept","refused to believe")} that he ${randomChoice("was ever unplugged","ever logged off","ever logged out")}, so he continues to delusionally ${randomChoice("assume","play","take on")} the ${randomChoice("role","character")} of ${randomChoice("indestructible","invincible","unstoppable","morally ambiguous")} antihero ${randomChoice("Nuke","Jack","Blaze","Duke","Rock","Zap","Ray")} ${randomChoice("Slater","Codec","Cyberarm","Stronggun","Blastarm","Lasershot","Plasm","Atomica")}.`;
-			break;
-		case 2:
-			return `${randomChoice("Cyborg merc","Mercenary cyborg","Cyborg-for-hire","Assassin-for-hire")} ${randomChoice("Ambrogia","Torquato","Raimondo","Ottavio","Chiara","Sofia","Martina","Giulia")} ${randomChoice("Male","Brutto","Cattivo","Guasto","Marcio")+randomChoice("reti","gramma","lessica","denaro","nodo")}, ${randomChoice("condottiero","captain","capitani di ventura")} and CEO of The ${randomChoice("Cwantum","Intrepid","Acquisition","Capital","Bitstream")} ${randomChoice("Corps","Companions","Comrades")}, the ${randomChoice("Italian","Italo-Helvetican","Franco-Italian","silico-Sicilian","neo-Neopolitan","Venusian-Venetian")} ${randomChoice("mercenary company","private army","free company")} whose ${randomChoice("successes","feats","achievements")} include turning the tide of The ${randomChoice("English-Catalan War","Battle of Biohack Bay","Second Browser War","First Digital Drug War","War between "+randCyberCorp()+" and "+randCyberCorp(),randCyberCorp()+" Public Offering War","First Great Mutant Uprising","Second American Proletariat Revolt","Third American Proletariat Uprising","Calexican Civil War","War of the Nine A.I. Saints","Battle for the Digital Papacy","Manitoba Bloodbath","Saskatchewan Uprising","Toronto Bloodbath")}.`;
-			break;
-		case 3:
-			return `A former ${randomChoice("Q","E","G","K","R","A","B","D","L","Z","X","M","N")}-SWAT team ${randomChoice("leader","captain")} who ${randomChoice("was fired and forced to go on the run from","was fired from","quit and had go on the run from","was forced to quit")} ${randomChoice("the S/F/PD","the FBXI","Cyberpol")} for ${randomChoice("refusing to undergo a mandatory personality wipe","refusing to take empathy-blocking drugs",`charging ${gend[0]} higher-ups with the murder of the CEO of ${randCyberCorp()}`,`discovering just how thoroughly ${randCyberCorp()} controls the authorities`,`refusing to pin a murder on a random wastoid`,`having moral scruples`)}.`;
-			break;
-		case 4:
-			return `${randomChoice("Snakeskin Sasha","Jesse Snook","Jesse Nineball","Sidepocket","Sasha Scratch","Red","Aubrey Bluff","Skeeter")}, a ${randomChoice("laserpool","lasersnooker","quantumpoker")} hustler who installed so many ${randomChoice("cheatmods","cheat-augs","calc-mods","prediction mods","prediction augments")} that ${gend[2]} can now literally see ${randomChoice("",`${gend[0]} opponents' emotions as well as `)}the physical paths that objects ${randomChoice("might","will","can")} take${randomChoice(""," (colored according to probability)")}, and who soon discovered that the advantages they give ${gend[1]} in deception, infiltration, and ${randomChoice("hand-to-hand","melee")} combat made a life of crime much ${randomChoice("","safer and ")}more profitable.`;
-			break;
-		case 5:
-			return ``;
-			break;
-		case 6:
-			return ``;
-			break;
-		default: return `No strike team leader could be found.`;
-	}
-}
-
-// 2: Matrix download of skills
-// 3: Undercover agent for FBXI who eventually switched sides on discovering that she liked the role she was playing more than she cared about justice.
-// 4: Street judge who was betrayed by the system
-// 5: Bounty hunter or merc?  Look at backgrounds of Cable, Deadpool, etc.  Condottieri, "free companies", capitani di ventura, Ambrogia, Torquato, Raimondo, Ottavio  Italo-Helvetican or Italian.  Captain/capitani di ventura/Neo-condottieri and CEO of one of the Free Corpos, turned the tides at the Battle of 
-
-//
 
 var cyberGiftedTypes = [];
 function cyberGifted() {
@@ -821,7 +822,7 @@ function buildCyberIntro() {
 		intro3 += `Slumming at a dive bar has unexpectedly paid off.`;
 		} else intro3 += `The mayor's party was rich with opportunity.`;
 	} else {
-		intro3 += `${randomChoice("sip it","take a sip")} as you take stock of your tiny ${randomChoice("condopod","podflat","cyberflat","techpartment")}. ${randomChoice(`It's grey and squalid without a single ${randomChoice("biojack","VR-jack","techport")} in sight; you frown in disapproval.`,"A mutoroach runs under a rug, and you shudder in revulsion.")} Time to turn your life around. You've been waiting for ${randomChoice("your big break", "that one job that'll pull you up to the station you deserve")}, and now, it seems, you've found it. You smile. `;
+		intro3 += `${randomChoice("sip it","take a sip")} as you take stock of your tiny ${randomChoice("condopod","podflat","cyberflat","techpartment")}. ${randomChoice(`It's grey and squalid without a single ${randomChoice("biojack","VR-jack","techport")} in sight; you frown in disapproval.`,`A mutoroach ${randomChoice("runs","scurries")} under ${randomChoice("a rug","the hoversofa","the hoverfuton")}, and you ${randomChoice("shudder","wince")} in revulsion.`)} It's time to turn your life around. You've been waiting for ${randomChoice("your big break", "that one job that'll pull you up to the station you deserve")}, and now, it seems, you've found it. You smile. `;
 		if (party=="mansion"||party=="olympics") {
 			intro3 += `Sneaking into the mayoral party without an invitation paid off, big time.`
 		} else intro3 += `You got more from ${divebar} last night than just a massive hangover.`;

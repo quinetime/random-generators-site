@@ -10,8 +10,8 @@ button {
 	h2::before { 
 	  display: block; 
 	  content: " "; 
-	  margin-top: -250px; 
-	  height: 250px; 
+	  margin-top: -160px; 
+	  height: 160px; 
 	  visibility: hidden; 
 	  pointer-events: none;
 	}

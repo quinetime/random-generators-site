@@ -104,7 +104,7 @@ function makeCyberpunk() {
     var cyberTitleText = document.createTextNode(criminal);
     cyberRoleNode.appendChild(cyberTitleText);
 
-    var cyberPersonNode=document.createElement("H4");
+    var cyberPersonNode = document.createElement("H4");
     var cyberPersonText = document.createTextNode(criminalText);
     cyberPersonNode.appendChild(cyberPersonText);
     cyberPersonNode.classList.add("cyberperson");
@@ -167,6 +167,7 @@ function cyberReset() {
 	}
 
 	buildCyberIntro();
+	location.hash = "#cyberpunks";
 }
 
 

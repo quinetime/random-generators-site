@@ -3,7 +3,7 @@
 const lastRoles = [];
 // const cyberRoles = ["forger", "hacker", "magic", "politics", "religion", "driver", "detective", "brawler", "weapons", "wildcard", "fence", "corpo", "hedonist", "celebrity", "intellect", "thief", "hood", "lookout", "engineer"];
 
-const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout","engineer","brawler","thief","striker"];
+const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout","engineer","brawler","thief","striker","hacker"];
 // other: explosive, weapons, acrobat, martial artist/brawler, strike force lead, scav, gang member, undedrworld boss  corporat corpoxec
 let cybersHired = 0;
 const cybersPerTeam = 6;
@@ -26,7 +26,8 @@ function makeCyberpunk() {
 
 	switch (nextCyberRole()) {
 		case "hacker":
-			criminal = randomChoice("The Hacker: ", "The Netrunner: ", "The Decker: ");
+			criminal = randomChoice("The Hacker: ", "The Coderunner: ", "The Netrunner: ", "The Black Hat Hacker: ");
+			criminalText = cyberHacker();
 			break;
 		case "magic":
 			criminal = "The Gifted: ";
@@ -40,7 +41,7 @@ function makeCyberpunk() {
 			criminalText = cyberFaith();
 			break;
 		case "driver":
-			criminal = randomChoice("The Driver: ", "The Getaway: ");
+			criminal = randomChoice("The Driver: ", "The Getaway: ", "The Wheels: ");
 			criminalText = cyberDriver();
 			break;
 		case "detective":
@@ -51,7 +52,7 @@ function makeCyberpunk() {
 			criminalText = cyberMuscle();
 			break;
 		case "weapons":
-			criminal = randomChoice("The Weapons Expert: ", "The Demolitions Expert: ", "The Explosives Expert: ");
+			criminal = randomChoice("The Safecracker: ", "The Demolitions Expert: ", "The Explosives Expert: ");
 			break;
 		case "wildcard":
 			criminal = randomChoice("The Wild Card: ", "The X Factor: ");
@@ -658,10 +659,10 @@ function cyberThief() {
 			return `${randomChoice("Anti-corpo","Anti-capitalist","Industrial")} saboteur The ${randomChoice("Shifting","Quantum","Spacetime","Freedom","Patriot","People's","Compassionate")} ${randomChoice("Phantasm","Specter","Shadow","Waveform","Haunt")}, an anarcho-${randomChoice("communist","reformist","Marxist","revolutionary","redistributivist")+randomChoice(""," Robin Hood")} ${randomChoice(`equipped with an experimental phase cloak that lets ${gend[1]} become`,`who was pelted with beta rays rendering ${gend[1]}`,`outfitted with a stealth suit that renders ${gend[1]}`)} transparent and intangible, relentlessly pursued by ${randCyberPolice()} for singlehandedly ${randomChoice("taking down","destroying","bankrupting","draining the assets of","causing the collapse of")} ${randCyberCorp()}.`;
 			break;
 		case 4:
-			return `${randomChoice("Pipespeed","Queek","Muscord","Dubilclik","Riteclik","Bitwise","Thum","Thrumb","Diode","Tidbyte","Tidbit","2Bit","Pinky Clyde","Gilly Wissenschaft")}, a ${randomChoice("ratty","charming","talkative","soot-covered","shaggy","Cockney","twelve-fingered","tiny")} urchin ${gend[4]} (no older than ${randomChoice("seven","eight","nine","ten")}) who ${randomChoice("l","h")}eads the ${randomChoice("Beggar","Alley","Urchin","Orphan")+randomChoice("master","lord"," King")}'s ${randomChoice("pickpocketing","petty theft","rooftop","lightfingered","streetrat")} ${randomChoice("corps","brigade","division")} and is ${randomChoice("neurally","cerebrally","genetically","cybernetically","physiologically")} enhanced to ${randomChoice("be able to deftly lift anything from anybody","be the perfect pickpocket","be the city's most slippery thief","be the perfect fingersmith")}.`;
+			return `${randomChoice("Pipespeed","Queek","Muscord","Dubilclik","Riteclik","Bitwise","Thum","Thrumb","Diode","Tidbyte","Tidbit","2Bit","Pinky Clyde","Gilly Wissenschaft","Clikbait")}, a ${randomChoice("ratty","charming","talkative","soot-covered","shaggy","Cockney","twelve-fingered","tiny")} urchin ${gend[4]} (no older than ${randomChoice("seven","eight","nine","ten")}) who ${randomChoice("l","h")}eads the ${randomChoice("Beggar","Alley","Urchin","Orphan")+randomChoice("master","lord"," King")}'s ${randomChoice("pickpocketing","petty theft","rooftop","lightfingered","streetrat")} ${randomChoice("corps","brigade","division")} and is ${randomChoice("neurally","cerebrally","genetically","cybernetically","physiologically")} enhanced to ${randomChoice("be able to deftly lift anything from anybody","be the perfect pickpocket","be the city's most slippery thief","be the perfect fingersmith")}.`;
 			break;
 		case 5:
-			return `${randomChoice("Yur","Andi","Vilka","Janus","Cosmaj","Valya","Vla","Kira","Bela","Zhenya","Ivica")} ${randomChoice("Stani","Novi","Petro","Pa","Vo","Pu","Ro","Robo","Cybo","Kro","Roboto","Bra","Kiri","Petu","Servo","Modulo","Nodo","Nuro","Siri","Vla")+randomChoice("slak","slav","stok","kov","tov","tovi","ka","dov","dosk","dka","ska","ski","slovski","bor","lski","lka","vich")}, a ${randomChoice("Soviet","Russian","Belorussian","Slavic","Macedonian")} ${randomChoice("Hypernaut","Hyperpilot")} presumed lost by ${randomChoice("HyperNASA","the authorities","the U.S. Cosmoforce","The Hypercube Institute",`${gend[0]} handlers`,"The Eternalists")} when exploring higher dimensions but who actually gave them the slip, and who now appears as a collection of floating body parts and is able to ${randomChoice("walk around solid walls in the fourth dimension","reach through the fourth dimension into enclosed spaces")}.`;
+			return `${randomChoice("Yur","Andi","Vilka","Janus","Cosmaj","Valya","Vla","Kira","Bela","Zhenya","Ivica")} ${randomChoice("Stani","Novi","Petro","Pa","Vo","Pu","Ro","Robo","Cybo","Kro","Roboto","Bra","Kiri","Petu","Servo","Modulo","Nodo","Nuro","Siri","Vla")+randomChoice("slak","slav","stok","kov","tov","tovi","ka","dov","dosk","dka","ska","ski","slovski","bor","lski","lka","vich")}, a ${randomChoice("Soviet","Russian","Belorussian","Slavic","Macedonian")} ${randomChoice("Hypernaut","Hyperpilot")} presumed lost by ${randomChoice("HyperNASA","the authorities","the U.S. Cosmoforce","The Hypercube Institute",`${gend[0]} handlers`,"The Eternalists")} when exploring higher dimensions but who actually gave them the slip, and who now appears as a collection of floating body parts able to ${randomChoice("walk around solid walls in the fourth dimension","reach through the fourth dimension into enclosed spaces")}.`;
 			// 4-D hypernaut
 			break;
 		case 6:
@@ -675,30 +676,37 @@ function cyberThief() {
 var cyberHackerTypes = [];
 function cyberHacker() {
 	if (cyberHackerTypes.length == 0) {
-		cyberHackerTypes = [1];			//enter numbers equal to the number of switchcases.
+		cyberHackerTypes = [1,2];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberHackerTypes.length);
 	let switchcase = cyberHackerTypes.splice(temp, 1)[0];
 	let gend = randGender();
 	switch (switchcase) {
 		case 1:
-			return ``;
+			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("coderunner","tech guru","technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} for ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","a multinational cryogenics lab","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
 			break;
+			// computer virus
 		case 2:
-			return ``;
+			let coname = randomChoice("R","M","L")+vowel("y")+"c"+randomChoice("","","h")+"o";
+			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Unknown","Overture","Voiceless")}, a feared and respected ${randomChoice("blackhat ","")}hacker collective that secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
 			break;
+			// Chloe O'Brien, tech guru for anti-terrorism task force/dinosaur amusement park, always acerbic comments (Chloe Dennis Nedry pastiche)
 		case 3:
 			return ``;
 			break;
+			// Street Judge sidekick, went freelance when his partner died/turned corpo/got disassembled
 		case 4:
 			return ``;
 			break;
+			// Film Noir detective
 		case 5:
 			return ``;
 			break;
+			// watchdogs hoodied saboteur, unusually active in fieldwork for a hacker/decker and digitally printing tools to 
 		case 6:
 			return ``;
 			break;
+			// a collective 
 		default: return `No hacker could be found.`;
 	}
 }

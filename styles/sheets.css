@@ -10,8 +10,8 @@ button {
 	h2::before { 
 	  display: block; 
 	  content: " "; 
-	  margin-top: -195px; 
-	  height: 195px; 
+	  margin-top: -205px; 
+	  height: 205px; 
 	  visibility: hidden; 
 	  pointer-events: none;
 	}
@@ -92,6 +92,33 @@ h4 {
 }
 
 
+
+
+.hiddenzinger {
+	display: none;
+}
+
+.haha {
+	/* font-size: 1.8em; */
+	/* font-family: "Patrick Hand SC",sans-serif; */
+  	font-weight: 200;
+  	font-variant-ligatures: no-common-ligatures;
+  	display: inline-block;
+}
+
+.firsthaha {
+	animation-delay: 0.4s;
+}
+
+
+#theJoke p {
+	font-size: 1.3em;
+}
+
+#jokeBtn {
+	margin-top: 0.5em;
+}
+
 @media only screen and (max-width: 630px) {
 	.cyberList{
 		padding-left: 0;
@@ -99,6 +126,72 @@ h4 {
 	}
 }
 
-/*p {
-  font-size: 1.1em;
-}*/
+
+
+@keyframes waggle {
+  from {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    color: black;
+  }
+
+  25%,
+  95% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  45%,
+  75% {
+    -webkit-transform: scale(1, 1.6);
+    transform: scale(1, 1.6);
+  }
+
+  60%
+   {
+    -webkit-transform: scale(1, 1.1);
+    transform: scale(1, 1.1);
+  }
+
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes waggle {
+  from {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  25%,
+  95% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  45%,
+  75% {
+    -webkit-transform: scale(1, 1.6);
+    transform: scale(1, 1.6);
+  }
+
+  60%
+   {
+    -webkit-transform: scale(1, 1.1);
+    transform: scale(1, 1.1);
+  }
+
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+.waggle {
+  -webkit-animation-name: waggle;
+  animation-name: waggle;
+  animation-duration: 1s; 
+  transform-origin: bottom;
+}

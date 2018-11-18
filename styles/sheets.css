@@ -107,7 +107,7 @@ h4 {
 }
 
 .firsthaha {
-	animation-delay: 0.4s;
+	animation-delay: 0.8s;
 }
 
 
@@ -127,7 +127,6 @@ h4 {
 }
 
 
-
 @keyframes waggle {
   from {
     -webkit-transform: scale(1, 1);
@@ -136,18 +135,12 @@ h4 {
   }
 
   25%,
-  95% {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  45%,
   75% {
     -webkit-transform: scale(1, 1.6);
     transform: scale(1, 1.6);
   }
 
-  60%
+  50%
    {
     -webkit-transform: scale(1, 1.1);
     transform: scale(1, 1.1);
@@ -163,21 +156,16 @@ h4 {
   from {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+    color: black;
   }
 
   25%,
-  95% {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  45%,
   75% {
     -webkit-transform: scale(1, 1.6);
     transform: scale(1, 1.6);
   }
 
-  60%
+  50%
    {
     -webkit-transform: scale(1, 1.1);
     transform: scale(1, 1.1);
@@ -192,6 +180,6 @@ h4 {
 .waggle {
   -webkit-animation-name: waggle;
   animation-name: waggle;
-  animation-duration: 1s; 
+  animation-duration: 0.8s; 
   transform-origin: bottom;
 }

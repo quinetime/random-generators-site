@@ -294,7 +294,7 @@ function capFirst(str) {
 
 function randCaps(str) {
 	let newstr = str.charAt(0).toUpperCase();
-	for (let i=1; i<str.length;i++) {
+	for (let i=1;i<str.length;i++) {
 		let randonum = Math.floor(Math.random()*2);
 		if (randonum == 0) {
 			newstr+=str.charAt(i).toLowerCase();
@@ -687,7 +687,7 @@ function cyberHacker() {
 			break;
 			// computer virus
 		case 2:
-			let coname = randomChoice("R","M","L")+vowel("y")+"c"+randomChoice("","","h")+"o";
+			let coname = randomChoice("R","M","L","T")+vowel("y")+"c"+randomChoice("","","h")+"o";
 			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Unknown","Overture","Voiceless")}, a feared and respected ${randomChoice("blackhat ","")}hacker collective that secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
 			break;
 			// Chloe O'Brien, tech guru for anti-terrorism task force/dinosaur amusement park, always acerbic comments (Chloe Dennis Nedry pastiche)

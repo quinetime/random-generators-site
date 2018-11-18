@@ -1,8 +1,6 @@
 //DADJOKES
 
-const getNodes = str => { 
-  return new DOMParser().parseFromString(str, 'text/html').body.childNodes;
-}
+const getNodes = str => new DOMParser().parseFromString(str, 'text/html').body.childNodes;
 
 const joke = str => `<strong class="haha">${str}</strong>`;
 
@@ -12,16 +10,16 @@ const adverbItem = [
 	[`a fishing rod`, joke`reel`+`y`],
 	[`a can of minestrone`, joke`soup`+`er`],
 	[`a hatchet`, joke`ax`+`tremely`],
-	[`a wizard`, joke`mage`+`-rly`],
+	[`a wizard`, joke`mage`+`rly`],
 	[`a tiny drill`, `a ${joke`little bit`}`],
 	[`a witch`, joke`wicked`],
 	[`a tiny bug`, joke`mite`+`y`],
 	[`a teacher's pen`, joke`ink-red`+`-ibly`],
 	[`a beautiful flower`, joke`pretty`],
-	[`your iPhone's voice assistant`, joke`Siri`+`-ously`],
+	[`your iPhone's voice assistant`, joke`Siri`+`ously`],
 	[`a clown`, joke`hilariously`],
-	[`a pane of glass`, joke`clearly`],
-	[`a hole-filled sock`, joke`darn`],
+	[`a pane of glass`, joke`clear`+`ly`],
+	[`a sock that needs mending`, joke`darn`],
 	[`a beaver`, joke`dam`],
 	[`Beelzebub`, joke`devilishly`],
 	[`a zombie`, joke`dead`],
@@ -29,13 +27,14 @@ const adverbItem = [
 	[`an insult`, joke`slight`+`ly`],
 	[`a person who needs a massage`, joke`sore`+`-ta`],
 	[`electricity`, `some`+joke`watt` ],
+	[`electricity`, joke`shocking`+`ly`],
 	[`your uncle`, joke`relative`+`ly`],
 	[`a six-pack`, joke`ab`+`-solutely`],
-	[`Frankenstein`, `de-`+joke`monster`+`-ably`],
+	[`Frankenstein`, `de`+joke`monster`+`ably`],
 	[`pizza cheese`, joke`grate`+`ly`],
-	[`a beautifully mended sock`, `${joke`pretty`} ${joke`darn`}`],
+	[`a beautiful sock that's just been mended`, `${joke`pretty`} ${joke`darn`}`],
 	[`a fat frog`, joke`toad`+`ally`],
-	[`a cloud`, joke`highly`],
+	[`a cloud`, joke`high`+`ly`],
 	[`a cow`, joke`udder`+`ly`],
 	[`a lion`, joke`mane`+`ly`],
 	[`a house that has lots of windows`, joke`paneful`+`ly`],
@@ -52,13 +51,30 @@ const adverbItem = [
 	[`snot`, joke`gross`+`ly`],
 	[`the Wolfman`, joke`monstrously`],
 	[`a haunted house`, joke`frightfully`],
-	[`an addition sign with a multiplication sign`, joke`sum`+`-`+joke`times`],
+	[`an addition sign with a multiplication sign`, joke`sum`+joke`times`],
 	[`Bambi`, joke`deer`+`ly`],
 	[`a Twitter button`, joke`like`+`ly`],
 	[`a donkey`, joke`ass`+`pecially`],
 	[`a shaggy dog`, joke`fur`+`rociously`],
-	[`a family after Thanksgiving dinner`, joke`full`+`y`],
-	[`a grizzly`, joke`bear`+`ly`]
+	[`a family that just finished Thanksgiving dinner`, joke`full`+`y`],
+	[`a grizzly`, joke`bear`+`ly`],
+	[`undercooked meat`, joke`rare`+`ly`],
+	[`any cop who isn't the police chief`, joke`not chief`+`ly`]
+	[`a rabbit`, `in-`+joke`hare`+`-ently`],
+	[`the Loch Ness Monster`, joke`Nessie`+`sarily`],
+	[`a submarine engineer named Stan`, joke`Sub Stan`+`-tially`],
+	[`an empty kennel`, joke`doggone`],
+	[`dynamite`, joke`blasted`],
+	[`a terrible surgeon`, joke`bloody`],
+	[`dandelion greens`, joke`bitter`+`ly`],
+	[`the knot that keeps thread from going through the eye of a needle`, joke`knot`+` `+joke`sew`],
+	[`the number 3`, joke`not 2`],
+	[`champagne`, `pro`+joke`bubbly`],
+	[`a flock of ghosts`, joke`scares`+`ly`],
+	[`an oil spill`, joke`slick`+`ly`],
+	[`a person who just passed out`, joke`faint`+`ly`],
+	[`sexy pyjamas`, joke`négligée`+`-bly`],
+	[`some Earl Grey that I bought`, joke`my-tea`]
 ];
 
 const adjItem = [
@@ -73,28 +89,27 @@ const adjItem = [
 	[`a rodent`, joke`ratty`],
 	[`Garfield`, joke`catty`],
 	[`a glove`, joke`hand`+`some`],
-	[`a peach`, joke`pit`+`-iful`],
+	[`a peach`, joke`pit`+`iful`],
 	[`a stick`, joke`sticky`],
 	[`Black Beauty`, joke`hoarse`],
 	[`a hunger strike`, joke`fast`],
 	[`a crustacean`, joke`crabby`],
 	[`a vape pen`, joke`puff`+`y`],
-	[`raw meat`, joke`rare`],
 	[`overcooked meat`, joke`well done`],
-	[`a cow`, joke`cud`+`-dly`],
+	[`a cow`, joke`cud`+`dly`],
 	[`a teabag`, joke`steep`],
 	[`an apartment`, joke`flat`],
 	[`a green gemstone`, joke`jade`+`d`],
 	[`someone walking down the sidewalk`, joke`pedestrian`],
 	[`a teddy bear`, joke`stuffy`],
-	[`a golfer`, joke`tee`+`-dious`],
+	[`a golfer`, joke`tee`+`dious`],
 	[`a drill`, joke`boring`],
 	[`a bird`, joke`flight`+`y`],
 	[`a whiskey-maker`, joke`still`],
 	[`a ladybug`, joke`dotty`],
 	[`a window`, joke`sill`+`y`],
-	[`a person with a rabbit on ${randomChoice("his","her")} head`, joke`harebrained`],
-	[`a pine tree`, joke`sap`+`py`],
+	[`a person hiding a rabbit under ${randomChoice("his","her")} hat`, joke`harebrained`],
+	[`a pine tree`, joke`sappy`],
 	[`fish soup`, joke`chowder`+`headed`],
 	[`a cashew`, joke`nutty`],
 	[`a distant galaxy`, joke`far out`],
@@ -108,29 +123,36 @@ const adjItem = [
 	[`the letter M`, joke`M`+`-pressive`],
 	[`a screw with a golfball`, joke`screwball`],
 	[`a baseball glove`, joke`catchy`],
-	[`a high school dance`, joke`prom`+`-inent`],
+	[`a high school dance`, joke`prom`+`inent`],
 	[`a waterpark`, joke`splashy`],
 	[`a professional bowler`, joke`striking`],
 	[`a police officer`, joke`arresting`],
 	[`the tide`, joke`swell`],
-	[`a submarine sandwich with a lime`, joke`sub`+`-`+joke`lime`],
+	[`a submarine sandwich with a lime`, joke`sub`+joke`lime`],
 	[`a person getting rained on`, joke`under the weather`],
 	[`the Shakespeare shelf at the library`, joke`play`+`ful`],
 	[`a chicken strip`, joke`tender`],
 	[`the contents of a witch's cauldron`, joke`brew`+`tal`],
 	[`a kitty cat`, joke`purr`+`ple`],
 	[`a kitty cat`, joke`mew`+`sical`],
-	[`an air conditioner`, joke`fan`+`cy`],
+	[`a ceiling fan`, joke`fan`+`cy`],
 	[`a skull`, joke`boneheaded`],
-	[`a rabbit`, joke`hare`+`-y`],
 	[`a weaving machine`, joke`loom`+`inous`],
-	[`a ballpoint`, joke`pen`+`-dulous`]
+	[`a ballpoint`, joke`pen`+`-dulous`],
+	[`a really cold day`, joke`brrr`+`ly`],
+	[`a lumberjack`, joke`plaid`+`itudinous`],
+	[`a poltergeist`, joke`spirit`+`ed`],
+	[`the letter E`, joke`E`+`-ger`],
+	[`a rushing river`, joke`rapid`],
+	[`a dictionary that only defines the word 'itself' over and over`, joke`full of itself`],
+	[`the North Pole`, joke`on top of the world`],
+	[`the first-place finisher of a race`, joke`win`+`some`],
+	[`a beet thrown high into the air`, joke`upbeet`],
+	[`a riot`, joke`revolting`]
 ];
 
 var adverbTemp = [];
 var adjTemp = [];
-
-//giant pickle = a big deal
 
 
 function writeJokeOpening() {
@@ -145,12 +167,14 @@ function writeJokeOpening() {
 	let randoAdj = Math.floor(Math.random()*adjTemp.length);
 	let currentAdj =adjTemp[randoAdj];
 
-	let childfirstname = randomChoice("Jenny","Jimmy","Bobby","Sammy","Taylor","Emily","Aiden","Sally","Charlie","Jayden","Molly","Sally Jo","Bobbie","Jennifer","Michael","Claire","Richie","Lizzy","Melanie","Oscar","Dexter","Alice","Billy","Jessie","Marcus","Ashley","Jaylor","Taylor","Matty");
+	let childfirstname = randomChoice("Jenny","Jimmy","Bobby","Sammy","Taylor","Emily","Aiden","Sally","Charlie","Jayden","Molly","Sally Jo","Bobbie","Jennifer","Michael","Claire","Richie","Lizzy","Melanie","Oscar","Dexter","Alice","Billy","Jessie","Marcus","Ashley","Taylor","Matty");
 	let childname = randomChoice("","little ","lil' ","","")+childfirstname;
 
 	let opening = randomChoice(
 		`Psst... hey, ${childname}. W`,
 		`Hey, ${childname}! W`,
+		`Hey, ${childname}. W`,
+		`Good morning, ${childname}. W`,
 		`I've got a good one for you, ${childname}! W`,
 		`What's up, ${childname}? Listen, w`,
 		`Hey ${childname}, dinner's in fifteen. By the way, w`,
@@ -160,6 +184,8 @@ function writeJokeOpening() {
 	let kidresponse1 = randomChoice(
 		`(eyeroll) I don't know, dad. What?`,
 		`Ugh. What, dad?`,
+		`What, dad?`,
+		`What, dad?`,
 		`What, dad?`,
 		`Ugh. I dunno, dad. What?`,
 		`Really? Another dad joke? Fine... I dunno, what?`,
@@ -211,7 +237,7 @@ function revealJokeZinger() {
 	hahas[0].classList.add("firsthaha");
 	hahas[0].classList.add("waggle");
 
-	for (let i = 1; i < hahas.length; ++i) {
+	for (let i=1;i<hahas.length;++i) {
   		hahas[i-1].addEventListener("animationend", () => {
     		hahas[i].classList.add("waggle");
   		});

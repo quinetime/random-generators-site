@@ -59,7 +59,7 @@ const adverbItem = [
 	[`a family that just finished Thanksgiving dinner`, joke`full`+`y`],
 	[`a grizzly`, joke`bear`+`ly`],
 	[`undercooked meat`, joke`rare`+`ly`],
-	[`any cop who isn't the police chief`, joke`not chief`+`ly`]
+	[`any cop who isn't the police chief`, joke`not chief`+`ly`],
 	[`a rabbit`, `in-`+joke`hare`+`-ently`],
 	[`the Loch Ness Monster`, joke`Nessie`+`sarily`],
 	[`a submarine engineer named Stan`, joke`Sub Stan`+`-tially`],
@@ -74,7 +74,17 @@ const adverbItem = [
 	[`an oil spill`, joke`slick`+`ly`],
 	[`a person who just passed out`, joke`faint`+`ly`],
 	[`sexy pyjamas`, joke`négligée`+`-bly`],
-	[`some Earl Grey that I bought`, joke`my-tea`]
+	[`some Earl Grey that I bought`, joke`my-tea`],
+	[`the netherworld`, joke`hell`+`a`],
+	[`road rage`, joke`mad`],
+	[`Pokemon Go`, joke`craze`+`y`],
+	[`a cow`, joke`moo`+`cho`],
+	[`a gang of cowboys`, joke`posse`+`bly`],
+	[`something unimpressive`, joke`meh`+`-ga`],
+	[`a campground`, `in`+joke`tents`+`ly`],
+	[`a ballerina`, joke`too too`],
+	[`a plant`, joke`plant`+`y`],
+	[`deodorizer`, joke`scentsless`+`ly`]
 ];
 
 const adjItem = [
@@ -148,7 +158,11 @@ const adjItem = [
 	[`the North Pole`, joke`on top of the world`],
 	[`the first-place finisher of a race`, joke`win`+`some`],
 	[`a beet thrown high into the air`, joke`upbeet`],
-	[`a riot`, joke`revolting`]
+	[`a riot`, joke`revolting`],
+	[`a pig`, joke`sty`+`lish`],
+	[`iron ore`, joke`unrefined`],
+	[`a jack-in-the-box`, joke`crank`+`y`],
+	[`a saxophone solo`, joke`saxy`]
 ];
 
 var adverbTemp = [];
@@ -160,7 +174,7 @@ function writeJokeOpening() {
 	if (adverbTemp.length == 0) {
     	adverbTemp = adverbItem.slice(); }
     if (adjTemp.length == 0) {
-    	adjTemp = adjItem.slice(); }
+    	adjTemp = adjItem.slice(); }  // repopulate empty joke arrays
 
     let randoAdv = Math.floor(Math.random()*adverbTemp.length);
 	let currentAdv = adverbTemp[randoAdv];
@@ -203,7 +217,7 @@ function writeJokeOpening() {
 	theJoke.appendChild(getNodes(zingertext)[0]);
 
 	adjTemp.splice(randoAdj, 1);
-	adverbTemp.splice(randoAdv, 1);
+	adverbTemp.splice(randoAdv, 1);  // take used-up jokes out of array
 }
 
 
@@ -215,7 +229,7 @@ function revealJokeZinger() {
 		`I swear to god, dad! Get out of my room!`,
 		`Dad! That doesn't even make any sense!`,
 		`Ugh. Whatever, dad.`,
-		`Get outta here, dad! I'm on the phone with ${randomChoice("Skye","Jaylor","Sasha","Paula","Cindy","Brett","Hawksley")}!`,
+		`Get outta here, dad! I'm on the phone with ${randomChoice("Skye","Jaylor","Sasha","Cindy","Brett","Hawksley")}!`,
 		`Get outta here, dad! I'm playing Fortnite!`,
 		`Dad, your jokes suck.`,
 		`Dad, your jokes make no sense.`,

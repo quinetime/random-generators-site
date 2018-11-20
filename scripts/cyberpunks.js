@@ -52,7 +52,7 @@ function makeCyberpunk() {
 			criminalText = cyberMuscle();
 			break;
 		case "weapons":
-			criminal = randomChoice("The Safecracker: ", "The Demolitions Expert: ", "The Explosives Expert: ");
+			criminal = randomChoice("The Safecracker: ", "The Demolitions Expert: ", "The Explosives Expert: ","The Bomb Maker: ");
 			break;
 		case "wildcard":
 			criminal = randomChoice("The Wild Card: ", "The X Factor: ");
@@ -676,7 +676,7 @@ function cyberThief() {
 var cyberHackerTypes = [];
 function cyberHacker() {
 	if (cyberHackerTypes.length == 0) {
-		cyberHackerTypes = [1,2];			//enter numbers equal to the number of switchcases.
+		cyberHackerTypes = [1,2,3];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberHackerTypes.length);
 	let switchcase = cyberHackerTypes.splice(temp, 1)[0];
@@ -685,14 +685,12 @@ function cyberHacker() {
 		case 1:
 			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("coderunner","tech guru","technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} for ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","a multinational cryogenics lab","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
 			break;
-			// computer virus
 		case 2:
 			let coname = randomChoice("R","M","L","T")+vowel("y")+"c"+randomChoice("","","h")+"o";
-			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Unknown","Overture","Voiceless")}, a feared and respected ${randomChoice("blackhat ","")}hacker collective that secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
+			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Unknown","Overture","Voiceless")}, a ${randomChoice("blackhat ","")}hacker collective that is known and feared for ${randomChoice("stealing elections","influencing elections","exposing government corruption","blackmailing CEOs")} but which secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
 			break;
-			// Chloe O'Brien, tech guru for anti-terrorism task force/dinosaur amusement park, always acerbic comments (Chloe Dennis Nedry pastiche)
 		case 3:
-			return ``;
+			return `${randomChoice("I","WE","THEY","ME")+randomChoice("BE","LIKE","HATE","LOVE","KNOW","EAT")+randomChoice("YOU","US","GOATS","BUGS","BEES")+"."+randomChoice("EXE","EXEC","DLL","PHP","JSX","SYS","TROJ","WORM")}, a ${randomChoice("computer virus","virus","piece of malware","computer worm")}${randomChoice(" with a sarcastic personality"," with a teasing personality"," with a snarky personality","")} that ${randomChoice("aces the Turing Test","satisfies all criteria for life","seems to be completely sentient")} and that is so thoroughly distributed across ${randomChoice("the net","the web","modern tech")} that you can open up a terminal on any machine and ${randomChoice("hire it to to disable any security system it has infected","try to convince it to give you blockchain cracks of any system it has infected", "discuss the terms of a hacking contract you would like it to complete")}.`;
 			break;
 			// Street Judge sidekick, went freelance when his partner died/turned corpo/got disassembled
 		case 4:

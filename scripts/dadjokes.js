@@ -48,7 +48,6 @@ const adverbItem = [
 	[`a nun`, joke`habit`+`ually`],
 	[`an optimist`, joke`positively`],
 	[`the number one`, joke`one`+`-derfully`],
-	[`snot`, joke`gross`+`ly`],
 	[`the Wolfman`, joke`monstrously`],
 	[`a haunted house`, joke`frightfully`],
 	[`an addition sign with a multiplication sign`, joke`sum`+joke`times`],
@@ -67,7 +66,6 @@ const adverbItem = [
 	[`dynamite`, joke`blasted`],
 	[`a terrible surgeon`, joke`bloody`],
 	[`dandelion greens`, joke`bitter`+`ly`],
-	[`the knot that keeps thread from going through the eye of a needle`, joke`knot`+` `+joke`sew`],
 	[`the number 3`, joke`not 2`],
 	[`champagne`, `pro`+joke`bubbly`],
 	[`a flock of ghosts`, joke`scares`+`ly`],
@@ -84,7 +82,10 @@ const adverbItem = [
 	[`a campground`, `in`+joke`tents`+`ly`],
 	[`a ballerina`, joke`too too`],
 	[`a plant`, joke`plant`+`y`],
-	[`deodorizer`, joke`scentsless`+`ly`]
+	[`a pog`, joke`flippin'`],
+	[`an open field`, joke`plain`+`ly`],
+	[`a needle and thread`, joke`sew`],
+	[`a phone screen`, `a `+joke`touch`]
 ];
 
 const adjItem = [
@@ -149,10 +150,8 @@ const adjItem = [
 	[`a skull`, joke`boneheaded`],
 	[`a weaving machine`, joke`loom`+`inous`],
 	[`a ballpoint`, joke`pen`+`-dulous`],
-	[`a really cold day`, joke`brrr`+`ly`],
 	[`a lumberjack`, joke`plaid`+`itudinous`],
 	[`a poltergeist`, joke`spirit`+`ed`],
-	[`the letter E`, joke`E`+`-ger`],
 	[`a rushing river`, joke`rapid`],
 	[`a dictionary that only defines the word 'itself' over and over`, joke`full of itself`],
 	[`the North Pole`, joke`on top of the world`],
@@ -162,7 +161,10 @@ const adjItem = [
 	[`a pig`, joke`sty`+`lish`],
 	[`iron ore`, joke`unrefined`],
 	[`a jack-in-the-box`, joke`crank`+`y`],
-	[`a saxophone solo`, joke`saxy`]
+	[`a saxophone solo`, joke`saxy`],
+	[`deodorizer`, joke`scentsless`],
+	[`a dog show only for collies`, joke`Lassie-fair`+`e`],
+	[`the 8th plot in a cemetery`, `a-`+joke`grave-eight`+`-ing`]
 ];
 
 var adverbTemp = [];

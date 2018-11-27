@@ -663,7 +663,6 @@ function cyberThief() {
 			break;
 		case 5:
 			return `${randomChoice("Yur","Andi","Vilka","Janus","Cosmaj","Valya","Vla","Kira","Bela","Zhenya","Ivica")} ${randomChoice("Stani","Novi","Petro","Pa","Vo","Pu","Ro","Robo","Cybo","Kro","Roboto","Bra","Kiri","Petu","Servo","Modulo","Nodo","Nuro","Siri","Vla")+randomChoice("slak","slav","stok","kov","tov","tovi","ka","dov","dosk","dka","ska","ski","slovski","bor","lski","lka","vich")}, a ${randomChoice("Soviet","Russian","Belorussian","Slavic","Macedonian")} ${randomChoice("Hypernaut","Hyperpilot")} presumed lost by ${randomChoice("HyperNASA","the authorities","the U.S. Cosmoforce","The Hypercube Institute",`${gend[0]} handlers`,"The Eternalists")} when exploring higher dimensions but who actually gave them the slip, and who now appears as a collection of floating body parts able to ${randomChoice("walk around solid walls in the fourth dimension","reach through the fourth dimension into enclosed spaces")}.`;
-			// 4-D hypernaut
 			break;
 		case 6:
 			return `Dashing and debonair gentleman thief, outfitted with `;
@@ -676,40 +675,37 @@ function cyberThief() {
 var cyberHackerTypes = [];
 function cyberHacker() {
 	if (cyberHackerTypes.length == 0) {
-		cyberHackerTypes = [1,2,3,4];			//enter numbers equal to the number of switchcases.
+		cyberHackerTypes = [1,2,3,4,5];			//enter numbers equal to the number of switchcases.
 	}
 	let temp = Math.floor(Math.random()*cyberHackerTypes.length);
 	let switchcase = cyberHackerTypes.splice(temp, 1)[0];
 	let gend = randGender();
 	switch (switchcase) {
 		case 1:
-			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("code dev","tech guru","technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} for ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
+			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("code dev","tech guru","technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} of ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
 			break;
 		case 2:
 			let coname = randomChoice("R","M","L","T")+vowel("y")+"c"+randomChoice("","","h")+"o";
-			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Unknown","Overture","Voiceless")}, a ${randomChoice("blackhat ","")}hacker collective that is known and feared for ${randomChoice("stealing elections","influencing elections","exposing government corruption","blackmailing CEOs")} and which secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
+			return `${coname} ${randomChoice("Cyber","Hyper","Fiber","Typer")+randomChoice("light","wire","mine","drive")}, ${randomChoice("wild-eyed","wild-haired","smooth-talking","opinionated")} ${randomChoice("founder","leader")} of The ${randomChoice("Faceless","Pseudonymous","Impersonal","Indistinct","Voiceless","Incognito")} ${randomChoice("Ones and Zeros","Hundred","Thousand","Overture","Majority","Equilibrium")}, a ${randomChoice("blackhat ","")}hacker collective known and feared for ${randomChoice("stealing elections","influencing elections","exposing government corruption","blackmailing CEOs")} but which secretly ${randomChoice(`has ${coname} as its only member`,`consists only of ${coname}`)}.`;
 			break;
 		case 3:
 			return `${randomChoice("I","WE","THEY","ME")+randomChoice("BE","LIKE","HATE","LOVE","KNOW","EAT")+randomChoice("YOU","US","GOATS","BUGS","BEES")+"."+randomChoice("EXE","EXEC","DLL","PHP","JSX","SYS","TROJ","WORM")}, a sentient ${randomChoice("computer virus","piece of malware","computer worm")} that ${randomChoice("aces the Turing Test","satisfies all criteria for life")} and that is so thoroughly distributed across ${randomChoice("the net","the web","modern tech")} that you can open up a terminal on any ${randomChoice("machine","server","computer")} and ${randomChoice("hire it to hack into systems it has infected","try to convince it hack into systems it has infected", "discuss the terms of a hacking contract you would like it to complete")}.`;
 			break;
-			// Street Judge sidekick, went freelance when his partner died/turned corpo/got disassembled
 		case 4:
 			let fname = "";
 			if (gend[3] == "woman") {
 				fname = randomChoice("Jen","Barb","Meg","Fran");
 			}
 				else {fname = randomChoice("Paul","Hank","Gus","Jack")}
-			return `${fname+randomChoice("soft","tium")} ${Math.floor(Math.random()*9)+1}.${Math.floor(Math.random()*10)}, a ${gend[3]}-computer hybrid who exists simultaneously in meatspace and cyberspace and whose ${randomChoice("simple","very","mere")} existence ${randomChoice("challenges","destroys","complicates")} conventional definitions of life.`; 
+			return `${fname+randomChoice("soft","tium")} ${Math.floor(Math.random()*9)+1}.${Math.floor(Math.random()*10)}, a ${gend[3]}-computer hybrid who exists simultaneously in meatspace and cyberspace and whose ${randomChoice("simple","very","mere")} existence ${randomChoice("challenges","destroys","complicates")} conventional ${randomChoice("definitions","conceptions")} of ${randomChoice("life","consciousness","humanity")}.`; 
 			break;
-			// Film Noir detective
 		case 5:
-			return ``;
+			return `${randomChoice("A","Ja","Cha","Gra","Ta","Ra","Bra")+randomChoice("i","y")+"d"+randomChoice("e","e","a","i")+"n "+randomChoice("Washington","Pierce","Franklin","Taylor Thomas","Carter")}, a ${randomChoice("too-cool-for-school","sarky","smack-talking","mannerless","forum-trolling")} ${randomChoice("skate","hover","surf","rocket")}boarding ${randomChoice("bill","trill","tetr","yott","picoll","megall","quint")+"ennial"} who always wears his signature ${randomChoice("grey","black","neon","opalescent","silver")} ${randomChoice("hoodie","duster","baseball cap","fedora")} and ${randomChoice("sneakers","tennis shoes")} and who is unusual among ${randomChoice("criminal","blackhat")} hackers in that he loves ${randomChoice("to get his hands dirty","fieldwork")} and insists on joining the heist strike team to 3D-print improvised ${randomChoice("tools","weapons","traps for security")}.`;
 			break;
-			// watchdogs hoodied saboteur, unusually active in fieldwork for a hacker/decker and digitally printing tools to 
 		case 6:
 			return ``;
 			break;
-			// a collective 
+			// a Film Noir detective, a search engine / shadow broker, or a Street Judge sidekick modeled on Microchip?
 		default: return `No hacker could be found.`;
 	}
 }
@@ -755,7 +751,7 @@ function cyberGifted() {
 
 
 
-// Mr. ${randomChoice("Kring","Slay","Kris","Nicolas","Snow","List","Cole","Clause","Garland")}, an animatronic mall Santa who ${randomChoice("unexpectedly ","mysteriously ","")}gained ${randomChoice("sentience","autonomy")}, ${randomChoice("went on a killing spree, ","eviscerated mall security, ","")}then traded his red coat for ${randomChoice("purple pinstripes","a purple suit","a white suit","a tailored suit","a suit and cane")} and ${randomChoice("worked his way up to become","eventually became")} the most ${randomChoice("feared","dangerous")} and respected crime ${randomChoice("boss","kingpin")} of ${randomChoice("the Castro 2.0", "the Voight-Ashbury district", "Nob Crater","Russiatown","the Emission district","Sector 17","The Savescumm Sector")}.
+// Mr. ${randomChoice("Kring","Slay","Kris","Nicolas","Snow","List","Cole","Clause","Garland")}, an animatronic mall Santa who ${randomChoice("unexpectedly ","mysteriously ","")}gained ${randomChoice("sentience","autonomy")}, ${randomChoice("went on a killing spree, ","eviscerated mall security, ","")}then traded his red coat for ${randomChoice("purple pinstripes","a purple suit","a white suit","a tailored suit","a suit and cane","a three-piece suit")} and ${randomChoice("worked his way up to become","eventually became")} the most ${randomChoice("feared","dangerous")} and respected crime ${randomChoice("boss","kingpin")} of ${randomChoice("the Castro 2.0", "the Voight-Ashbury district", "Nob Crater","Russiatown","the Emission district","Sector 17","The Savescumm Sector")}.
 
 // mandatory: burglar, hacker, gifted
 // good adds: brains, lowlife/scav/hood, corpo
@@ -776,21 +772,8 @@ function cyberGifted() {
 // The above two can both be The Intellect.  Jumper is like Dax, lived for ages.
 // Modular distributed brain?
 // sushi/ramen/gagh stall
-  
-
-	//Melvin/Gerald/Percy onetime desk jockey who became an action antihero by taking an immersive VR holovacation in TITLE, and then he believes he never left and that he is still in the game... and found the experience so intoxicating that he refuses to acccept that he was ever unplugged.
-
-	//Onetime deskjockey office slave Melvin, who three years ago took on the role of indestructible criminal antihero Jack Slater in the hit immersive VR game/sensation/experience Kung Fu Cyberheist, and apparently found the experience so intoxicating that he refuses to accept that he ever logged out.
-
 
 // The Search Engine for Shadow broker
-// Heynong, Bugmane
-
-//matric like upload of skills way past safe limit
-
-//a ghost... dead consciousness in a flickering electronic form.  Great infiltrator/burglar!
-
-// Anonymous hacker: Guy, Incognito, Anonym, Nameless, Faceless, Nondescript, Impersonal
 
 
 

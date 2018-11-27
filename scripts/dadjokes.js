@@ -58,7 +58,7 @@ const adverbItem = [
 	[`a family that just finished Thanksgiving dinner`, joke`full`+`y`],
 	[`a grizzly`, joke`bear`+`ly`],
 	[`undercooked meat`, joke`rare`+`ly`],
-	[`any cop who isn't the police chief`, joke`not chief`+`ly`],
+	[`a cop who isn't the police chief`, joke`not chief`+`ly`],
 	[`a rabbit`, `in-`+joke`hare`+`-ently`],
 	[`the Loch Ness Monster`, joke`Nessie`+`sarily`],
 	[`a submarine engineer named Stan`, joke`Sub Stan`+`-tially`],

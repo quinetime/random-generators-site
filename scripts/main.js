@@ -90,7 +90,7 @@ function makeBully() {
 
 //ILLNESS
 
-
+const getNodes = str => new DOMParser().parseFromString(str, 'text/html').body.childNodes;
 
 
 const BodyPart = ["heart", "lung", "kidney", "bone", "liver", "brain", "eye jelly", "spine", "muscle", "nervous system", "face", "tongue", "nerve", "nose", "throat", "pubic", "gluteus", "foot", "shoulder", "ankle", "lymph node", "respiratory", "hormone", "skin", "white blood cell", "vein", "frontal lobe", "sinus", "hairline", "ear canal", "tooth", "bone marrow", "retina", "intestinal", "hemoglobin", "genital", "hip", "urethral", "deep vein", "extremity", "underarm", "knee", "glandular", "bowel", "stomach", "septum", "follicle", "oral", "aural", "cardiac", "renal", "amygdala", "dermal", "glucose", "serotonin", "neuron", "neural", "mental", "navel", "tricep", "pectoral", "red blood cell", "macular", "retinal", "emotion", "cognitive", "mitochondrial", "thumb", "brainstem", "spine", "bipolar", "gum", "lip", "forebrain", "forearm", "occipital lobe", "temporal lobe", "aortal", "large intestine", "small intestine", "pyloric sphincter", "joint", "adrenal", "internal", "chest cavity", "tonsil", "vocal cord", "adenoid", "nasopharynx", "full body", "head", "cell wall", "organ", "nipple", "facial", "gene", "DNA", "chromosomal", "epithelial", "bladder", "gall bladder", "platelet", "pulmonary", "leg", "spleen", "windpipe", "kneecap", "elbow", "jowl", "tailbone", "gut", "fatty tissue", "muscle", "limb", "reproductive system", "skeletal", "skull", "crotch", "lymphatic", "upper palate", "toe", "belly", "memory", "cognitive", "esophageal", "ribcage", "colon", "urinary tract", "mucous membrane", "gastric", "gastrointestinal", "immune system", "duodenum", "oral cavity", "epiglottal", "jaw", "jawbone", "uvula", "nasolabial", "upper body", "lower body", "midsection", "groin", "diaphragm", "pituitary", "eardrum", "stomach lining", "rectal", "tearduct", "eyelid", "scalp", "abdominal", "cranial", "vascular", "pancreatic", "smooth muscle", "canker", "hamstring", "inner thigh", "inner ear", "subcutaneous"];
@@ -111,6 +111,8 @@ var randDisorderNum;
 var randPrefix;
 var randPrefixNum;
 var diseaseName;
+
+let firstSickness = true;
 
 
 function createNewAilment() {
@@ -138,19 +140,32 @@ function createNewAilment() {
 
 function threeAilments() {
     createNewAilment();
-    let str = diseaseName;
+    let str = `<h3 class="illnesses"><span class="sick">${diseaseName},</span>`;
     createNewAilment();
-    str += ", " + diseaseName;
+    str += `<span class="sick"> ${diseaseName},</span>`;
     createNewAilment();
-    str += ", and " + diseaseName;
-    var h = document.createElement("H3");
-    var t = document.createTextNode(str);
-    h.appendChild(t);
-    h.classList.add("illnesses");
-    document.getElementById("theList").appendChild(h);
+    str += `<span class="sick"> and ${diseaseName}</span></h3>`;
 
-    setTimeout(function() {
-        h.classList.add("illnessesShow");
-    }, 10);
+    let illnessNode = getNodes(str)[0];
+
+    document.getElementById("theList").appendChild(illnessNode)
+
+    if (firstSickness) {
+        illnessNode.childNodes[0].classList.add("illnessesShow");
+        illnessNode.childNodes[1].classList.add("illnessesShow");
+        illnessNode.childNodes[2].classList.add("illnessesShow");
+        firstSickness = false;
+    } else {
+        setTimeout(function() {
+            illnessNode.childNodes[0].classList.add("illnessesShow");
+        }, 10);
+        setTimeout(function() {
+            illnessNode.childNodes[1].classList.add("illnessesShow");
+        }, 1500);
+        setTimeout(function() {
+            illnessNode.childNodes[2].classList.add("illnessesShow");
+        }, 3000);
+    }
 }
+
 

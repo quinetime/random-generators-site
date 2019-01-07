@@ -1,7 +1,5 @@
 //DADJOKES
 
-const getNodes = str => new DOMParser().parseFromString(str, 'text/html').body.childNodes;
-
 const joke = str => `<strong class="haha">${str}</strong>`;
 
 const adverbItem = [

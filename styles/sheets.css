@@ -68,22 +68,15 @@ h4 {
 	margin: 100px 40px;
 }
 
-.illnesses{
+.sick{
   margin: 0;
-  /*padding: 0; */
   opacity: 0;
   overflow: hidden;
-  transition: max-height 1s ease-out, opacity 0.7s ease-out;
-  height: 0;
-  max-height: 0;
+  transition: opacity 1s ease-out;
 }
 
 .illnessesShow {
-  margin: 0.5em;
-  padding-bottom: 0.4em;
   opacity: 1;
-  height: auto;
-  max-height: 5em;
 }
 
 .cyberperson {

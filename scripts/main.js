@@ -146,6 +146,11 @@ function threeAilments() {
     var h = document.createElement("H3");
     var t = document.createTextNode(str);
     h.appendChild(t);
+    h.classList.add("illnesses");
     document.getElementById("theList").appendChild(h);
+
+    setTimeout(function() {
+        h.classList.add("illnessesShow");
+    }, 10);
 }
 

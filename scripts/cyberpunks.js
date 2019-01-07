@@ -12,7 +12,7 @@ function nextCyberRole() {
 	let randonum = Math.floor(Math.random()*cyberRoles.length);
 	let newRole = cyberRoles.splice(randonum, 1)[0];
 	lastRoles.push(newRole);
-	if (lastRoles.length>=6) {
+	if (lastRoles.length>=cybersPerTeam) {
 		let oldRole = lastRoles.shift();
 		cyberRoles.push(oldRole);
 	}
@@ -110,7 +110,17 @@ function makeCyberpunk() {
     cyberPersonNode.appendChild(cyberPersonText);
     cyberPersonNode.classList.add("cyberperson");
     cyberRoleNode.appendChild(cyberPersonNode);
+
+    var cyberPersonWrapper = document.createElement("div");
+    cyberPersonWrapper.classList.add("cyberwrapper");
+    cyberPersonWrapper.appendChild(cyberRoleNode);
+    //cyberPersonWrapper.appendChild(cyberPersonNode);
+
     document.getElementById("cyberList").appendChild(cyberRoleNode);
+
+    setTimeout(function() {
+     	cyberRoleNode.classList.add("cybershow");
+  	}, 10);
 
     cybersHired++;
     let outcome = "";
@@ -163,9 +173,12 @@ function cyberReset() {
 	setTextContent(document.getElementById("cyberOutcome"),"");
 
 	let listNode = document.getElementById("cyberList");
+
+
 	while (listNode.firstChild) {
-    	listNode.removeChild(listNode.firstChild);
+		listNode.removeChild(listNode.lastChild);
 	}
+
 
 	buildCyberIntro();
 	location.hash = "#cyberpunks";

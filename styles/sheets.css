@@ -73,7 +73,7 @@ h4 {
   /*padding: 0; */
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.8s ease-out, opacity 0.4s ease-out;
+  transition: max-height 1s ease-out, opacity 0.7s ease-out;
   height: 0;
   max-height: 0;
 }
@@ -111,6 +111,20 @@ h4 {
   margin: 0.4em;
 }
 
+.fadetransition {
+  transition: opacity 300ms ease-out;
+}
+
+.joketransition {
+  transition: opacity 500ms ease-out, max-height 0.4s ease-out;
+  max-height: 2em;
+  margin-top: 0;
+}
+
+.fadedout {
+  opacity: 0;
+}
+
 #cyberpunks {
 	margin-bottom: 30px;
 }
@@ -131,7 +145,11 @@ h4 {
 
 
 .hiddenzinger {
-	display: none;
+  transition: opacity 0ms, max-height 0.2s ease-out;
+	height: auto;
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
 }
 
 .haha {

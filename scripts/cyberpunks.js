@@ -161,9 +161,22 @@ function cyberHeistOutcome() {
 			break;
 		default:
 	}
-	setTextContent(document.getElementById("cyberOutcome"),outcome);
-	document.getElementById("cyberBtn").onclick = cyberReset;
-	document.getElementById("cyberBtn").childNodes[0].nodeValue = "RESTART";
+
+	if (!document.getElementById("cyberOutcome").classList.contains("fadedout")) {
+		document.getElementById("cyberOutcome").classList.add("fadedout")
+	}
+
+	document.getElementById("cyberBtn").disabled=true;
+
+	setTimeout(function() {
+ 		setTextContent(document.getElementById("cyberOutcome"),outcome);
+      	document.getElementById("cyberOutcome").classList.remove("fadedout");
+  		document.getElementById("cyberBtn").onclick = cyberReset;
+		document.getElementById("cyberBtn").childNodes[0].nodeValue = "RESTART";
+		document.getElementById("cyberBtn").disabled=false;
+   	}, 300);
+
+
 }
 
 function cyberReset() {
@@ -174,14 +187,12 @@ function cyberReset() {
 
 	let listNode = document.getElementById("cyberList");
 
-
 	while (listNode.firstChild) {
 		listNode.removeChild(listNode.lastChild);
 	}
 
-
-	buildCyberIntro();
 	location.hash = "#cyberpunks";
+	buildCyberIntro();
 }
 
 
@@ -831,11 +842,18 @@ function buildCyberIntro() {
 	let intro4 = cyberOverhear(party,job);
 	let intro5 = `${randomChoice("This is going to be a perfect heist.","Now is the time to strike.")} You just need to ${randomChoice("assemble","recruit")} your team. Six experienced criminals should ${randomChoice("be the right number.","do it.")}`;
 
-	setTextContent(document.getElementById("cyberIntroPar1"), intro1);
-	setTextContent(document.getElementById("cyberIntroPar2"), intro2);
-	setTextContent(document.getElementById("cyberIntroPar3"), intro3);
-	setTextContent(document.getElementById("cyberIntroPar4"), intro4);
-	setTextContent(document.getElementById("cyberIntroPar5"), intro5);
+	if (!document.getElementById("cyberIntro").classList.contains("fadedout")) {
+		document.getElementById("cyberIntro").classList.add("fadedout")
+	}
+
+	setTimeout(function() {
+ 		setTextContent(document.getElementById("cyberIntroPar1"), intro1);
+		setTextContent(document.getElementById("cyberIntroPar2"), intro2);
+		setTextContent(document.getElementById("cyberIntroPar3"), intro3);
+		setTextContent(document.getElementById("cyberIntroPar4"), intro4);
+		setTextContent(document.getElementById("cyberIntroPar5"), intro5);
+      	document.getElementById("cyberIntro").classList.remove("fadedout");
+   	}, 450);
 } 
 
 function cyberIntroParty(party, alcohol,divebar) {

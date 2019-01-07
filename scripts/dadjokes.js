@@ -170,6 +170,8 @@ const adjItem = [
 var adverbTemp = [];
 var adjTemp = [];
 
+let firstjoke = 1;
+
 
 function writeJokeOpening() {
 
@@ -214,12 +216,24 @@ function writeJokeOpening() {
 	setTextContent(document.getElementById("jokeBtn"), kidresponse1);
 	document.getElementById("jokeBtn").onclick = revealJokeZinger;
 
-	theJoke.removeChild(theJoke.lastChild); // remove existing joke answer
-	let zingertext = `<p id="jokeZinger" class="hiddenzinger">I don't know, but I bet it's ${currentAdv[1]} ${currentAdj[1]}!</p>`;
-	theJoke.appendChild(getNodes(zingertext)[0]);
+	if (!firstjoke) {
+		document.getElementById("jokeZinger").classList.toggle("hiddenzinger");
+		setTimeout(function() {
+			theJoke.removeChild(theJoke.lastChild);
+			let zingertext = `<p id="jokeZinger" class="hiddenzinger joketransition">I don't know, but I bet it's ${currentAdv[1]} ${currentAdj[1]}!</p>`;
+			theJoke.appendChild(getNodes(zingertext)[0]);
+			adjTemp.splice(randoAdj, 1);
+			adverbTemp.splice(randoAdv, 1);  // take used-up jokes out of array
+		}, 300);
+	} else {
+		theJoke.removeChild(theJoke.lastChild); // remove existing joke answer
+		let zingertext = `<p id="jokeZinger" class="hiddenzinger joketransition">I don't know, but I bet it's ${currentAdv[1]} ${currentAdj[1]}!</p>`;
+		theJoke.appendChild(getNodes(zingertext)[0]);
+		adjTemp.splice(randoAdj, 1);
+		adverbTemp.splice(randoAdv, 1);  // take used-up jokes out of array
+	}
 
-	adjTemp.splice(randoAdj, 1);
-	adverbTemp.splice(randoAdv, 1);  // take used-up jokes out of array
+
 }
 
 
@@ -247,6 +261,8 @@ function revealJokeZinger() {
 
 	setTextContent(document.getElementById("jokeBtn"), kidresponse2);
 	document.getElementById("jokeBtn").onclick = writeJokeOpening;
+
+	if (firstjoke) {firstjoke = 0}
 
 	let hahas = document.querySelectorAll(".haha");
 

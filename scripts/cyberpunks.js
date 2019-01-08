@@ -138,6 +138,7 @@ function makeCyberpunk() {
     	document.getElementById("cyberBtn").childNodes[0].nodeValue = gotime;
     }
     setTextContent(document.getElementById("cyberOutcome"),outcome);
+    document.getElementById("cyberOutcome").classList.remove("fadedout");
 }
 
 function cyberHeistOutcome() {
@@ -182,7 +183,9 @@ function cyberReset() {
 	cybersHired = 0;
 	document.getElementById("cyberBtn").onclick = makeCyberpunk;
 	document.getElementById("cyberBtn").childNodes[0].nodeValue = "Enlist Cybercriminal";
-	setTextContent(document.getElementById("cyberOutcome"),"");
+	setTextContent(document.getElementById("cyberOutcome"),".");
+	document.getElementById("cyberOutcome").classList.add("fadedout");
+	
 
 	let listNode = document.getElementById("cyberList");
 
@@ -653,7 +656,7 @@ function cyberStriker() {
 			else {
 				fname = randomChoice("Gabriela","Michaela","Raffaela");
 			}
-			return `${fname} ${randomChoice("Lopez","Lup","Loop","Lupez","La Paz","Lopes","Looper")}, a ${randomChoice("star","decorated")} undercover agent for the S/F/PD who ${randomChoice(`was so deeply embedded in ${gend[0]} role`,`so completely bifurcated ${gend[0]} consciousness between ${gend[0]} cop role and ${gend[0]} criminal role`)} that, while occupying ${gend[0]} criminal ${("alterego","identity")}, ${gend[2]} discovered evidence of being an undercover agent and then used ${randomChoice("a data scalpel","a precision mem-wipe","targeted neural bleach")} to ${randomChoce("purge","excise")} all ${gend[0]} memories of being a police${gend[3]}.`
+			return `${fname} ${randomChoice("Lopez","Lup","Loop","Lupez","La Paz","Lopes","Looper")}, a ${randomChoice("star","decorated")} undercover agent for the S/F/PD who ${randomChoice(`was so deeply embedded in ${gend[0]} role`,`so completely bifurcated ${gend[0]} consciousness between ${gend[0]} cop role and ${gend[0]} criminal role`)} that, while occupying ${gend[0]} criminal ${("alterego","identity")}, ${gend[2]} discovered evidence of being an undercover agent and then used ${randomChoice("a data scalpel","a precision mem-wipe","targeted neural bleach")} to ${randomChoice("purge","excise")} all ${gend[0]} memories of being a police${gend[3]}.`
 			break;
 		default: return `No strike team leader could be found.`;
 	}
@@ -705,7 +708,7 @@ function cyberHacker() {
 	let gend = randGender();
 	switch (switchcase) {
 		case 1:
-			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("code dev","tech guru","technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} of ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
+			return `${randomChoice("Chloe","Dennis")} ${randomChoice("","O'")+randomChoice("Dennis","Jason","Lizabeth","Jack","Gordon","Phillip","Steven")+randomChoice("","ry")}, ${randomChoice("acerbic","socially maladroit","cranky","graceless")} but ${randomChoice("lovable","quick-witted","charming","jocular")} ${randomChoice("code dev","tech guru","technohacker","and chubby technohacker")} who worked for ${randomChoice("years","ten years","a decade")} as ${randomChoice("chief","head","lead")} ${randomChoice("systems administrator","software engineer")} of ${randomChoice("the U.S. Lottery Commission","the Oceanian Counter-Terrorism Unit","a dinosaur cloning facility","the Environmental Enforcement Agency")} but eventually ${randomChoice("succumbed","gave in")} to ${randomChoice("temptation","the allure of money")} and ${randomChoice("sold off","went on the lam with")} ${randomChoice("dozens","hundreds")} of ${randomChoice("decrypted secrets","corporate passkeys","stolen DNA samples","backdoor exploits")}.`;
 			break;
 		case 2:
 			let coname = randomChoice("R","M","L","T")+vowel("y")+"c"+randomChoice("","","h")+"o";
@@ -852,7 +855,7 @@ function buildCyberIntro() {
 		setTextContent(document.getElementById("cyberIntroPar4"), intro4);
 		setTextContent(document.getElementById("cyberIntroPar5"), intro5);
       	document.getElementById("cyberIntro").classList.remove("fadedout");
-   	}, 450);
+   	}, 320);
 } 
 
 function cyberIntroParty(party, alcohol,divebar) {

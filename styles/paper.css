@@ -1397,7 +1397,7 @@ select.paper-btn[disabled],
 select[type=button][disabled],
 textarea.paper-btn[disabled],
 textarea[type=button][disabled] {
-  cursor: not-allowed;
+  cursor: none;
   opacity: .5
 }
 a {

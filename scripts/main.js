@@ -139,6 +139,7 @@ function createNewAilment() {
 
 
 function threeAilments() {
+    document.getElementById("illnessButton").disabled = true;
     createNewAilment();
     let str = `<h3 class="illnesses"><span class="sick">${diseaseName},</span>`;
     createNewAilment();
@@ -151,7 +152,6 @@ function threeAilments() {
     document.getElementById("theList").appendChild(illnessNode)
 
     if (firstSickness) {
-        document.getElementById("illnessButton").childNodes[0].nodeValue = "Anything Else?";
         setTimeout(function() {
             document.getElementById("badnews").classList.add("badnewsShow");
         }, 1);
@@ -165,6 +165,10 @@ function threeAilments() {
         setTimeout(function() {
             illnessNode.childNodes[2].classList.add("sickShow");
         }, 3400);
+        setTimeout(function() {
+            document.getElementById("illnessButton").childNodes[0].nodeValue = "Anything Else?";
+            document.getElementById("illnessButton").disabled = false;
+        }, 4600);
         firstSickness = false;
     } else {
         setTimeout(function() {
@@ -177,6 +181,9 @@ function threeAilments() {
         setTimeout(function() {
             illnessNode.childNodes[2].classList.add("sickShow");
         }, 2400);
+        setTimeout(function() {
+            document.getElementById("illnessButton").disabled = false;
+        }, 3600);
     }
 }
 

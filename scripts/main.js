@@ -151,20 +151,32 @@ function threeAilments() {
     document.getElementById("theList").appendChild(illnessNode)
 
     if (firstSickness) {
-        illnessNode.childNodes[0].classList.add("illnessesShow");
-        illnessNode.childNodes[1].classList.add("illnessesShow");
-        illnessNode.childNodes[2].classList.add("illnessesShow");
+        document.getElementById("illnessButton").childNodes[0].nodeValue = "Anything Else?";
+        setTimeout(function() {
+            document.getElementById("badnews").classList.add("badnewsShow");
+        }, 10);
+        setTimeout(function() {
+            illnessNode.classList.add("illnessesShow");
+            illnessNode.childNodes[0].classList.add("sickShow");
+        }, 1200);
+        setTimeout(function() {
+            illnessNode.childNodes[1].classList.add("sickShow");
+        }, 2400);
+        setTimeout(function() {
+            illnessNode.childNodes[2].classList.add("sickShow");
+        }, 3600);
         firstSickness = false;
     } else {
         setTimeout(function() {
-            illnessNode.childNodes[0].classList.add("illnessesShow");
+            illnessNode.classList.add("illnessesShow");
+            illnessNode.childNodes[0].classList.add("sickShow");
         }, 10);
         setTimeout(function() {
-            illnessNode.childNodes[1].classList.add("illnessesShow");
-        }, 1500);
+            illnessNode.childNodes[1].classList.add("sickShow");
+        }, 1200);
         setTimeout(function() {
-            illnessNode.childNodes[2].classList.add("illnessesShow");
-        }, 3000);
+            illnessNode.childNodes[2].classList.add("sickShow");
+        }, 2400);
     }
 }
 

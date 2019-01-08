@@ -8,22 +8,13 @@
 	<link href="styles/sheets.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
 </head>
-<body onload="makeBully(); threeAilments(); buildCyberIntro(); writeJokeOpening();">
-	<!-- <header><h1 class="border border-shadow">Random Generators</h1></header>	 -->
+<body onload="makeBully(); buildCyberIntro(); writeJokeOpening();">
 
 	<nav class="border fixed split-nav">
 		<div class="nav-brand">
 			<h1>Random Generators</h1>
 		</div>
 		<div class="collapsible">
-<!-- 			<input id="collapsible1" type="checkbox" name="collapsible1">
-			<button>
-				<label for="collapsible1">
-					<div class="bar1"></div>
-					<div class="bar2"></div>
-					<div class="bar3"></div>
-				</label>
-			</button> -->
 			<div class="collapsible-body">
 				<ul class="inline">
 					<li><a href="#ailments">A<span class="shorten">ilments</span></a></li>
@@ -39,9 +30,10 @@
 
 		<div id="illnessSheet" class="sheet padding-left-large padding-right-large">
 			<h2 id="ailments">Random Ailment Generator</h2>
-			<p>Please, sit down.  I have good news and bad news.  The good news is that you'll live.  The bad news is that you've been diagnosed with:</p>
+			<p>Please, sit down.  I have good news and bad news.  The good news is that you'll live.</p>
+			<p id="badnews" class="badnews">The bad news is that you've been diagnosed with:</p>
 			<ul id="theList"> </ul>
-			<button id="illnessButton" onclick="threeAilments()">Anything else?</button>
+			<button id="illnessButton" onclick="threeAilments()">What's the bad news?</button>
 		</div>
 
 

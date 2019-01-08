@@ -154,17 +154,17 @@ function threeAilments() {
         document.getElementById("illnessButton").childNodes[0].nodeValue = "Anything Else?";
         setTimeout(function() {
             document.getElementById("badnews").classList.add("badnewsShow");
-        }, 10);
+        }, 1);
         setTimeout(function() {
             illnessNode.classList.add("illnessesShow");
             illnessNode.childNodes[0].classList.add("sickShow");
-        }, 1200);
+        }, 1000);
         setTimeout(function() {
             illnessNode.childNodes[1].classList.add("sickShow");
-        }, 2400);
+        }, 2200);
         setTimeout(function() {
             illnessNode.childNodes[2].classList.add("sickShow");
-        }, 3600);
+        }, 3400);
         firstSickness = false;
     } else {
         setTimeout(function() {

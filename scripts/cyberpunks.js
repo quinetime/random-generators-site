@@ -114,7 +114,6 @@ function makeCyberpunk() {
     var cyberPersonWrapper = document.createElement("div");
     cyberPersonWrapper.classList.add("cyberwrapper");
     cyberPersonWrapper.appendChild(cyberRoleNode);
-    //cyberPersonWrapper.appendChild(cyberPersonNode);
 
     document.getElementById("cyberList").appendChild(cyberRoleNode);
 

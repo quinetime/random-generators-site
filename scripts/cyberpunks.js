@@ -141,6 +141,8 @@ function makeCyberpunk() {
     document.getElementById("cyberOutcome").classList.remove("fadedout");
 }
 
+
+
 function cyberHeistOutcome() {
 	let outcome = "";
 	switch (randCyberOutcome()) {
@@ -183,7 +185,7 @@ function cyberReset() {
 	cybersHired = 0;
 	document.getElementById("cyberBtn").onclick = makeCyberpunk;
 	document.getElementById("cyberBtn").childNodes[0].nodeValue = "Enlist Cybercriminal";
-	setTextContent(document.getElementById("cyberOutcome"),".");
+	setTextContent(document.getElementById("cyberOutcome"),`Six experienced criminals should ${randomChoice("be the right number.","do it.")}`);
 	document.getElementById("cyberOutcome").classList.add("fadedout");
 	
 
@@ -842,7 +844,7 @@ function buildCyberIntro() {
 	}
 
 	let intro4 = cyberOverhear(party,job);
-	let intro5 = `${randomChoice("This is going to be a perfect heist.","Now is the time to strike.")} You just need to ${randomChoice("assemble","recruit")} your team. Six experienced criminals should ${randomChoice("be the right number.","do it.")}`;
+	let intro5 = `${randomChoice("This is going to be a perfect heist.","Now is the time to strike.")} You just need to ${randomChoice("assemble","recruit")} your team.`;
 
 	if (!document.getElementById("cyberIntro").classList.contains("fadedout")) {
 		document.getElementById("cyberIntro").classList.add("fadedout")
@@ -855,6 +857,7 @@ function buildCyberIntro() {
 		setTextContent(document.getElementById("cyberIntroPar4"), intro4);
 		setTextContent(document.getElementById("cyberIntroPar5"), intro5);
       	document.getElementById("cyberIntro").classList.remove("fadedout");
+      	document.getElementById("cyberOutcome").classList.remove("fadedout");
    	}, 320);
 } 
 

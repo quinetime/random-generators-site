@@ -1,4 +1,6 @@
 //BULLY
+// to do: use animate.css, zoomOut one bully and BounceIn the next.
+// that is: remove bouncein and give zoomout class, then on animationend change text and make sure resizing happens accordingly, then after a beat, remove zoomout and give bouncein class.
 
 const Title = ["Tough", "Squat", "Big", "Lumpy", "Meaty", "Burly", "Scary", "Beefy", "Fat", "Pudgy", "Shaggy", "Lantern-jawed", "Scruffy", "Gruff", "Ugly", "Rough", "Savage", "Surly", "Dimwit", "Sleazy", "Mad", "Angry", "Blubbery", "Illiterate", "Semi-literate", "Pimply", "Hairy", "Heavy", "Delinquent", "Cruel", "Creepy", "Gross", "Monkey Wrench", "Well-fed", "Ill-kempt", "Hamfisted", "Open-mouth", "Pastepot", "Butcher's boy", "Go-nowhere", "Post-pubescent", "Furious", "Sweaty", "Lumpen", "Gangly", "Oafish", "Gassy", "Paste-eating", "Glue-huffing", "Abusive", "Sloppy"];
 
@@ -21,6 +23,8 @@ const Gangname = ["Gang", "Orphans", "Newsies", "Jets", "Eagles", "Weasels", "Ti
  let TempJob = Job.slice();
  let TempGangadjective = Gangadjective.slice();
  let TempGangname = Gangname.slice();
+
+ let firstBully = true;
   
 function makeBully() {
 
@@ -62,30 +66,68 @@ function makeBully() {
     var randGangname = TempGangname[randGangnameNum];
     TempGangname.splice(randGangnameNum, 1);
 
+    var bullyElem = document.getElementById("bullyResult");
 
-    switch (Math.floor(Math.random() * 4)) {
-        case 0: 
-            document.getElementById("bullyResult").innerHTML = randTitle + " " + randFirstname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-        TempTitle.splice(randTitleNum, 1);
-        TempFirstname.splice(randFirstnameNum, 1);
-        TempLastname.splice(randLastnameNum, 1);
-            break;
-        case 1:
-            document.getElementById("bullyResult").innerHTML = randTitle + " " + randFirstname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-        TempTitle.splice(randTitleNum, 1);
-        TempFirstname.splice(randFirstnameNum, 1);
-            break;
-        case 2:
-            document.getElementById("bullyResult").innerHTML = randNickname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-        TempNickname.splice(randNicknameNum, 1);
-        TempLastname.splice(randLastnameNum, 1);
-            break;
-        case 3:
-            document.getElementById("bullyResult").innerHTML = randFirstname + " \"" + randNickname + "\" " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-        TempFirstname.splice(randFirstnameNum, 1);
-        TempNickname.splice(randNicknameNum, 1);
-        TempLastname.splice(randLastnameNum, 1);
-    }
+
+    bullyElem.classList.add("zoomOut");
+    bullyBtn.disabled = true;
+
+    setTimeout(function() {
+        bullyElem.classList.remove("zoomOut") 
+        switch (Math.floor(Math.random() * 4)) {
+            case 0: 
+                bullyElem.innerText = randTitle + " " + randFirstname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                TempTitle.splice(randTitleNum, 1);
+                TempFirstname.splice(randFirstnameNum, 1);
+                TempLastname.splice(randLastnameNum, 1);
+                break;
+            case 1:
+                bullyElem.innerText = randTitle + " " + randFirstname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                TempTitle.splice(randTitleNum, 1);
+                TempFirstname.splice(randFirstnameNum, 1);
+                break;
+            case 2:
+                bullyElem.innerText = randNickname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                TempNickname.splice(randNicknameNum, 1);
+                TempLastname.splice(randLastnameNum, 1);
+                break;
+            case 3:
+                bullyElem.innerText = `${randFirstname} "${randNickname}" ${randLastname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
+                TempFirstname.splice(randFirstnameNum, 1);
+                TempNickname.splice(randNicknameNum, 1);
+                TempLastname.splice(randLastnameNum, 1);
+            }
+        bullyElem.classList.add("bounceIn");
+        bullyBtn.disabled = false;
+    }, 300);
+
+
+    // switch (Math.floor(Math.random() * 4)) {
+    //     case 0: 
+    //         bullyElem.innerText = randTitle + " " + randFirstname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+    //         TempTitle.splice(randTitleNum, 1);
+    //         TempFirstname.splice(randFirstnameNum, 1);
+    //         TempLastname.splice(randLastnameNum, 1);
+    //         break;
+    //     case 1:
+    //         bullyElem.innerText = randTitle + " " + randFirstname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+    //         TempTitle.splice(randTitleNum, 1);
+    //         TempFirstname.splice(randFirstnameNum, 1);
+    //         break;
+    //     case 2:
+    //         bullyElem.innerText = randNickname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+    //         TempNickname.splice(randNicknameNum, 1);
+    //         TempLastname.splice(randLastnameNum, 1);
+    //         break;
+    //     case 3:
+    //         bullyElem.innerText = `${randFirstname} "${randNickname}" ${randLastname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
+    //         TempFirstname.splice(randFirstnameNum, 1);
+    //         TempNickname.splice(randNicknameNum, 1);
+    //         TempLastname.splice(randLastnameNum, 1);
+    // }
+
+
+    if (firstBully) {firstBully = false}
 }
 
 //ILLNESS
@@ -114,7 +156,6 @@ var diseaseName;
 
 let firstSickness = true;
 
-
 function createNewAilment() {
     if (TempBodyPart.length == 0) {TempBodyPart = BodyPart.slice(); }
     randBodyPartNum = Math.floor(Math.random() * TempBodyPart.length);
@@ -137,7 +178,6 @@ function createNewAilment() {
     }
 }
 
-
 function threeAilments() {
     document.getElementById("illnessButton").disabled = true;
     createNewAilment();
@@ -154,7 +194,7 @@ function threeAilments() {
     if (firstSickness) {
         setTimeout(function() {
             document.getElementById("badnews").classList.add("badnewsShow");
-        }, 1);
+        }, 50);
         setTimeout(function() {
             illnessNode.classList.add("illnessesShow");
             illnessNode.childNodes[0].classList.add("sickShow");
@@ -174,7 +214,7 @@ function threeAilments() {
         setTimeout(function() {
             illnessNode.classList.add("illnessesShow");
             illnessNode.childNodes[0].classList.add("sickShow");
-        }, 10);
+        }, 50);
         setTimeout(function() {
             illnessNode.childNodes[1].classList.add("sickShow");
         }, 1200);
@@ -186,5 +226,3 @@ function threeAilments() {
         }, 3600);
     }
 }
-
-

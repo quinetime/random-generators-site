@@ -76,18 +76,18 @@ function makeBully() {
         bullyElem.classList.remove("zoomOut") 
         switch (Math.floor(Math.random() * 4)) {
             case 0: 
-                bullyElem.innerText = randTitle + " " + randFirstname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                bullyElem.innerText = `${randTitle} ${randFirstname} ${randLastname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
                 TempTitle.splice(randTitleNum, 1);
                 TempFirstname.splice(randFirstnameNum, 1);
                 TempLastname.splice(randLastnameNum, 1);
                 break;
             case 1:
-                bullyElem.innerText = randTitle + " " + randFirstname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                bullyElem.innerText = `${randTitle} ${randFirstname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
                 TempTitle.splice(randTitleNum, 1);
                 TempFirstname.splice(randFirstnameNum, 1);
                 break;
             case 2:
-                bullyElem.innerText = randNickname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
+                bullyElem.innerText = `${randNickname} ${randLastname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
                 TempNickname.splice(randNicknameNum, 1);
                 TempLastname.splice(randLastnameNum, 1);
                 break;
@@ -97,37 +97,13 @@ function makeBully() {
                 TempNickname.splice(randNicknameNum, 1);
                 TempLastname.splice(randLastnameNum, 1);
             }
-        bullyElem.classList.add("bounceIn");
+
+        if (!firstBully) {
+            bullyElem.classList.add("bounceIn");
+        } else {firstBully = false}
         bullyBtn.disabled = false;
     }, 300);
 
-
-    // switch (Math.floor(Math.random() * 4)) {
-    //     case 0: 
-    //         bullyElem.innerText = randTitle + " " + randFirstname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-    //         TempTitle.splice(randTitleNum, 1);
-    //         TempFirstname.splice(randFirstnameNum, 1);
-    //         TempLastname.splice(randLastnameNum, 1);
-    //         break;
-    //     case 1:
-    //         bullyElem.innerText = randTitle + " " + randFirstname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-    //         TempTitle.splice(randTitleNum, 1);
-    //         TempFirstname.splice(randFirstnameNum, 1);
-    //         break;
-    //     case 2:
-    //         bullyElem.innerText = randNickname + " " + randLastname + ", " + randJob + " of the " + randGangadjective + " " + randGangname;
-    //         TempNickname.splice(randNicknameNum, 1);
-    //         TempLastname.splice(randLastnameNum, 1);
-    //         break;
-    //     case 3:
-    //         bullyElem.innerText = `${randFirstname} "${randNickname}" ${randLastname}, ${randJob} of the ${randGangadjective} ${randGangname}`;
-    //         TempFirstname.splice(randFirstnameNum, 1);
-    //         TempNickname.splice(randNicknameNum, 1);
-    //         TempLastname.splice(randLastnameNum, 1);
-    // }
-
-
-    if (firstBully) {firstBully = false}
 }
 
 //ILLNESS
@@ -198,17 +174,17 @@ function threeAilments() {
         setTimeout(function() {
             illnessNode.classList.add("illnessesShow");
             illnessNode.childNodes[0].classList.add("sickShow");
-        }, 1000);
+        }, 900);
         setTimeout(function() {
             illnessNode.childNodes[1].classList.add("sickShow");
-        }, 2200);
+        }, 2100);
         setTimeout(function() {
             illnessNode.childNodes[2].classList.add("sickShow");
-        }, 3400);
+        }, 3300);
         setTimeout(function() {
             document.getElementById("illnessButton").childNodes[0].nodeValue = "Anything Else?";
             document.getElementById("illnessButton").disabled = false;
-        }, 4600);
+        }, 4500);
         firstSickness = false;
     } else {
         setTimeout(function() {

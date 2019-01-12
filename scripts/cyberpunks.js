@@ -180,8 +180,6 @@ function cyberHeistOutcome() {
 
 	setTimeout(function() {
  		setTextContent(document.getElementById("cyberOutcome"),outcome);
- 		document.getElementById("cyberIntro").classList.add("glitch");
- 		document.getElementById("cyberOutcome").classList.add("glitch");
       	document.getElementById("cyberOutcome").classList.remove("fadedout");
   		document.getElementById("cyberBtn").onclick = cyberReset;
 		document.getElementById("cyberBtn").childNodes[0].nodeValue = "RESTART";
@@ -197,6 +195,8 @@ function cyberReset() {
 	document.getElementById("cyberBtn").childNodes[0].nodeValue = "Enlist Cybercriminal";
 	setTextContent(document.getElementById("cyberOutcome"),`Six experienced criminals should ${randomChoice("be the right number.","do it.")}`);
 	document.getElementById("cyberOutcome").classList.add("fadedout");
+	document.getElementById("cyberIntro").classList.add("glitch");
+	document.getElementById("cyberOutcome").classList.add("glitch");
 	
 
 	let listNode = document.getElementById("cyberList");
@@ -205,7 +205,7 @@ function cyberReset() {
 		listNode.removeChild(listNode.lastChild);
 	}
 
-	location.hash = "#cyberpunks";
+	document.getElementById("cyberpunks").scrollIntoView();
 	buildCyberIntro();
 }
 

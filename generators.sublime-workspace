@@ -59,16 +59,25 @@
 			"file": "styles/sheets.css",
 			"settings":
 			{
-				"buffer_size": 7790,
+				"buffer_size": 9441,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "scripts/cyberpunks.js",
 			"settings":
 			{
-				"buffer_size": 2895,
+				"buffer_size": 91264,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/paper.css",
+			"settings":
+			{
+				"buffer_size": 47533,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -271,6 +280,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"glitch",
+			"fadetran",
+			"waggle",
 			"Sheet",
 			"animation-name",
 			"anim",
@@ -329,15 +341,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7790,
+						"buffer_size": 9441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1022,
-								1022
+								1874,
+								1874
 							]
 						],
 						"settings":
@@ -347,7 +359,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 982.0,
+						"translation.y": 2026.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -355,11 +367,39 @@
 				},
 				{
 					"buffer": 1,
-					"file": "index.html",
+					"file": "scripts/cyberpunks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 91264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11405,
+								11405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2862.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styles/paper.css",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2895,
+						"buffer_size": 47533,
 						"regions":
 						{
 						},
@@ -372,11 +412,12 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 864.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

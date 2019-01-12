@@ -1,3 +1,8 @@
+:root {
+  --glitch-red: rgba(255,85,0, 0.5);
+  --glitch-blue: rgba(60, 85, 255, 0.5);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -520,10 +525,10 @@ h4 {
 @-webkit-keyframes glitch {
   // FIRST GLITCH
   30%{
-    text-shadow: 0.1em -0.1em 0px rgba(60, 85, 255, 1);
+    text-shadow: 0.1em -0.1em 0px var(--glitch-blue);
   }
   32%{
-    text-shadow: -0.1em 0.1em 0px rgba(255,85,0,1); 
+    text-shadow: -0.1em 0.1em 0px var(--glitch-red); 
   }
   0%, 28%, 34%{
     text-shadow: none;
@@ -540,11 +545,11 @@ h4 {
   
   // SECOND GLITCH
   50%{
-    text-shadow: 0.1em 0.1em 0px rgba(60, 85, 255, 1);
+    text-shadow: 0.1em 0.1em 0px var(--glitch-blue);
     
   }
   52%{
-    text-shadow: -0.1em -0.1em 0px rgba(255,85,0,1);  
+    text-shadow: -0.1em -0.1em 0px var(--glitch-red);  
     
   }
   48%, 54%{
@@ -563,10 +568,10 @@ h4 {
 
 @keyframes glitch {
   30%{
-    text-shadow: 0.1em -0.1em 0px rgba(60, 85, 255, 1);
+    text-shadow: 0.1em -0.1em 0px var(--glitch-blue);
   }
   32%{
-    text-shadow: -0.1em 0.1em 0px rgba(255,85,0,1); 
+    text-shadow: -0.1em 0.1em 0px var(--glitch-red); 
   }
   0%, 28%, 34%{
     text-shadow: none;
@@ -582,11 +587,11 @@ h4 {
   }
   
   50%{
-    text-shadow: 0.1em 0.1em 0px rgba(60, 85, 255, 1);
+    text-shadow: 0.1em 0.1em 0px var(--glitch-blue);
     
   }
   52%{
-    text-shadow: -0.1em -0.1em 0px rgba(255,85,0,1);  
+    text-shadow: -0.1em -0.1em 0px var(--glitch-red);  
     
   }
   48%, 54%{
@@ -606,5 +611,5 @@ h4 {
 .glitch {
   animation-name: glitch;
   animation-duration: 3s;
-  animation-delay: 600ms;
+  animation-delay: 300ms;
 }

@@ -121,7 +121,7 @@ h4 {
   padding: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 1.5s ease, opacity 0.4s ease 0.4s;
+  transition: max-height 1s linear, opacity 0.4s ease 0.4s;
   height: 0;
   max-height: 0;
   margin: 0em;
@@ -131,8 +131,11 @@ h4 {
 .cybershow {
   opacity: 1;
   height: auto;
-  max-height: 20em;
+  max-height: 14em;
   margin: 0.4em;
+  animation-name: glitch;
+  animation-duration: 3s;
+  animation-delay: 0.2s;
 }
 
 .fadetransition {
@@ -508,4 +511,100 @@ h4 {
 .bounceInUp {
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
+}
+
+
+
+/*glitch animation adapted from https://codepen.io/anon/pen/REqMQv*/
+
+@-webkit-keyframes glitch {
+  // FIRST GLITCH
+  30%{
+    text-shadow: 0.1em -0.1em 0px rgba(60, 85, 255, 1);
+  }
+  32%{
+    text-shadow: -0.1em 0.1em 0px rgba(255,85,0,1); 
+  }
+  0%, 28%, 34%{
+    text-shadow: none;
+  }
+  31%,32%{
+    transform: translate(-0.2em,0.2em);
+  }
+  32%,33%{
+    transform: translate(0.2em,-0.2em);
+  }
+  31%,33%{
+    transform: translatex(0);
+  }
+  
+  // SECOND GLITCH
+  50%{
+    text-shadow: 0.1em 0.1em 0px rgba(60, 85, 255, 1);
+    
+  }
+  52%{
+    text-shadow: -0.1em -0.1em 0px rgba(255,85,0,1);  
+    
+  }
+  48%, 54%{
+    text-shadow: none;
+  }
+  49%,52%{
+    transform: translatex(0);
+  }
+  50%{
+    transform: translate(0.2em,0.2em);
+  }
+  51%{
+    transform: translate(-0.2em,-0.2em);
+  }
+}
+
+@keyframes glitch {
+  30%{
+    text-shadow: 0.1em -0.1em 0px rgba(60, 85, 255, 1);
+  }
+  32%{
+    text-shadow: -0.1em 0.1em 0px rgba(255,85,0,1); 
+  }
+  0%, 28%, 34%{
+    text-shadow: none;
+  }
+  31%,32%{
+    transform: translate(-0.2em,0.2em);
+  }
+  32%,33%{
+    transform: translate(0.2em,-0.2em);
+  }
+  31%,33%{
+    transform: translatex(0);
+  }
+  
+  50%{
+    text-shadow: 0.1em 0.1em 0px rgba(60, 85, 255, 1);
+    
+  }
+  52%{
+    text-shadow: -0.1em -0.1em 0px rgba(255,85,0,1);  
+    
+  }
+  48%, 54%{
+    text-shadow: none;
+  }
+  49%,52%{
+    transform: translatex(0);
+  }
+  50%{
+    transform: translate(0.2em,0.2em);
+  }
+  51%{
+    transform: translate(-0.2em,-0.2em);
+  }
+}
+
+.glitch {
+  animation-name: glitch;
+  animation-duration: 3s;
+  animation-delay: 600ms;
 }

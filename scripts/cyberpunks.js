@@ -168,10 +168,20 @@ function cyberHeistOutcome() {
 		document.getElementById("cyberOutcome").classList.add("fadedout")
 	}
 
+	if (document.getElementById("cyberOutcome").classList.contains("glitch")) {
+		document.getElementById("cyberOutcome").classList.remove("glitch")
+	}
+
+	if (document.getElementById("cyberIntro").classList.contains("glitch")) {
+		document.getElementById("cyberIntro").classList.remove("glitch")
+	}
+
 	document.getElementById("cyberBtn").disabled=true;
 
 	setTimeout(function() {
  		setTextContent(document.getElementById("cyberOutcome"),outcome);
+ 		document.getElementById("cyberIntro").classList.add("glitch");
+ 		document.getElementById("cyberOutcome").classList.add("glitch");
       	document.getElementById("cyberOutcome").classList.remove("fadedout");
   		document.getElementById("cyberBtn").onclick = cyberReset;
 		document.getElementById("cyberBtn").childNodes[0].nodeValue = "RESTART";

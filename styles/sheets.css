@@ -38,7 +38,6 @@ h3 {
 
 h4 {
 	font-variant-ligatures: no-common-ligatures;
-	font-size: 0.75em;
 }
 
 
@@ -115,18 +114,35 @@ h4 {
   transition: max-height 2s linear, margin 0.3s linear;
 }
 
+.cyberwrapper {
+  overflow: hidden;
+}
+
+.cyberwrappershow {
+}
+
 .cyberperson {
-	display: inline-block;
-	padding-left: 0.75em;
-	margin-top: 0;
-	margin-bottom: 0;
+	padding-left: 8%;
+  padding-right: 4%;
+  padding-top: 0;
+  opacity: 0;
+  height: 0;
+  max-height: 0;
+  margin-top: -0.3em;
+  margin-bottom: 0.3em;
+  transition: max-height 2s linear 1.6s, opacity 0.2s ease 2s;
+}
+
+.cyberpersonshow {
+  opacity: 1;
+  height: auto;
+  max-height: 22em;
 }
 
 .cybertitle {
   padding: 0;
   opacity: 0;
-  overflow: hidden;
-  transition: max-height 1s linear, opacity 0.2s ease 0.4s;
+  transition: max-height 2s linear, opacity 0.2s ease 0.5s;
   height: 0;
   max-height: 0;
   margin: 0em;
@@ -136,11 +152,11 @@ h4 {
 .cybershow {
   opacity: 1;
   height: auto;
-  max-height: 14em;
+  max-height: 22em;
   margin: 0.4em;
   animation-name: glitch;
   animation-duration: 4s;
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
 }
 
 .fadetransition {
@@ -611,4 +627,39 @@ h4 {
   animation-name: glitch;
   animation-duration: 3s;
   animation-delay: 300ms;
+}
+
+@keyframes burn-in {
+  0%{
+    opacity: 0;
+    color: #990000;
+    text-shadow: 0 0 0 red;
+  }
+
+  40%{
+    opacity: 1;
+    color: #990000;
+    text-shadow: 0 0 0.4em red;
+  }
+
+
+  50% {
+    text-shadow: 0 0 0.4em red;
+  }
+
+
+  80%{
+    color: black;
+  }
+
+  100%{
+    text-shadow: none;
+  }
+
+}
+
+.burn-in {
+  animation-name: burn-in;
+  animation-duration: 3s;
+  animation-delay: 100ms;
 }

@@ -7,6 +7,7 @@ const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout"
 // other: explosive, weapons, acrobat, martial artist/brawler, strike force lead, scav, gang member, undedrworld boss  corporat corpoxec
 let cybersHired = 0;
 const cybersPerTeam = 6;
+let firstCyberpunk = true;
 
 function nextCyberRole() {
 	let randonum = Math.floor(Math.random()*cyberRoles.length);
@@ -26,100 +27,102 @@ function makeCyberpunk() {
 
 	switch (nextCyberRole()) {
 		case "hacker":
-			criminal = randomChoice("The Hacker: ", "The Coderunner: ", "The Netrunner: ", "The Black Hat Hacker: ");
+			criminal = randomChoice("The Hacker", "The Coderunner", "The Netrunner", "The Black Hat Hacker");
 			criminalText = cyberHacker();
 			break;
 		case "magic":
-			criminal = "The Gifted: ";
+			criminal = "The Gifted";
 			break;
 		case "politics":
-			criminal = randomChoice("The Influence: ", "The Politico: ");
+			criminal = randomChoice("The Influence", "The Politico");
 			criminalText = cyberPolitics();
 			break;
 		case "religion":
-			criminal = randomChoice("The Faith: ","The Zealot: ","The Devoted: ");
+			criminal = randomChoice("The Faith","The Zealot","The Devoted");
 			criminalText = cyberFaith();
 			break;
 		case "driver":
-			criminal = randomChoice("The Driver: ", "The Getaway: ", "The Wheels: ");
+			criminal = randomChoice("The Driver", "The Getaway", "The Wheels");
 			criminalText = cyberDriver();
 			break;
 		case "detective":
-			criminal = randomChoice("The Investigator: ", "The Fact-Finder: ", "The Blackmailer: ");
+			criminal = randomChoice("The Investigator", "The Fact-Finder", "The Blackmailer");
 			break;
 		case "brawler":
-			criminal = randomChoice("The Brawler: ", "The Muscle: ", "The Bruiser: ", "The Brute Force: ");
+			criminal = randomChoice("The Brawler", "The Muscle", "The Bruiser", "The Brute Force");
 			criminalText = cyberMuscle();
 			break;
 		case "weapons":
-			criminal = randomChoice("The Safecracker: ", "The Demolitions Expert: ", "The Explosives Expert: ","The Bomb Maker: ");
+			criminal = randomChoice("The Safecracker", "The Demolitions Expert", "The Explosives Expert","The Bomb Maker");
 			break;
 		case "wildcard":
-			criminal = randomChoice("The Wild Card: ", "The X Factor: ");
+			criminal = randomChoice("The Wild Card", "The X Factor");
 			criminalText = cyberWildcard();
 			break;
 		case "fence":
-			criminal = randomChoice("The Fence: ", "The Fixer: ");
+			criminal = randomChoice("The Fence", "The Fixer");
 			break;
 		case "corpo":
-			criminal = randomChoice("The Corporat: ", "The Executive: ");
+			criminal = randomChoice("The Corporat", "The Executive");
 			break;
 		case "hedonist":
-			criminal = randomChoice("The Distraction: ", "The Hedonist: ", "The Temptation: ", "The Smooth Operator: ");
+			criminal = randomChoice("The Distraction", "The Hedonist", "The Temptation", "The Smooth Operator");
 			break;
 		case "celebrity":
-			criminal = randomChoice("The Celebrity: ", "The Fame: ");
+			criminal = randomChoice("The Celebrity", "The Fame");
 			break;
 		case "intellect":
-			criminal = randomChoice("The Intellect: ", "The Brains: ");
+			criminal = randomChoice("The Intellect", "The Brains");
 			break;
 		case "thief":
-			criminal = randomChoice("The Thief: ", "The Rogue: ", "The Burglar: ","The Infiltration: ");
+			criminal = randomChoice("The Thief", "The Rogue", "The Burglar","The Infiltration");
 			criminalText = cyberThief();
 			break;
 		case "hood":
-			criminal = randomChoice("The Street Hood: ", "The Gang Member: ", "The Street Rat: ", "The Lowlife: ");
+			criminal = randomChoice("The Street Hood", "The Gang Member", "The Street Rat", "The Lowlife");
 			break;
 		case "engineer":
-			criminal = randomChoice("The Engineer: ", "The Gearhead: ", "The Technician: ");
+			criminal = randomChoice("The Engineer", "The Gearhead", "The Technician");
 			criminalText = cyberEng();
 			break;
 		case "lookout":
-			criminal = randomChoice("The Lookout: ", "The Scout: ", "The Watch: ", "The Sentry: ");
+			criminal = randomChoice("The Lookout", "The Scout", "The Watch", "The Sentry");
 			criminalText = cyberWatch();
 			break;
 		case "forger":
-			criminal = randomChoice("The Forger: ", "The Counterfeiter: ");
+			criminal = randomChoice("The Forger", "The Counterfeiter");
 			criminalText = cyberForger();
 			break;
 		case "striker":
-			criminal = randomChoice("The Strike Team Leader: ", "The Spearhead: ");
+			criminal = randomChoice("The Strike Team Leader", "The Spearhead");
 			criminalText = cyberStriker();
 			break;
 		default:
 			criminal = "No Criminal Found."
 	}
 
-	var cyberRoleNode = document.createElement("H3");
-	cyberRoleNode.classList.add("cybertitle");
+	var cyberTitleNode = document.createElement("H3");
+	cyberTitleNode.classList.add("cybertitle");
     var cyberTitleText = document.createTextNode(criminal);
-    cyberRoleNode.appendChild(cyberTitleText);
+    cyberTitleNode.appendChild(cyberTitleText);
 
     var cyberPersonNode = document.createElement("H4");
     var cyberPersonText = document.createTextNode(criminalText);
     cyberPersonNode.appendChild(cyberPersonText);
     cyberPersonNode.classList.add("cyberperson");
-    cyberRoleNode.appendChild(cyberPersonNode);
 
     var cyberPersonWrapper = document.createElement("div");
     cyberPersonWrapper.classList.add("cyberwrapper");
-    cyberPersonWrapper.appendChild(cyberRoleNode);
+    cyberPersonWrapper.appendChild(cyberTitleNode);
+    cyberPersonWrapper.appendChild(cyberPersonNode);
 
-    document.getElementById("cyberList").appendChild(cyberRoleNode);
+    document.getElementById("cyberList").appendChild(cyberPersonWrapper);
 
     setTimeout(function() {
-     	cyberRoleNode.classList.add("cybershow");
-  	}, 10);
+    	cyberPersonWrapper.classList.add("cyberwrappershow");
+     	cyberTitleNode.classList.add("cybershow");
+     	cyberPersonNode.classList.add("cyberpersonshow");
+  	}, 20);
 
     cybersHired++;
     let outcome = "";
@@ -168,12 +171,12 @@ function cyberHeistOutcome() {
 		document.getElementById("cyberOutcome").classList.add("fadedout")
 	}
 
-	if (document.getElementById("cyberOutcome").classList.contains("glitch")) {
-		document.getElementById("cyberOutcome").classList.remove("glitch")
+	if (document.getElementById("cyberOutcome").classList.contains("burn-in")) {
+		document.getElementById("cyberOutcome").classList.remove("burn-in")
 	}
 
-	if (document.getElementById("cyberIntro").classList.contains("glitch")) {
-		document.getElementById("cyberIntro").classList.remove("glitch")
+	if (document.getElementById("cyberIntro").classList.contains("burn-in")) {
+		document.getElementById("cyberIntro").classList.remove("burn-in")
 	}
 
 	document.getElementById("cyberBtn").disabled=true;
@@ -193,11 +196,7 @@ function cyberReset() {
 	cybersHired = 0;
 	document.getElementById("cyberBtn").onclick = makeCyberpunk;
 	document.getElementById("cyberBtn").childNodes[0].nodeValue = "Enlist Cybercriminal";
-	setTextContent(document.getElementById("cyberOutcome"),`Six experienced criminals should ${randomChoice("be the right number.","do it.")}`);
-	document.getElementById("cyberOutcome").classList.add("fadedout");
-	document.getElementById("cyberIntro").classList.add("glitch");
-	document.getElementById("cyberOutcome").classList.add("glitch");
-	
+	setTextContent(document.getElementById("cyberOutcome"),`Six experienced criminals should ${randomChoice("be the right number.","do it.")}`);	
 
 	let listNode = document.getElementById("cyberList");
 
@@ -205,8 +204,12 @@ function cyberReset() {
 		listNode.removeChild(listNode.lastChild);
 	}
 
-	document.getElementById("cyberpunks").scrollIntoView();
-	buildCyberIntro();
+	document.getElementById("cyberIntro").classList.add("fadedout");
+    document.getElementById("cyberOutcome").classList.add("fadedout");
+    document.getElementById("cyberpunks").scrollIntoView();
+
+	
+	setTimeout(buildCyberIntro, 200);
 }
 
 
@@ -856,19 +859,23 @@ function buildCyberIntro() {
 	let intro4 = cyberOverhear(party,job);
 	let intro5 = `${randomChoice("This is going to be a perfect heist.","Now is the time to strike.")} You just need to ${randomChoice("assemble","recruit")} your team.`;
 
-	if (!document.getElementById("cyberIntro").classList.contains("fadedout")) {
-		document.getElementById("cyberIntro").classList.add("fadedout")
+	setTextContent(document.getElementById("cyberIntroPar1"), intro1);
+	setTextContent(document.getElementById("cyberIntroPar2"), intro2);
+	setTextContent(document.getElementById("cyberIntroPar3"), intro3);
+	setTextContent(document.getElementById("cyberIntroPar4"), intro4);
+	setTextContent(document.getElementById("cyberIntroPar5"), intro5);
+
+	if (!firstCyberpunk) {
+		document.getElementById("cyberIntro").classList.add("burn-in");
+  		document.getElementById("cyberOutcome").classList.add("burn-in");
+	} else {
+		firstCyberpunk = false;
 	}
 
 	setTimeout(function() {
- 		setTextContent(document.getElementById("cyberIntroPar1"), intro1);
-		setTextContent(document.getElementById("cyberIntroPar2"), intro2);
-		setTextContent(document.getElementById("cyberIntroPar3"), intro3);
-		setTextContent(document.getElementById("cyberIntroPar4"), intro4);
-		setTextContent(document.getElementById("cyberIntroPar5"), intro5);
-      	document.getElementById("cyberIntro").classList.remove("fadedout");
+		document.getElementById("cyberIntro").classList.remove("fadedout");
       	document.getElementById("cyberOutcome").classList.remove("fadedout");
-   	}, 320);
+   	}, 300);
 } 
 
 function cyberIntroParty(party, alcohol,divebar) {

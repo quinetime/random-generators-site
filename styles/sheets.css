@@ -123,7 +123,7 @@ h4 {
 
 .cyberperson {
 	padding-left: 8%;
-  padding-right: 4%;
+  padding-right: 5%;
   padding-top: 0;
   opacity: 0;
   height: 0;
@@ -141,6 +141,7 @@ h4 {
 
 .cybertitle {
   padding: 0;
+  padding-left: 3%;
   opacity: 0;
   transition: max-height 2s linear, opacity 0.2s ease 0.5s;
   height: 0;
@@ -660,6 +661,6 @@ h4 {
 
 .burn-in {
   animation-name: burn-in;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-delay: 100ms;
 }

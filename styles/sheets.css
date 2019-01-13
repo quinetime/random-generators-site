@@ -126,7 +126,7 @@ h4 {
   padding: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 1s linear, opacity 0.4s ease 0.4s;
+  transition: max-height 1s linear, opacity 0.2s ease 0.4s;
   height: 0;
   max-height: 0;
   margin: 0em;
@@ -139,12 +139,12 @@ h4 {
   max-height: 14em;
   margin: 0.4em;
   animation-name: glitch;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-delay: 0.2s;
 }
 
 .fadetransition {
-  transition: opacity 300ms ease-out;
+  transition: opacity 100ms ease-out;
 }
 
 .joketransition {
@@ -522,89 +522,88 @@ h4 {
 
 /*glitch animation adapted from https://codepen.io/anon/pen/REqMQv*/
 
+
 @-webkit-keyframes glitch {
-  // FIRST GLITCH
-  30%{
+  10%{
     text-shadow: 0.1em -0.1em 0px var(--glitch-blue);
   }
-  32%{
+  12%{
     text-shadow: -0.1em 0.1em 0px var(--glitch-red); 
   }
-  0%, 28%, 34%{
+  0%, 8%, 14%{
     text-shadow: none;
   }
-  31%,32%{
+  11%,12%{
     transform: translate(-0.2em,0.2em);
   }
-  32%,33%{
+  12%,13%{
     transform: translate(0.2em,-0.2em);
   }
-  31%,33%{
+  11%,13%{
     transform: translatex(0);
   }
   
-  // SECOND GLITCH
-  50%{
+  20%{
     text-shadow: 0.1em 0.1em 0px var(--glitch-blue);
     
   }
-  52%{
+  22%{
     text-shadow: -0.1em -0.1em 0px var(--glitch-red);  
     
   }
-  48%, 54%{
+  18%, 24%{
     text-shadow: none;
   }
-  49%,52%{
+  19%,22%{
     transform: translatex(0);
   }
-  50%{
+  20%{
     transform: translate(0.2em,0.2em);
   }
-  51%{
-    transform: translate(-0.2em,-0.2em);
+  21%{
+    transform: translate(-0.1em,-0.1em);
   }
 }
 
 @keyframes glitch {
-  30%{
+  10%{
     text-shadow: 0.1em -0.1em 0px var(--glitch-blue);
   }
-  32%{
+  12%{
     text-shadow: -0.1em 0.1em 0px var(--glitch-red); 
   }
-  0%, 28%, 34%{
+  0%, 8%, 14%{
     text-shadow: none;
   }
-  31%,32%{
+  11%,12%{
     transform: translate(-0.2em,0.2em);
   }
-  32%,33%{
+  12%,13%{
     transform: translate(0.2em,-0.2em);
   }
-  31%,33%{
+  11%,13%{
     transform: translatex(0);
   }
   
-  50%{
+  20%{
     text-shadow: 0.1em 0.1em 0px var(--glitch-blue);
     
   }
-  52%{
+  22%{
     text-shadow: -0.1em -0.1em 0px var(--glitch-red);  
     
   }
-  48%, 54%{
+  18%, 24%{
     text-shadow: none;
   }
-  49%,52%{
+  19%,22%{
     transform: translatex(0);
   }
-  50%{
+  20%{
     transform: translate(0.2em,0.2em);
   }
-  51%{
-    transform: translate(-0.2em,-0.2em);
+  21%{
+    transform: translate(-0.1em,-0.1em);
   }
 }
 

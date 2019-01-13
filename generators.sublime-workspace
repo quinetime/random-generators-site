@@ -59,7 +59,7 @@
 			"file": "styles/sheets.css",
 			"settings":
 			{
-				"buffer_size": 9441,
+				"buffer_size": 9526,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -68,16 +68,16 @@
 			"file": "scripts/cyberpunks.js",
 			"settings":
 			{
-				"buffer_size": 91264,
+				"buffer_size": 91285,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "styles/paper.css",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 47533,
+				"buffer_size": 2895,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,6 +280,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Rese",
+			"#",
 			"glitch",
 			"fadetran",
 			"waggle",
@@ -341,73 +343,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9441,
+						"buffer_size": 9526,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1874,
-								1874
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2026.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "scripts/cyberpunks.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 91264,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11405,
-								11405
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2862.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "styles/paper.css",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 47533,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								83,
+								83
 							]
 						],
 						"settings":
@@ -420,7 +364,64 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/cyberpunks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 91285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11631,
+								11631
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3096.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

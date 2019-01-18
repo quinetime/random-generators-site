@@ -55,33 +55,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "styles/sheets.css",
-			"settings":
-			{
-				"buffer_size": 9526,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "scripts/cyberpunks.js",
-			"settings":
-			{
-				"buffer_size": 91285,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 2895,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -183,10 +156,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles/sheets.css",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts/cyberpunks.js",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/index.html",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts/main.js",
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts/cyberpunks.js",
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles/sheets.css",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts/dadjokes.js",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles/paper.css",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/generators.sublime-workspace",
@@ -280,6 +253,20 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"blackhat",
+			"burn",
+			"cybershow",
+			"h4",
+			"CyberTitleNode",
+			"cyberList",
+			"Reset",
+			"reset",
+			"buildC",
+			"build",
+			"fadedout",
+			"Reset",
+			"glitch",
+			"cyberList",
 			"Rese",
 			"#",
 			"glitch",
@@ -334,96 +321,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "styles/sheets.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9526,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								83,
-								83
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "scripts/cyberpunks.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 91285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11631,
-								11631
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3096.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								462,
-								462
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 594.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -207,7 +207,19 @@ h4 {
 }
 
 #cyberpunkSheet {
-  animation-duration: 1.2s; 
+  animation-duration: 1.2s;
+
+  --skew-1: -50deg;
+  --skew-2: 50deg;
+
+  --offset1: -2em;
+  --offset2: -2em;
+  --offset3: 2em;
+  --offset4: 2em;
+  --offset5: 2em;
+  --offset6: 2em;
+  --offset7: 0em;
+  --offset8: 0em;
 }
 
 #dadjokeSheet {
@@ -578,7 +590,7 @@ h4 {
     transform: translate(0.2em,0.2em);
   }
   21%{
-    transform: translate(-0.1em,-0.1em);
+    transform: translate(-0.2em,-0.2em);
   }
 }
 
@@ -593,15 +605,12 @@ h4 {
     text-shadow: none;
   }
   11%,12%{
-    transform: translate(-0.2em,0.2em);
-    transform: skewX(50deg);
+    transform: translate(var(--offset1),var(--offset2)) skewX(var(--skew-1));
   }
   12%,13%{
-    transform: translate(0.2em,-0.2em);
-    transform: skewX(50deg);
+    transform: translate(var(--offset3),var(--offset4)) skewX(var(--skew-1));
   }
   11%,13%{
-    transform: translatex(0);
     transform: skewX(0);
   }
   
@@ -621,12 +630,12 @@ h4 {
     transform: skewX(0);
   }
   20%{
-    transform: translate(0.2em,0.2em);
-    transform: skewX(-50deg);
+    transform: translate(var(--offset5),var(--offset6)) skewX(var(--skew-2));
+    transform: ;
   }
   21%{
-    transform: translate(-0.1em,-0.1em);
-    transform: skewX(-50deg);
+    transform: translate(var(--offset7),var(--offset8)) skewX(var(--skew-2));
+    transform: ;
   }
 }
 

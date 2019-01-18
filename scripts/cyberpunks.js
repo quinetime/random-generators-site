@@ -20,7 +20,31 @@ function nextCyberRole() {
 	return newRole;
 }
 
+function randomSkew() {
+	return (Math.floor(Math.random()*120)-60)+"deg";
+}
+
+function randomOffset() {
+	return randomChoice("0.2em","0.1em","0","-0.1em","-0.2em");
+}
+
+function randomizeCyberPunkCSS() {
+	let elem = document.getElementById("cyberpunkSheet");
+	elem.style.setProperty('--skew-1', randomSkew());
+	elem.style.setProperty('--skew-2', randomSkew());
+	elem.style.setProperty('--offset1', randomOffset());
+	elem.style.setProperty('--offset2', randomOffset());
+	elem.style.setProperty('--offset3', randomOffset());
+	elem.style.setProperty('--offset4', randomOffset());
+	elem.style.setProperty('--offset5', randomOffset());
+	elem.style.setProperty('--offset6', randomOffset());
+	elem.style.setProperty('--offset7', randomOffset());
+	elem.style.setProperty('--offset8', randomOffset());
+}
+
 function makeCyberpunk() {
+
+	randomizeCyberPunkCSS();
 	
 	let criminal="";
 	let criminalText = "";

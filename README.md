@@ -2,7 +2,7 @@
 
 Just a simple page that randomly generates fun instances of fun categories.
 
-Can be found online at [www.randomness.rocks](randomness.rocks).
+Can be found online at [randomness.rocks](https://www.randomness.rocks).
 
 ## Current categories
 

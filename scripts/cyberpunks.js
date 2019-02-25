@@ -7,7 +7,7 @@ const cyberRoles = ["forger","politics","religion","driver","wildcard","lookout"
 // other: explosive, weapons, acrobat, martial artist/brawler, strike force lead, scav, gang member, undedrworld boss  corporat corpoxec
 let cybersHired = 0;
 const cybersPerTeam = 6;
-let firstCyberpunk = true;
+let firstCyberpunk = false;
 
 function nextCyberRole() {
 	let randonum = Math.floor(Math.random()*cyberRoles.length);

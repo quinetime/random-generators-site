@@ -55,6 +55,32 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scripts/cyberpunks.js",
+			"settings":
+			{
+				"buffer_size": 92271,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 18618,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/sheets.css",
+			"settings":
+			{
+				"buffer_size": 10508,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -253,6 +279,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"t randomC",
+			"randomC",
+			"random",
+			"offset",
 			"blackhat",
 			"burn",
 			"cybershow",
@@ -321,14 +351,103 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "scripts/cyberpunks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 92271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2194,
+								2201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 564.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/main.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 18618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15828,
+								15828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/JS Custom/Syntaxes/React.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2052.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styles/sheets.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9818,
+								9818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11277.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -365,7 +484,7 @@
 	"project": "generators.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -631,11 +631,9 @@ h4 {
   }
   20%{
     transform: translate(var(--offset5),var(--offset6)) skewX(var(--skew-2));
-    transform: ;
   }
   21%{
     transform: translate(var(--offset7),var(--offset8)) skewX(var(--skew-2));
-    transform: ;
   }
 }
 

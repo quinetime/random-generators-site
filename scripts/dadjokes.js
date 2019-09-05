@@ -167,15 +167,13 @@ const adjItem = [
 
 var adverbTemp = [];
 var adjTemp = [];
-
 let firstjoke = 1;
 
 
 function writeJokeOpening() {
-
-	if (adverbTemp.length == 0) {
+	if (adverbTemp.length === 0) {
     	adverbTemp = adverbItem.slice(); }
-    if (adjTemp.length == 0) {
+    if (adjTemp.length === 0) {
     	adjTemp = adjItem.slice(); }  // repopulate empty joke arrays
 
     let randoAdv = Math.floor(Math.random()*adverbTemp.length);

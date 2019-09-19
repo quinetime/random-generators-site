@@ -14,3 +14,4 @@ Can be found online at [randomness.rocks](https://www.randomness.rocks).
 ## Coming Up
 
 - Ethics
+- Frogs

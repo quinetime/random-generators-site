@@ -30,13 +30,13 @@ const ethicsActivityVerbs = [
 	()=>`abstain from drug use`,
 	()=>`have children`,
 	()=>`decide not to procreate`,
-	()=>`believe falsehoods`,
+	()=>`believe a falsehood`,
 	()=>`lie`,
 	()=>`break the law`,
 	()=>`jaywalk`,
 	()=>`overeat`,
-	()=>`drink ${randomChoice(`alcohol`,`energy drinks`,`hard liquor`,`bottled water`,`human blood`)}`,
-	()=>`drink ${randomChoice(`alcohol`,`hard liquor`,`bottled water`,`human blood`)}`,
+	()=>`drink ${randomChoice(`alcohol`,`energy drinks`,`hard liquor`,`bottled water`,`human blood`,"fair trade coffee")}`,
+	()=>`drink ${randomChoice(`alcohol`,`hard liquor`,`bottled water`,`human blood`,"fair trade coffee")}`,
 	()=>`use illegal drugs`,
 	()=>`use mescaline`,
 	()=>`use meth`,
@@ -62,7 +62,7 @@ const ethicsActivityVerbs = [
 	()=>`masturbate`,
 	()=>`wear fur`,
 	()=>`argue in online comment threads`,
-	()=>`buy groceries on Amazon`,
+	()=>`give government subsidies to the ${randomChoice("corn","petroleum","tobacco","tech")} industry`,
 	()=>`buy clothes made with sweatshop labor`,
 	()=>`cheer for the away team at a baseball game`,
 	()=>`root for the underdog at a basketball game`,
@@ -127,6 +127,16 @@ const ethicsActivityVerbs = [
 	()=>`fake one's own death`,
 	()=>`extort ${randomEthicsPerson()}`,
 	()=>`sell counterfeit goods`,
+	()=>`exploit the cognitive biases of ${randomEthicsPerson()}`,
+	()=>`inflict ${randomChoice("long-term","permanent","significant")} emotional damage upon ${randomEthicsPerson()}`,
+	()=>`inflict physical pain, but not mental anguish, on ${randomEthicsPerson()}`,
+	()=>`invade ${randomChoice("a smaller","a less powerful", "an oil-rich", "a neighboring")} country`,
+	()=>`invite one's parents to move in`,
+	()=>`watch pornography`,
+	()=>`give into one's baser instincts and ${randomEthicsActivityVerb()}`,
+	()=>`buy cryptocurrency`,
+	()=>`desire fame`,
+	()=>`desire immortality`,
 ];
 
 const ethicsActivityNouns = [
@@ -166,8 +176,12 @@ const ethicsActivityNouns = [
 	()=>`laziness`,
 	()=>`jealousy`,
 	()=>`envy`,
+	()=>`buying merchandise licensed by the NFL`,
+	()=>`supporting universal health care`,
 	()=>`speaking ill of the dead`,
 	()=>`envy of ${randomEthicsPerson()}`,
+	()=>`suffering`,
+	()=>`inflicting mental anguish (but not physical pain) on ${randomEthicsPerson()}`,
 	()=>`ambition`,
 	()=>`sloth`,
 	()=>`cremation`,
@@ -229,19 +243,22 @@ const ethicsActivityNouns = [
 	()=>`murdering ${randomEthicsPerson()} to save ${randomEthicsPerson()}`,
 	()=>`sacrificing ${randomEthicsPerson()} to save ${randomEthicsPerson()}`,
 	()=>`preferring the company of ${randomEthicsPerson()} to the company of ${randomEthicsPerson()}`,
-	()=>`drinking ${randomChoice(`alcohol`,`hard liquor`,`bottled water`,`human blood`)}`,
+	()=>`drinking ${randomChoice(`alcohol`,`hard liquor`,`bottled water`,`human blood`,"fair trade coffee")}`,
 	()=>`loving ${randomEthicsPerson()}`,
 	()=>`admiring ${randomEthicsPerson()}`,
 	()=>`befriending ${randomEthicsPerson()}`,
 	()=>`cutting in line`,
 	()=>`bullying`,
 	()=>`bullying ${randomEthicsPerson()}`,
+	()=>`instilling a sense of ${randomChoice("justice","fairness","morality","guilt")} in one's children`,
+	()=>`playing violent video games`,
 ];
 
 const ethicsJudgments = [
 	()=>`is ${timen()+mely()}necessary`,
 	()=>`is ${mely()}prohibited`,
 	()=>`is ${mely()}mandatory`,
+	()=>`is ${mely()}wrong`,
 	()=>`is ${mely()}wrong`,
 	()=>`is ${mely()}permissible`,
 	()=>`is ${mely()}impermissible`,
@@ -277,6 +294,7 @@ const ethicsJudgments = [
 	()=>`is ${timen()}an ethical vice`,
 	()=>`is ${timen()}a carnal sin`,
 	()=>`is ${timen()}a venal sin`,
+	()=>`is ${timen()}a mortal sin`,
 	()=>`is ${menly()}virtuous`,
 	()=>`is ${mely()}repugnant`,
 	()=>`is ${mely()}repellant`,
@@ -285,6 +303,7 @@ const ethicsJudgments = [
 	()=>`is ${timen()+menly()}bad`,
 	()=>`is illegal but ${timen()+menly()}acceptable`,
 	()=>`is supererogatory`,
+	()=>`goes above and beyond what is ${mely()}required`,
 	()=>`is illegal but ${timen()+mely()}mandatory`,
 	()=>`is ${timen()+menly()}exemplary`,
 	()=>`is ${mely()}criminal`,
@@ -341,6 +360,51 @@ const ethicsJudgments = [
 	()=>`is a tragedy`,
 	()=>`merits praise`,
 	()=>`deserves punishment`,
+	()=>`is a tool of the devil`,
+	()=>`is looked on unfavorably at the Gates of Heaven`,
+	()=>`is bad karma`,
+	()=>`is good karma`,
+	()=>`is a mitzvah`,
+	()=>`is one's spiritual duty`,
+	()=>`is a wicked deed`,
+	()=>`is wicked`,
+	()=>`will lead to one's reincarnation as a worm`,
+	()=>`guarantees salvation`,
+	()=>`is an act of grace`,
+	()=>`is normatively required`,
+	()=>`is normatively prohibited`,
+	()=>`contravenes the social contract`,
+	()=>`is ${mely()}wrongheaded`,
+	()=>`is ${mely()}self-justifying`,
+	()=>`is ideologically bankrupt`,
+	()=>`is ${menly()}unforgivable`,
+	()=>`can never be ${menly()}forgiven`,
+	()=>`can be absolved only with ${randomChoice("five","ten")} Hail Marys`,
+	()=>`blemishes ${randomChoice("the soul","one's moral character","one's moral standing")}`,
+	()=>`deserves the death penalty`,
+	()=>`is upstanding`,
+	()=>`is socially expected but not ${mely()+randomChoice("required","mandatory")}`,
+	()=>`is immoral`,
+	()=>`is unethical`,
+	()=>`evolved for a purpose but it is no longer morally acceptable`,
+	()=>`runs counter to ${me()}obligation`,
+	()=>`is ${randomChoice("prudentially","instrumentially")} useful but ${mely()}unacceptable`,
+	()=>`is wrong (according to deep-seated moral intuitions)`,
+	()=>`cannot be morally defended (in a non-question-begging way)`,
+	()=>`can be justified by ${randomChoice("rule utilitarian","Kantian","deontological","consequentialist")} principles`,
+	()=>`generates a moral paradox`,
+	()=>`is divine`,
+	()=>`brings balance to the universe`,
+	()=>`uses oneself as a mere means`,
+	()=>`decreases global utility`,
+	()=>`increases global utility`,
+	()=>`does a disservice to future generations`,
+	()=>`disrespects the wishes of the dead`,
+	()=>`is demanded by the categorical imperative`,
+	()=>`is falsely believed to be ${randomChoice("good","bad")}`,
+	()=>`${randomChoice("evinces","is proof of")} the ${randomChoice("fallen","irredeemable","essentially good")} status of ${randomChoice("humanity","mankind")}`,
+	()=>`is irredeemable`,
+	()=>`is ${mely()}naïve`,
 ];
 
 const ethicsPerson = [
@@ -428,6 +492,7 @@ const ethicsPerson = [
 	()=>`a man with a gun to one's head`,
 	()=>`a person threatening to kill ${randomEthicsPerson()}`,
 	()=>`a person threatening to torture ${randomEthicsPerson()}`,
+	()=>`an old lady`,
 ];
 
 const ethicsPurposes = [
@@ -489,6 +554,11 @@ const ethicsPurposes = [
 	()=>`except in a graveyard`,
 	()=>`but only in philosophy class`,
 	()=>`if no one is watching`,
+	()=>`if all other alternatives are exhausted`,
+	()=>`when diplomacy has broken down`,
+	()=>`under capitalism`,
+	()=>`under communism`,
+	()=>`in the workplace`,
 ];
 
 let ethicsActivityVerbsTemp = ethicsActivityVerbs.slice();
@@ -528,19 +598,19 @@ function randomEthicsPurpose() {
     return " "+ethicsPurposesTemp.splice(rando, 1)[0]();
 }
 
-const rareEthicsTemplate1 = () => `${randomChoice("One","One","A good person","An ethical person","A moral actor","A moral agent","Thou")} ${randomChoice("must not", "must never","cannot in good conscience","cannot, on pain of being morally stained,","must never intentionally","shalt not","must","shall","must whenever possible")} ${randomEthicsActivityVerb()}.`;
-const rareEthicsTemplate2 = () => `There is ${randomChoice(`nothing`,`nothing`,`very little`,`little`)} ${randomChoice(`more`,`less`)} ${randomChoice(`virtuous`,`evil`,`despicable`,`selfish`,`morally horrid`,`morally praiseworthy`)} than ${randomEthicsActivityNoun()}.`;
+const rareEthicsTemplate1 = () => `${randomChoice("One","One","A good person","An ethical person","A moral actor","A moral agent","Thou")} ${randomChoice("must not", "must never","cannot in good conscience","cannot, on pain of being morally stained,","must never intentionally","shalt not","must","shall","must whenever possible","ought not","ought to","should","should not")} ${randomEthicsActivityVerb()}.`;
+const rareEthicsTemplate2 = () => `There is ${randomChoice(`nothing`,`nothing`,`very little`,`little`)} ${randomChoice(`more`,`less`)} ${randomChoice(`virtuous`,`evil`,`despicable`,`selfish`,`morally horrid`,`morally praiseworthy`,`outrageously evil`)} than ${randomEthicsActivityNoun()}.`;
 
 
 const makeEthicsProp = () => {
 	const rando = Math.random();
-	const purposeFlag = (Math.random()<0.35) ? randomEthicsPurpose() : "";
+	const purposeFlag = (Math.random()<0.34) ? randomEthicsPurpose() : "";
 	let proposition = "";
-	if (rando<0.44) {
+	if (rando<0.43) {
 		proposition = capitalize(`${randomEthicsActivityNoun() + purposeFlag + " " + randomEthicsJudgment()}.`)
-	} else if (rando<0.88) {
+	} else if (rando<0.86) {
 		proposition = `It ${randomEthicsJudgment()} to ${randomEthicsActivityVerb() + purposeFlag}.`
-	} else if (rando<0.94) {
+	} else if (rando<0.93) {
 		proposition = rareEthicsTemplate1();
 	} else {
 		proposition = rareEthicsTemplate2();
@@ -552,12 +622,15 @@ const makeEthicsProp = () => {
 }
 
 const addEthicsLine = () => {
+	const ethicsLineNode = document.createElement("div");
 	const ethicsNode = document.createElement("p");
-	ethicsNode.classList.add("ethicsLine");
+	ethicsLineNode.classList.add("ethicsLine");
 	const ethicsTextNode = document.createTextNode(makeEthicsProp());
 	ethicsNode.appendChild(ethicsTextNode);
-	document.getElementById("ethicsQuestions").appendChild(ethicsNode);
+	ethicsLineNode.appendChild(ethicsNode);
+	document.getElementById("ethicsQuestions").appendChild(ethicsLineNode);
 	document.getElementById("ethicsBtn").childNodes[0].nodeValue = "Next Proposition";
+	// setTimeout(ethicsLineNode.classList.add("ethicsLineUnspooled"), 3000);
 }
 
 

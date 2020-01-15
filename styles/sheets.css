@@ -170,6 +170,19 @@ h4 {
   margin-top: 0;
 }
 
+.ethicsLine {
+  font-size: 1.3em;
+  /*max-height: 0;*/
+  overflow: hidden;
+  margin-top: -1.3em;
+  margin-bottom: 0.3em;
+  /*transition: max-height 1s linear 1.6s;*/
+}
+
+/*.ethicsLineUnspooled {
+  max-height: 8.4em;
+}*/
+
 .fadedout {
   opacity: 0;
 }

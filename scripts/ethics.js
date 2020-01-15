@@ -557,6 +557,7 @@ const addEthicsLine = () => {
 	const ethicsTextNode = document.createTextNode(makeEthicsProp());
 	ethicsNode.appendChild(ethicsTextNode);
 	document.getElementById("ethicsQuestions").appendChild(ethicsNode);
+	document.getElementById("ethicsBtn").childNodes[0].nodeValue = "Next Proposition";
 }
 
 

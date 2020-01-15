@@ -63,6 +63,24 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 273,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4179,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -159,7 +177,7 @@
 	"expanded_folders":
 	[
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators",
-		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/notes",
+		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/images",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/scripts",
 		"/C/Users/Richard/Dropbox/My Work/My Projects/web-projects/random-generators/styles"
 	],
@@ -339,7 +357,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -367,6 +385,63 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 7663.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 273,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4179,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -124,7 +124,7 @@ function makeCyberpunk() {
 		default:
 			criminal = "No Criminal Found."
 	}
-
+	
 	var cyberTitleNode = document.createElement("H3");
 	cyberTitleNode.classList.add("cybertitle");
     var cyberTitleText = document.createTextNode(criminal);
@@ -310,16 +310,6 @@ function randCyberOutcome() {
 	if (cyberOutcomeListTemp.length == 0) {cyberOutcomeListTemp = cyberOutcomeList.slice();}
     let rando = Math.floor(Math.random() * cyberOutcomeListTemp.length);
     return cyberOutcomeListTemp.splice(rando, 1)[0];
-}
-
-function randomChoice() {
-	let rando = Math.floor(Math.random()*arguments.length);
-	return arguments[rando];
-}
-
-function randomChoiceInArray(array) {
-	let rando = Math.floor(Math.random()*array.length);
-	return array[rando];
 }
 
 
@@ -1000,7 +990,7 @@ function cyberJob(party,job) {
 			str = ``;
 			break;
 		default:
-			return "there's a possible heist on the horizon ."
+			return "there's a possible heist on the horizon."
 	}
 	return str;
 }

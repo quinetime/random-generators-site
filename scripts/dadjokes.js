@@ -228,8 +228,6 @@ function writeJokeOpening() {
 		adjTemp.splice(randoAdj, 1);
 		adverbTemp.splice(randoAdv, 1);  // take used-up jokes out of array
 	}
-
-
 }
 
 

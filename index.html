@@ -45,6 +45,7 @@
 					<li><a href="#bullies">B<span class="shorten">ullies</span></a></li>
 					<li><a href="#cyberpunks">C<span class="shorten">yberpunks</span></a></li>
 					<li><a href="#dadjokes">D<span class="shorten">ad Jokes</span></a></li>
+					<li><a href="#ethics">E<span class="shorten">thics</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -93,14 +94,29 @@
 			<button id="jokeBtn" type="button" onclick="jokeAnswer()"></button>
 		</div>
 
+		<div id="ethicsSheet" class="sheet">
+			<h2 id="ethics">Random Ethics Generator</h2>
+			<h3 class="centered ethicsTitle">Ethical Theory 101</h3> 
+			<h4 class="centered ethicsOpening">Final Exam</h4>
+			<p class="centered ethicsOpening">For each of the following ethical claims, construct an argument in defense.</p>
+			<p class="centered ethicsOpening ethicsOpeningSpacer">You have three hours to complete the exam.</p>
+			<div id="ethicsQuestions">
+
+			</div>	
+			<button id="ethicsBtn" type="button" onclick="addEthicsLine()">Open exam</button>
+		</div>
+
 
 	</div>
 
 	<footer></footer>
 
 	<script src="scripts/main.js"></script>
+	<script src="scripts/ailments.js"></script>
+	<script src="scripts/bullies.js"></script>
 	<script src="scripts/cyberpunks.js"></script>
 	<script src="scripts/dadjokes.js"></script>
+	<script src="scripts/ethics.js"></script>
 
 </body>
 </html>

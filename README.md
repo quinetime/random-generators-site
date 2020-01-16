@@ -10,8 +10,8 @@ Can be found online at [randomness.rocks](https://www.randomness.rocks).
 - Bullies
 - Cyberpunks
 - Dad Jokes
+- Ethics
 
 ## Coming Up
 
-- Ethics
 - Frogs

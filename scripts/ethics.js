@@ -137,11 +137,14 @@ const ethicsActivityVerbs = [
 	()=>`buy cryptocurrency`,
 	()=>`desire fame`,
 	()=>`desire immortality`,
+	()=>`commit adultery`,
+	()=>`bear false witness against ${randomEthicsPerson()}`
 ];
 
 const ethicsActivityNouns = [
 	()=>`inciting political revolution`,
 	()=>`wearing fur`,
+	()=>`taking a vow of ${randomChoice(`chastity`,`silence`)}`,
 	()=>`conspicious consumption`,
 	()=>`cleanliness`,
 	()=>`vanity`,
@@ -293,7 +296,7 @@ const ethicsJudgments = [
 	()=>`is ${timen()}a vice`,
 	()=>`is ${timen()}an ethical vice`,
 	()=>`is ${timen()}a carnal sin`,
-	()=>`is ${timen()}a venal sin`,
+	()=>`is ${timen()}a venial sin`,
 	()=>`is ${timen()}a mortal sin`,
 	()=>`is ${menly()}virtuous`,
 	()=>`is ${mely()}repugnant`,
@@ -405,12 +408,20 @@ const ethicsJudgments = [
 	()=>`${randomChoice("evinces","is proof of")} the ${randomChoice("fallen","irredeemable","essentially good")} status of ${randomChoice("humanity","mankind")}`,
 	()=>`is irredeemable`,
 	()=>`is ${mely()}naïve`,
+	()=>`is a moral violation`,
+	()=>`consigns one's soul to eternal damnation${randomChoice("","in the flames of Hell")}`,
+	()=>`contravenes ${randomChoice("one","two","three")} of the eight points on the Noble Eightfold path to enlightenment`,
+	()=>`is not wrong in itself but is apt to lead to future harmful acts`,
+	()=>`harms one's dignity`,
+	()=>`drags a person down to the level of a mere animal`,
 ];
 
 const ethicsPerson = [
 	()=>`one's mother`,
 	()=>`one's father`,
 	()=>`one's child`,
+	()=>`thy neighbor`,
+	()=>`thy neighbor's wife`,
 	()=>`a lover`,
 	()=>`a puppy`,
 	()=>`a baby`,
